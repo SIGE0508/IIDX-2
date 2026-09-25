@@ -1,0 +1,28 @@
+{
+  "schemaVersion": 1,
+  "masterVersion": "0.1.0-dev",
+  "updatedAt": "2026-09-23T11:12:14.739Z",
+  "generatedAt": "2026-09-23T11:12:14.739Z",
+  "files": {
+    "chart-master.json": {
+      "path": "chart-master.json",
+      "masterVersion": "0.1.0-dev",
+      "recordCount": 2485
+    },
+    "unofficial.json": {
+      "path": "unofficial.json",
+      "masterVersion": "0.1.0-dev",
+      "recordCount": 2485
+    },
+    "ereter.json": {
+      "path": "ereter.json",
+      "masterVersion": "0.1.0-dev",
+      "recordCount": 760
+    },
+    "notes-radar.json": {
+      "path": "notes-radar.json",
+      "masterVersion": "0.1.0-dev",
+      "recordCount": 2485
+    }
+  }
+}

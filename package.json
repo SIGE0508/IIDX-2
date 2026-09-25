@@ -1,0 +1,28 @@
+{
+  "name": "iidx-clear-tracker",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "engines": { "node": ">=22.13.0" },
+  "scripts": {
+    "generate:masters": "node scripts/generate-masters.mjs",
+    "test:phase1": "node --test tests/ver1-phase1-master.test.mjs",
+    "test:phase2": "node --test tests/ver1-phase2-storage.test.mjs",
+    "test:phase3": "node --test tests/ver1-phase3-setup-player.test.mjs",
+    "test:phase4": "node --test tests/ver1-phase4-import.test.mjs",
+    "test:phase5": "node --test tests/ver1-phase5-training.test.mjs",
+    "typecheck": "tsc --noEmit",
+    "build": "vite build"
+  },
+  "dependencies": {
+    "react": "19.2.6",
+    "react-dom": "19.2.6"
+  },
+  "devDependencies": {
+    "@types/node": "22.19.19",
+    "@types/react": "19.2.14",
+    "@types/react-dom": "19.2.3",
+    "typescript": "5.9.3",
+    "vite": "8.0.13"
+  }
+}
