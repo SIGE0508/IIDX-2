@@ -15,5 +15,12 @@ export const MASTER_SCHEMA_VERSION = 1 as const;
 export const USER_DATA_SCHEMA_VERSION = 2 as const;
 export const INDEXED_DB_NAME = "iidx-clear-tracker";
 export const INDEXED_DB_VERSION = 2;
-export const MASTER_ASSET_ROOT = "/masters/v1";
+/**
+ * Resolves below the document base URL. Vite's configured base therefore
+ * produces /masters/v1 locally and /IIDX-2/masters/v1 on GitHub Pages.
+ * The fallback keeps Node-based domain tests independent of a DOM runtime.
+ */
+export const MASTER_ASSET_ROOT = typeof document === "undefined"
+  ? "/masters/v1"
+  : new URL("masters/v1/", document.baseURI).pathname.replace(/\/$/, "");
 export const meetsLamp = (lamp: ClearLamp, threshold: ClearLamp) => CLEAR_LAMP_RANK[lamp] >= CLEAR_LAMP_RANK[threshold];
