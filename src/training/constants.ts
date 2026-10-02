@@ -20,4 +20,4 @@ export const PERFORMANCE_START_LEVEL: Readonly<Record<HighestDpRank, 10 | 12>> =
   CHUDEN: 12,
   KAIDEN: 12,
 };
-export const TRAINING_LIMITS = { clear: 10, cleanup: 2, hard: 2, exh: 1, challenge: 2, attributePractice: 5 } as const;
+export const TRAINING_LIMITS = { clear: 5, cleanup: 5, hard: 5, exh: 5, challenge: 5, attributePractice: 5 } as const;

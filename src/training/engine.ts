@@ -17,7 +17,6 @@ const progress = (key: number, charts: readonly TrainingChart[]): TrainingProgre
   const value = rate(charts);
   return { key, ...value, skipped: value.denominator === 0, passed: value.rate !== null && value.rate >= TRAINING_PROGRESS_THRESHOLD };
 };
-const missingLastNumber = (left: number | null, right: number | null) => left === null ? right === null ? 0 : 1 : right === null ? -1 : left - right;
 
 function recommendation(chart: TrainingChart, category: TrainingRecommendation["category"], reason: TrainingRecommendation["reason"], target: ClearLamp, ereterValue: number | null = null, radarScore: number | null = null, matchedAttributes: RadarAttribute[] = []): TrainingRecommendation {
   return { chartId: chart.chartId, category, reason, officialLevel: chart.officialLevel, effectiveDifficulty: chart.effectiveDifficulty, currentLamp: chart.currentLamp, targetLamp: target, ereterValue, radarScore, matchedAttributes };
@@ -73,18 +72,27 @@ export function calculateTraining(input: TrainingInput): TrainingResult {
 
   const introductionBands = [...new Set(charts.filter(chart => chart.officialLevel === 12 && chart.effectiveDifficulty < 12).map(chart => chart.effectiveDifficulty))].sort((left, right) => left - right);
   const ereterValue = (chart: TrainingChart, key: "ec" | "hc" | "exh") => ereter.get(chart.chartId)?.[key] ?? null;
-  const sortByEreter = (key: "ec" | "hc" | "exh") => (left: TrainingChart, right: TrainingChart) => missingLastNumber(ereterValue(left, key), ereterValue(right, key)) || stable(left, right);
+  const sortByEreter = (key: "ec" | "hc" | "exh") => (left: TrainingChart, right: TrainingChart) => {
+    const leftValue = ereterValue(left, key); const rightValue = ereterValue(right, key);
+    if (leftValue === null) return rightValue === null ? stable(left, right) : 1;
+    if (rightValue === null) return -1;
+    const personal = input.player.ereterOverall;
+    return (personal === null ? 0 : Math.abs(leftValue - personal) - Math.abs(rightValue - personal)) || leftValue - rightValue || stable(left, right);
+  };
 
   let clearCandidates: TrainingChart[] = [];
   if (mainBand !== null) {
     if (mode === "INITIAL") clearCandidates = initialCharts.filter(chart => sameBand(chart.effectiveDifficulty, mainBand) && !achieved(chart));
     else if (phase === 12) clearCandidates = charts.filter(chart => chart.officialLevel === 12 && sameBand(chart.effectiveDifficulty, mainBand!) && !achieved(chart));
-    else clearCandidates = charts.filter(chart => chart.officialLevel === phase && !achieved(chart));
+    else clearCandidates = charts.filter(chart => chart.officialLevel === phase && sameBand(chart.effectiveDifficulty, mainBand!) && !achieved(chart));
   }
-  clearCandidates.sort((left, right) => {
-    if (left.officialLevel !== 12 || right.officialLevel !== 12) return left.effectiveDifficulty - right.effectiveDifficulty || stable(left, right);
-    return sortByEreter("ec")(left, right);
-  });
+  clearCandidates.sort(sortByEreter("ec"));
+  if (clearCandidates.length < TRAINING_LIMITS.clear && mainBand !== null) {
+    const supplementBand = roundDifficultyToTenths(mainBand + 0.1);
+    const clearScope = mode === "INITIAL" ? initialCharts : phase === 12 ? charts.filter(chart => chart.officialLevel === 12) : charts.filter(chart => chart.officialLevel === phase);
+    const supplements = clearScope.filter(chart => sameBand(chart.effectiveDifficulty, supplementBand) && !achieved(chart)).sort(sortByEreter("ec"));
+    clearCandidates.push(...supplements);
+  }
   const clearTargets = clearCandidates.slice(0, TRAINING_LIMITS.clear).map(chart => recommendation(chart, "CLEAR_TARGET", mode === "INITIAL" ? "INITIAL_BAND" : "MAIN_BAND", targetLamp(chart), chart.officialLevel === 12 ? ereterValue(chart, "ec") : null));
 
   let cleanupCandidates: TrainingChart[] = [];
@@ -92,12 +100,12 @@ export function calculateTraining(input: TrainingInput): TrainingResult {
     cleanupCandidates = charts.filter(chart => chart.officialLevel === phase && chart.effectiveDifficulty < mainBand! && (phase !== 12 || chart.effectiveDifficulty >= 12) && !achieved(chart));
     cleanupCandidates.sort((left, right) => right.effectiveDifficulty - left.effectiveDifficulty || (phase === 12 ? sortByEreter("ec")(left, right) : stable(left, right)));
   }
-  const cleanupTargets = cleanupCandidates.slice(0, TRAINING_LIMITS.cleanup).map(chart => recommendation(chart, "CLEANUP", "LOWER_BAND", targetLamp(chart), phase === 12 ? ereterValue(chart, "ec") : null));
+  const cleanupTargets = cleanupCandidates.slice(0, TRAINING_LIMITS.cleanup).map(chart => recommendation(chart, "CLEANUP", "LOWER_BAND", targetLamp(chart), ereterValue(chart, "ec")));
 
   const hardScope = mode === "INITIAL" ? initialCharts : charts;
-  const hardCandidates = phase === 12 ? hardScope.filter(chart => chart.officialLevel === 12 && (chart.currentLamp === "EASY_CLEAR" || chart.currentLamp === "CLEAR")).sort(sortByEreter("hc")) : [];
+  const hardCandidates = phase === 12 ? hardScope.filter(chart => chart.officialLevel === 12 && (chart.currentLamp === "EASY_CLEAR" || chart.currentLamp === "CLEAR") && ereterValue(chart, "hc") !== null).sort(sortByEreter("hc")) : [];
   const hardTargets = hardCandidates.slice(0, TRAINING_LIMITS.hard).map(chart => recommendation(chart, "HARD_TARGET", "HARD_UPGRADE", "HARD_CLEAR", ereterValue(chart, "hc")));
-  const exhCandidates = phase === 12 ? hardScope.filter(chart => chart.officialLevel === 12 && chart.currentLamp === "HARD_CLEAR").sort(sortByEreter("exh")) : [];
+  const exhCandidates = phase === 12 ? hardScope.filter(chart => chart.officialLevel === 12 && chart.currentLamp === "HARD_CLEAR" && ereterValue(chart, "exh") !== null).sort(sortByEreter("exh")) : [];
   const exhTargets = exhCandidates.slice(0, TRAINING_LIMITS.exh).map(chart => recommendation(chart, "EXH_TARGET", "EXH_UPGRADE", "EX_HARD_CLEAR", ereterValue(chart, "exh")));
 
   const strongAttributes = getStrongAttributes(input.player.notesRadar);
@@ -111,20 +119,39 @@ export function calculateTraining(input: TrainingInput): TrainingResult {
     challengeCandidates = scope.filter(chart => !achieved(chart) && radar.has(chart.chartId)).map(chart => ({ chart, score: strongAttributes.reduce((sum, attribute) => sum + radar.get(chart.chartId)!.values[attribute], 0) / 2 }));
     challengeCandidates.sort((left, right) => {
       if (phase === 11 && left.chart.officialLevel !== right.chart.officialLevel) return left.chart.officialLevel === 11 ? -1 : 1;
-      return right.score - left.score || stable(left.chart, right.chart);
+      return sortByEreter("ec")(left.chart, right.chart) || right.score - left.score || stable(left.chart, right.chart);
     });
   }
   const challengeTargets = challengeCandidates.slice(0, TRAINING_LIMITS.challenge).map(({ chart, score }) => recommendation(chart, "CHALLENGE", "STRONG_ATTRIBUTE", targetLamp(chart), null, score, [...strongAttributes]));
 
-  let attributePracticeCandidates: Array<{ chart: TrainingChart; diff: number; above: boolean; current: boolean; value: number }> = [];
+  let attributePracticeCandidates: Array<{ chart: TrainingChart; percentile: number; playable: number; detailThreshold: boolean; value: number }> = [];
   if (mainBand !== null && input.player.notesRadar && input.selectedAttribute) {
     const attribute = input.selectedAttribute;
-    const playerValue = input.player.notesRadar[attribute];
-    const allowed = [roundDifficultyToTenths(mainBand - 0.1), mainBand, roundDifficultyToTenths(mainBand + 0.1)];
-    attributePracticeCandidates = charts.filter(chart => allowed.some(band => sameBand(chart.effectiveDifficulty, band)) && radar.has(chart.chartId)).map(chart => { const value = radar.get(chart.chartId)!.values[attribute]; return { chart, value, diff: Math.abs(value - playerValue), above: value >= playerValue, current: sameBand(chart.effectiveDifficulty, mainBand!) }; });
-    attributePracticeCandidates.sort((left, right) => left.diff - right.diff || Number(right.above) - Number(left.above) || Number(right.current) - Number(left.current) || stable(left.chart, right.chart));
+    const detail = input.player.notesRadarDetails?.[attribute] ?? [];
+    const tenthValue = detail.length >= 10 ? [...detail].sort((left, right) => right.value - left.value || left.chartId.localeCompare(right.chartId))[9].value : null;
+    // A chart can train an attribute only when that chart itself has a positive
+    // common Radar value for the selected attribute.
+    const eligible = charts.filter(chart => {
+      const value = radar.get(chart.chartId)?.values[attribute];
+      return typeof value === "number" && Number.isFinite(value) && value > 0;
+    });
+    attributePracticeCandidates = eligible.map(chart => {
+      const value = radar.get(chart.chartId)!.values[attribute];
+      const peers = eligible.filter(peer => peer.officialLevel === chart.officialLevel && sameBand(peer.effectiveDifficulty, chart.effectiveDifficulty));
+      const percentile = peers.length === 0 ? 0 : peers.filter(peer => radar.get(peer.chartId)!.values[attribute] <= value).length / peers.length;
+      return { chart, value, percentile, playable: meetsLamp(chart.currentLamp, targetLamp(chart)) ? 1 : 0, detailThreshold: tenthValue !== null && value >= tenthValue };
+    });
+    // Relative strength in a comparable band is primary. Player details only
+    // break otherwise comparable candidates and cannot override the band.
+    attributePracticeCandidates.sort((left, right) => right.percentile - left.percentile || right.value - left.value || Number(right.detailThreshold) - Number(left.detailThreshold) || right.playable - left.playable || stable(left.chart, right.chart));
   }
-  const attributePracticeTargets = attributePracticeCandidates.slice(0, TRAINING_LIMITS.attributePractice).map(({ chart, value }) => recommendation(chart, "ATTRIBUTE_PRACTICE", "ATTRIBUTE_MATCH", targetLamp(chart), null, value, input.selectedAttribute ? [input.selectedAttribute] : []));
+  const attributePracticeTargets = mainBand === null ? [] : ([
+    { reason: "ATTRIBUTE_BASIC" as const, min: -Infinity, max: roundDifficultyToTenths(mainBand - 0.3), limit: 2 },
+    { reason: "ATTRIBUTE_STANDARD" as const, min: roundDifficultyToTenths(mainBand - 0.2), max: roundDifficultyToTenths(mainBand - 0.1), limit: 2 },
+    { reason: "ATTRIBUTE_CHALLENGE" as const, min: mainBand, max: roundDifficultyToTenths(mainBand + 0.1), limit: 1 },
+  ].flatMap(group => attributePracticeCandidates.filter(item => item.chart.effectiveDifficulty >= group.min && item.chart.effectiveDifficulty <= group.max)
+    .sort((left, right) => right.percentile - left.percentile || right.value - left.value || Number(right.detailThreshold) - Number(left.detailThreshold) || right.playable - left.playable || stable(left.chart, right.chart))
+    .slice(0, group.limit).map(({ chart, value }) => recommendation(chart, "ATTRIBUTE_PRACTICE", group.reason, targetLamp(chart), null, value, input.selectedAttribute ? [input.selectedAttribute] : []))));
 
   return { playerId: input.player.playerId, mode, initialRange, coverage, phase, mainBand, officialProgress, level12Progress, introductionBands, strongAttributes, attributePracticeAvailable: input.player.notesRadar !== null, recommendations: { clearTargets, cleanupTargets, hardTargets, exhTargets, challengeTargets, attributePracticeTargets } };
 }

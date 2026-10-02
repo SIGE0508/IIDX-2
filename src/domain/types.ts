@@ -11,6 +11,8 @@ export interface SongMaster {
   songId: string;
   title: string;
   debutVersion: string | null;
+  /** Numeric debut-version ordering metadata from CHART_MASTER. */
+  debutVersionNumber: number;
   aliases: Partial<Record<AliasSource, string[]>>;
 }
 export interface ChartMaster {
@@ -22,9 +24,12 @@ export interface ChartMaster {
   notes: number | null;
   availability: Availability;
 }
-export interface UnofficialDifficultyRecord { chartId: string; difficulty: number; lastUpdated: string; }
+/** Null means the source table intentionally has no confirmed unofficial value. */
+export interface UnofficialDifficultyRecord { chartId: string; difficulty: number | null; lastUpdated: string; }
 export interface EreterChartDataRecord { chartId: string; ec: number | null; hc: number | null; exh: number | null; lastUpdated: string; }
 export interface NotesRadarRecord { chartId: string; values: Record<RadarAttribute, number>; verified: true; lastUpdated: string; }
+export interface PlayerRadarDetail { chartId: string; value: number; }
+export type PlayerRadarDetails = Record<RadarAttribute, PlayerRadarDetail[]>;
 
 /** User-owned data. Shared masters never contain these records. */
 export interface Player {
@@ -33,6 +38,10 @@ export interface Player {
   playerName: string | null;
   highestDpRank: HighestDpRank;
   notesRadar: Record<RadarAttribute, number> | null;
+  /** User-entered aggregate ability estimate; unrelated to ereter scrape history. */
+  ereterOverall: number | null;
+  /** Per-attribute top-contributor entries entered by the player. */
+  notesRadarDetails: PlayerRadarDetails;
   createdAt: string;
   updatedAt: string;
 }

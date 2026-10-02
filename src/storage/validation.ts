@@ -22,9 +22,15 @@ const nullableString = (value: unknown): value is string | null => value === nul
 const nullableFinite = (value: unknown): value is number | null => value === null || finite(value);
 const oneOf = <T extends string>(value: unknown, list: readonly T[]): value is T => string(value) && (list as readonly string[]).includes(value);
 const radar = (value: unknown): boolean => object(value) && RADAR_ATTRIBUTES.every((attribute) => finite(value[attribute]));
+const radarDetails = (value: unknown): boolean => object(value) && RADAR_ATTRIBUTES.every((attribute) => {
+  const entries = value[attribute];
+  if (!Array.isArray(entries) || entries.length > 10) return false;
+  const chartIds = new Set<string>();
+  return entries.every(entry => object(entry) && nonBlank(entry.chartId) && finite(entry.value) && entry.value >= 0 && !chartIds.has(entry.chartId) && Boolean(chartIds.add(entry.chartId)));
+});
 
 export function assertPlayer(value: unknown): asserts value is Player {
-  if (!object(value) || !nonBlank(value.playerId) || !nullableString(value.iidxId) || !nullableString(value.playerName) || !oneOf(value.highestDpRank, HIGHEST_DP_RANKS) || (value.notesRadar !== null && !radar(value.notesRadar)) || !iso(value.createdAt) || !iso(value.updatedAt)) throw new Error("Player record is invalid.");
+  if (!object(value) || !nonBlank(value.playerId) || !nullableString(value.iidxId) || !nullableString(value.playerName) || !oneOf(value.highestDpRank, HIGHEST_DP_RANKS) || (value.notesRadar !== null && !radar(value.notesRadar)) || !nullableFinite(value.ereterOverall) || (finite(value.ereterOverall) && value.ereterOverall < 0) || !radarDetails(value.notesRadarDetails) || !iso(value.createdAt) || !iso(value.updatedAt)) throw new Error("Player record is invalid.");
 }
 export function assertPlayerChartRecord(value: unknown): asserts value is PlayerChartRecord {
   if (!object(value) || !nonBlank(value.playerId) || !nonBlank(value.chartId) || !oneOf(value.clearLamp, CLEAR_LAMPS) || !nullableFinite(value.score) || (finite(value.score) && (!Number.isSafeInteger(value.score) || value.score < 0)) || !nullableFinite(value.bp) || (finite(value.bp) && (!Number.isInteger(value.bp) || value.bp < 0)) || (value.clearSource !== null && !oneOf(value.clearSource, RECORD_SOURCES)) || (value.scoreSource !== null && !oneOf(value.scoreSource, RECORD_SOURCES)) || (value.bpSource !== null && !oneOf(value.bpSource, RECORD_SOURCES)) || !iso(value.updatedAt)) throw new Error("PlayerChartRecord is invalid.");

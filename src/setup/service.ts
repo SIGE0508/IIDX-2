@@ -1,6 +1,6 @@
 import { CLEAR_LAMP_RANK, HIGHEST_DP_RANKS, RADAR_ATTRIBUTES, SETUP_REGISTRATION_METHODS } from "../domain/constants";
 import { isCurrentlyPlayableChart, isManagedChart } from "../domain/chart";
-import type { ChartMaster, ClearLamp, HighestDpRank, Player, PlayerChartRecord, SetupDraft, SetupRegistrationMethod } from "../domain/types";
+import type { ChartMaster, ClearLamp, HighestDpRank, Player, PlayerChartRecord, PlayerRadarDetails, SetupDraft, SetupRegistrationMethod } from "../domain/types";
 import { UserDataRepository } from "../storage/repository";
 import type { PlayerPlayDataSummary, PlayerProfilePatch, PlayerRadarValues, SetupDraftPayloadV1, SetupDraftState, SetupStep } from "./types";
 
@@ -12,6 +12,7 @@ const isRank = (value: unknown): value is HighestDpRank => typeof value === "str
 const isMethod = (value: unknown): value is SetupRegistrationMethod => typeof value === "string" && (SETUP_REGISTRATION_METHODS as readonly string[]).includes(value);
 function assertTimestamp(now: string): void { if (!iso(now)) throw new Error("A valid ISO timestamp is required."); }
 function initialPayload(): SetupDraftPayloadV1 { return { version: DRAFT_PAYLOAD_VERSION, stagedRecords: [] }; }
+const emptyPlayerRadarDetails = () => Object.fromEntries(RADAR_ATTRIBUTES.map(attribute => [attribute, []])) as unknown as Player["notesRadarDetails"];
 function copyRecord(record: PlayerChartRecord): PlayerChartRecord { return { ...record }; }
 
 /** Rejects malformed persisted drafts rather than silently changing pending registration data. */
@@ -73,7 +74,7 @@ export async function correctInitialLamp(repository: UserDataRepository, state: 
 export async function completeSetup(repository: UserDataRepository, state: SetupDraftState, now: string): Promise<Player> {
   assertTimestamp(now); const { highestDpRank, selectedRegistrationMethod } = state.draft;
   if (highestDpRank === null || selectedRegistrationMethod === null) throw new Error("DP highest rank and registration method are required to complete setup.");
-  const player: Player = { playerId: state.draft.playerId, iidxId: null, playerName: null, highestDpRank, notesRadar: null, createdAt: now, updatedAt: now };
+  const player: Player = { playerId: state.draft.playerId, iidxId: null, playerName: null, highestDpRank, notesRadar: null, ereterOverall: null, notesRadarDetails: emptyPlayerRadarDetails(), createdAt: now, updatedAt: now };
   await repository.completeInitialSetup(player, state.payload.stagedRecords); return player;
 }
 export async function discardSetup(repository: UserDataRepository, playerId: string): Promise<void> { await repository.deleteSetupDraft(playerId); }
@@ -86,6 +87,16 @@ export async function updatePlayerProfile(repository: UserDataRepository, player
 export async function updatePlayerRadar(repository: UserDataRepository, player: Player, notesRadar: PlayerRadarValues, now: string): Promise<Player> {
   assertTimestamp(now); if (!RADAR_ATTRIBUTES.every((attribute) => Number.isFinite(notesRadar[attribute]))) throw new Error("All player NOTES RADAR values must be finite numbers.");
   const updated: Player = { ...player, notesRadar: { ...notesRadar }, updatedAt: now }; await repository.savePlayer(updated); return updated;
+}
+export async function updatePlayerEreterOverall(repository: UserDataRepository, player: Player, ereterOverall: number | null, now: string): Promise<Player> {
+  assertTimestamp(now); if (ereterOverall !== null && (!Number.isFinite(ereterOverall) || ereterOverall < 0)) throw new Error("Personal ERETER value must be a non-negative finite number.");
+  const updated: Player = { ...player, ereterOverall, updatedAt: now }; await repository.savePlayer(updated); return updated;
+}
+export async function updatePlayerRadarDetails(repository: UserDataRepository, player: Player, details: PlayerRadarDetails, now: string): Promise<Player> {
+  assertTimestamp(now);
+  if (!RADAR_ATTRIBUTES.every(attribute => Array.isArray(details[attribute]) && details[attribute].length <= 10 && details[attribute].every(item => item.chartId.trim() && Number.isFinite(item.value) && item.value >= 0) && new Set(details[attribute].map(item => item.chartId)).size === details[attribute].length)) throw new Error("Player NOTES RADAR details are invalid.");
+  const copied = Object.fromEntries(RADAR_ATTRIBUTES.map(attribute => [attribute, details[attribute].map(item => ({ ...item }))])) as unknown as PlayerRadarDetails;
+  const updated: Player = { ...player, notesRadarDetails: copied, updatedAt: now }; await repository.savePlayer(updated); return updated;
 }
 /** Common PLAYER aggregate: managed, currently playable ☆10–12 charts only. */
 export function summarizePlayerPlayData(charts: readonly ChartMaster[], records: readonly PlayerChartRecord[]): PlayerPlayDataSummary {

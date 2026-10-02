@@ -1,5327 +1,5327 @@
 {
   "schemaVersion": 1,
   "masterVersion": "0.1.0-dev",
-  "updatedAt": "2026-09-23T11:12:14.739Z",
+  "updatedAt": "2026-10-02T11:43:12.854Z",
   "records": [
     {
       "chartId": "CT_ID0513",
       "ec": 0.7,
       "hc": 3.9,
       "exh": 7.9,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID1886",
       "ec": 1,
       "hc": 4.1,
       "exh": 7.6,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID0305",
       "ec": 1.3,
       "hc": 6.8,
       "exh": 10,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID1015",
       "ec": 0.8,
       "hc": 3.9,
       "exh": 8.5,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID0047",
       "ec": 0.8,
       "hc": 5.7,
       "exh": 10.2,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID2063",
       "ec": 0.8,
       "hc": 4.3,
       "exh": 9.4,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID2421",
       "ec": 0.8,
       "hc": 3.8,
       "exh": 7.8,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID0666",
       "ec": 0.9,
       "hc": 2.9,
       "exh": 7.4,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID0479",
       "ec": 0.9,
       "hc": 2.7,
       "exh": 8,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID0909",
       "ec": 0.9,
       "hc": 4.2,
       "exh": 8.8,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID0750",
       "ec": 0.9,
       "hc": 5.5,
       "exh": 10.1,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID1882",
       "ec": 0.9,
       "hc": 4.1,
       "exh": 7.9,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID1123",
       "ec": 0.9,
       "hc": 3.3,
       "exh": 7.7,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID1517",
       "ec": 0.9,
       "hc": 3.6,
       "exh": 7.8,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID1401",
       "ec": 0.9,
       "hc": 3.3,
       "exh": 7.8,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID1241",
       "ec": 0.9,
       "hc": 3.5,
       "exh": 8,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID0687",
       "ec": 0.9,
       "hc": 5.5,
       "exh": 9.3,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID0353",
       "ec": 1,
       "hc": 5.4,
       "exh": 10.4,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID0265",
       "ec": 1,
       "hc": 5,
       "exh": 8.5,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID2241",
       "ec": 1,
       "hc": 5,
       "exh": 9,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID1807",
       "ec": 1,
       "hc": 3.8,
       "exh": 7.5,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID0396",
       "ec": 1.1,
       "hc": 11.4,
       "exh": 13.5,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID0973",
       "ec": 1.1,
       "hc": 4.6,
       "exh": 8.9,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID0289",
       "ec": 1.1,
       "hc": 3.6,
       "exh": 8.3,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID0072",
       "ec": 1.1,
       "hc": 7.1,
       "exh": 11.4,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID0182",
       "ec": 1.2,
       "hc": 2.2,
       "exh": 8.2,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID1488",
       "ec": 1.3,
       "hc": 5.8,
       "exh": 9.7,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID0294",
       "ec": 1.7,
       "hc": 7.3,
       "exh": 10.9,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID1873",
       "ec": 0.8,
       "hc": 4.2,
       "exh": 8.4,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID2051",
       "ec": 0.8,
       "hc": 4.3,
       "exh": 8.5,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID1062",
       "ec": 0.9,
       "hc": 4.1,
       "exh": 9,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID0500",
       "ec": 0.9,
       "hc": 4.6,
       "exh": 8.2,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID0326",
       "ec": 0.9,
       "hc": 5.3,
       "exh": 9.5,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID0888",
       "ec": 0.9,
       "hc": 5.2,
       "exh": 9.3,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID0383",
       "ec": 0.9,
       "hc": 6.3,
       "exh": 9.7,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID1821",
       "ec": 1,
       "hc": 4.1,
       "exh": 7.9,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID0927",
       "ec": 1,
       "hc": 3.6,
       "exh": 9,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID1927",
       "ec": 1,
       "hc": 4.7,
       "exh": 9.1,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID0668",
       "ec": 1,
       "hc": 5,
       "exh": 9.5,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID1553",
       "ec": 1,
       "hc": 4.8,
       "exh": 9.3,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID0311",
       "ec": 1,
       "hc": 5.9,
       "exh": 10.3,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID0726",
       "ec": 1,
       "hc": 4.3,
       "exh": 8.3,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID1246",
       "ec": 1,
       "hc": 4.9,
       "exh": 8.8,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID0259",
       "ec": 1,
       "hc": 6,
       "exh": 10,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID1917",
       "ec": 1,
       "hc": 4,
       "exh": 7.7,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID0623",
       "ec": 1,
       "hc": 5.9,
       "exh": 9.6,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID1146",
       "ec": 1,
       "hc": 5.3,
       "exh": 9.8,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID1452",
       "ec": 1,
       "hc": 5.2,
       "exh": 9.1,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID1121",
       "ec": 1,
       "hc": 5.2,
       "exh": 10.4,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID1981",
       "ec": 1,
       "hc": 4.4,
       "exh": 8.1,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID0894",
       "ec": 1.1,
       "hc": 5.3,
       "exh": 9.4,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID0313",
       "ec": 1.1,
       "hc": 6.1,
       "exh": 9.9,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID0897",
       "ec": 1.1,
       "hc": 5.6,
       "exh": 8.7,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID0632",
       "ec": 1.1,
       "hc": 4.9,
       "exh": 8.6,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID1525",
       "ec": 1.1,
       "hc": 4.5,
       "exh": 7.8,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID0962",
       "ec": 1.2,
       "hc": 5.5,
       "exh": 9.3,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID1164",
       "ec": 1.2,
       "hc": 6.3,
       "exh": 10.1,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID1131",
       "ec": 1.2,
       "hc": 5,
       "exh": 8.3,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID1086",
       "ec": 1.2,
       "hc": 4.6,
       "exh": 8.9,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID2437",
       "ec": 1.2,
       "hc": 6.4,
       "exh": 9.7,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID1106",
       "ec": 1.2,
       "hc": 5.2,
       "exh": 9.5,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID0058",
       "ec": 1.2,
       "hc": 6.9,
       "exh": 11.5,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID0095",
       "ec": 1.2,
       "hc": 5.5,
       "exh": 9.7,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID0934",
       "ec": 1.2,
       "hc": 5.8,
       "exh": 10,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID0617",
       "ec": 1.2,
       "hc": 4.7,
       "exh": 8.6,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID0533",
       "ec": 1.3,
       "hc": 6.8,
       "exh": 10.4,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID0151",
       "ec": 1.3,
       "hc": 6.8,
       "exh": 11.1,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID1676",
       "ec": 1.3,
       "hc": 5.2,
       "exh": 9.2,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID0249",
       "ec": 1.3,
       "hc": 6.7,
       "exh": 10.9,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID1810",
       "ec": 1.3,
       "hc": 5.6,
       "exh": 9.5,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID0735",
       "ec": 1.4,
       "hc": 5.6,
       "exh": 9.3,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID0225",
       "ec": 1.4,
       "hc": 6.6,
       "exh": 11.4,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID1686",
       "ec": 1.4,
       "hc": 5.8,
       "exh": 9.8,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID0460",
       "ec": 1.4,
       "hc": 5.1,
       "exh": 8.7,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID0536",
       "ec": 1.4,
       "hc": 5.4,
       "exh": 9,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID1199",
       "ec": 1.4,
       "hc": 4.9,
       "exh": 8.6,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID0759",
       "ec": 1.4,
       "hc": 6.4,
       "exh": 9.9,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID2296",
       "ec": 1.4,
       "hc": 6,
       "exh": 9.3,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID0373",
       "ec": 1.4,
       "hc": 5.4,
       "exh": 9.2,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID1167",
       "ec": 1.5,
       "hc": 5.6,
       "exh": 9.3,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID0074",
       "ec": 1.5,
       "hc": 7.2,
       "exh": 11.3,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID2157",
       "ec": 1.5,
       "hc": 5.3,
       "exh": 8.8,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID0425",
       "ec": 1.7,
       "hc": 4.6,
       "exh": 8.2,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID0005",
       "ec": 1.7,
       "hc": 6.9,
       "exh": 11.1,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID1203",
       "ec": 2.1,
       "hc": 6,
       "exh": 9.2,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID0056",
       "ec": 2.1,
       "hc": 8,
       "exh": 11.8,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID0754",
       "ec": 1.1,
       "hc": 6.2,
       "exh": 9.9,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID1197",
       "ec": 1.1,
       "hc": 5.5,
       "exh": 9.5,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID0581",
       "ec": 1.2,
       "hc": 5,
       "exh": 8.9,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID1542",
       "ec": 1.2,
       "hc": 5.7,
       "exh": 9,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID0309",
       "ec": 1.3,
       "hc": 4,
       "exh": 9.2,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID1477",
       "ec": 1.3,
       "hc": 5.6,
       "exh": 8.6,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID0531",
       "ec": 1.3,
       "hc": 5.6,
       "exh": 9.5,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID1040",
       "ec": 1.3,
       "hc": 6.3,
       "exh": 9.7,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID1417",
       "ec": 1.4,
       "hc": 6.1,
       "exh": 9.8,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID1057",
       "ec": 1.4,
       "hc": 6,
       "exh": 10,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID0328",
       "ec": 1.4,
       "hc": 6.1,
       "exh": 9.7,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID0863",
       "ec": 1.4,
       "hc": 5.8,
       "exh": 9.4,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID0653",
       "ec": 1.4,
       "hc": 6.1,
       "exh": 9.5,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID0708",
       "ec": 1.4,
       "hc": 5.8,
       "exh": 8.9,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID1259",
       "ec": 1.4,
       "hc": 5.8,
       "exh": 9.3,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID1354",
       "ec": 1.4,
       "hc": 7,
       "exh": 10.4,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID2146",
       "ec": 1.4,
       "hc": 6.3,
       "exh": 10.2,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID0856",
       "ec": 1.4,
       "hc": 5.8,
       "exh": 8.9,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID0551",
       "ec": 1.5,
       "hc": 6.6,
       "exh": 10.1,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID0740",
       "ec": 1.5,
       "hc": 6.2,
       "exh": 9.6,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID0895",
       "ec": 1.5,
       "hc": 6.4,
       "exh": 10.2,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID0177",
       "ec": 1.5,
       "hc": 5.9,
       "exh": 10,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID1291",
       "ec": 1.5,
       "hc": 6.3,
       "exh": 9.8,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID2335",
       "ec": 1.5,
       "hc": 8.1,
       "exh": 11.4,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID0300",
       "ec": 1.5,
       "hc": 6.3,
       "exh": 10.3,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID1681",
       "ec": 1.5,
       "hc": 6.1,
       "exh": 9.3,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID0467",
       "ec": 1.6,
       "hc": 6.4,
       "exh": 9.6,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID2291",
       "ec": 1.6,
       "hc": 7,
       "exh": 10.7,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID0804",
       "ec": 1.6,
       "hc": 6.3,
       "exh": 9.7,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID0466",
       "ec": 1.6,
       "hc": 6.1,
       "exh": 10.4,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID1405",
       "ec": 1.6,
       "hc": 5.2,
       "exh": 8.7,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID2250",
       "ec": 1.6,
       "hc": 6,
       "exh": 9.5,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID0938",
       "ec": 1.7,
       "hc": 6.6,
       "exh": 10,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID0872",
       "ec": 1.7,
       "hc": 5.7,
       "exh": 9.1,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID2016",
       "ec": 1.7,
       "hc": 6.7,
       "exh": 10.5,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID0733",
       "ec": 1.9,
       "hc": 7.5,
       "exh": 11.1,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID0377",
       "ec": 2,
       "hc": 6.1,
       "exh": 9.6,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID1293",
       "ec": 2,
       "hc": 6.2,
       "exh": 9.9,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID0794",
       "ec": 2,
       "hc": 6.9,
       "exh": 10.1,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID1266",
       "ec": 2,
       "hc": 6.9,
       "exh": 9.9,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID0187",
       "ec": 2.1,
       "hc": 5.8,
       "exh": 10.2,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID1732",
       "ec": 2.1,
       "hc": 6.2,
       "exh": 9.3,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID0024",
       "ec": 2.1,
       "hc": 6.4,
       "exh": 10.7,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID0120",
       "ec": 2.1,
       "hc": 5.5,
       "exh": 9.3,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID1993",
       "ec": 2.1,
       "hc": 5.9,
       "exh": 9.8,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID0719",
       "ec": 2.2,
       "hc": 10.7,
       "exh": 13.5,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID1468",
       "ec": 2.3,
       "hc": 5.8,
       "exh": 9.3,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID0283",
       "ec": 2.3,
       "hc": 5.4,
       "exh": 9.6,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID1288",
       "ec": 2.3,
       "hc": 6.1,
       "exh": 9.6,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID0557",
       "ec": 2.3,
       "hc": 7.2,
       "exh": 11.1,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID0452",
       "ec": 2.4,
       "hc": 6.9,
       "exh": 10.6,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID1826",
       "ec": 2.5,
       "hc": 6.1,
       "exh": 9.9,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID1852",
       "ec": 2.5,
       "hc": 6.5,
       "exh": 9.8,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID0572",
       "ec": 2.5,
       "hc": 8.2,
       "exh": 11.5,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID2141",
       "ec": 2.5,
       "hc": 5.7,
       "exh": 10.5,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID1737",
       "ec": 2.5,
       "hc": 5.9,
       "exh": 9.7,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID0031",
       "ec": 2.5,
       "hc": 6.5,
       "exh": 10.5,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID2120",
       "ec": 2.5,
       "hc": 7,
       "exh": 10.6,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID0079",
       "ec": 2.6,
       "hc": 6.5,
       "exh": 10.2,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID0298",
       "ec": 2.7,
       "hc": 7,
       "exh": 10.6,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID0139",
       "ec": 2.8,
       "hc": 7.5,
       "exh": 10.9,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID0104",
       "ec": 3.1,
       "hc": 7.8,
       "exh": 12.2,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID1101",
       "ec": 3.1,
       "hc": 7.9,
       "exh": 11.2,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID0528",
       "ec": 3.1,
       "hc": 7.3,
       "exh": 10.8,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID0334",
       "ec": 3.2,
       "hc": 7.5,
       "exh": 11,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID2313",
       "ec": 3.2,
       "hc": 6.5,
       "exh": 9.9,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID0539",
       "ec": 3.3,
       "hc": 6.5,
       "exh": 10.4,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID1147",
       "ec": 3.3,
       "hc": 6.2,
       "exh": 9.7,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID1345",
       "ec": 3.6,
       "hc": 7.1,
       "exh": 11,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID1624",
       "ec": 3.6,
       "hc": 7.1,
       "exh": 10.5,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID0518",
       "ec": 3.8,
       "hc": 7.1,
       "exh": 10.3,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID1550",
       "ec": 3.8,
       "hc": 6.8,
       "exh": 9.8,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID0006",
       "ec": 3.8,
       "hc": 8.8,
       "exh": 12.7,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID0020",
       "ec": 3.9,
       "hc": 8.8,
       "exh": 12.7,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID1883",
       "ec": 4,
       "hc": 6.9,
       "exh": 10.4,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID1514",
       "ec": 4.2,
       "hc": 6.9,
       "exh": 9.8,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID2337",
       "ec": 4.2,
       "hc": 6.4,
       "exh": 9.4,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID1915",
       "ec": 1.5,
       "hc": 6.3,
       "exh": 9.7,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID0604",
       "ec": 1.5,
       "hc": 6.6,
       "exh": 10.7,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID1920",
       "ec": 1.5,
       "hc": 6.6,
       "exh": 10.5,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID1213",
       "ec": 1.8,
       "hc": 5.8,
       "exh": 11,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID1731",
       "ec": 2,
       "hc": 6.8,
       "exh": 10.4,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID2422",
       "ec": 2.2,
       "hc": 6.5,
       "exh": 9.4,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID1922",
       "ec": 2.3,
       "hc": 6.7,
       "exh": 10.2,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID0562",
       "ec": 2.4,
       "hc": 6.5,
       "exh": 10.7,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID1375",
       "ec": 2.4,
       "hc": 6.7,
       "exh": 10.3,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID0393",
       "ec": 2.5,
       "hc": 5.9,
       "exh": 9.2,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID1426",
       "ec": 2.5,
       "hc": 5.7,
       "exh": 9.6,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID2257",
       "ec": 2.5,
       "hc": 7.6,
       "exh": 10.9,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID1102",
       "ec": 2.5,
       "hc": 6,
       "exh": 9.5,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID1393",
       "ec": 2.6,
       "hc": 7.1,
       "exh": 10.4,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID2417",
       "ec": 2.6,
       "hc": 6.3,
       "exh": 9.5,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID1835",
       "ec": 2.6,
       "hc": 7.4,
       "exh": 11,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID0658",
       "ec": 2.7,
       "hc": 7.6,
       "exh": 10.8,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID2179",
       "ec": 2.8,
       "hc": 6.7,
       "exh": 10.3,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID0771",
       "ec": 2.8,
       "hc": 10.2,
       "exh": 12.6,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID1117",
       "ec": 2.8,
       "hc": 6.9,
       "exh": 10.2,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID0017",
       "ec": 3,
       "hc": 8.3,
       "exh": 12.5,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID2011",
       "ec": 3,
       "hc": 7.2,
       "exh": 10.2,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID1368",
       "ec": 3,
       "hc": 6.3,
       "exh": 9.4,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID2341",
       "ec": 3,
       "hc": 7.4,
       "exh": 10.5,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID0791",
       "ec": 3,
       "hc": 7,
       "exh": 10.2,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID2433",
       "ec": 3,
       "hc": 7.2,
       "exh": 10,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID0882",
       "ec": 3,
       "hc": 6.6,
       "exh": 10,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID0819",
       "ec": 3.1,
       "hc": 8.1,
       "exh": 11.4,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID1742",
       "ec": 3.2,
       "hc": 7.8,
       "exh": 11.6,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID0588",
       "ec": 3.2,
       "hc": 7,
       "exh": 10.5,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID0213",
       "ec": 3.2,
       "hc": 7.5,
       "exh": 11.2,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID2311",
       "ec": 3.2,
       "hc": 6.3,
       "exh": 9.3,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID0310",
       "ec": 3.3,
       "hc": 7.1,
       "exh": 10.8,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID1800",
       "ec": 3.3,
       "hc": 7.3,
       "exh": 10.6,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID2425",
       "ec": 3.3,
       "hc": 7.1,
       "exh": 10.3,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID1606",
       "ec": 3.3,
       "hc": 7.6,
       "exh": 11.4,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID0842",
       "ec": 3.3,
       "hc": 7.3,
       "exh": 10.5,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID1871",
       "ec": 3.3,
       "hc": 7.3,
       "exh": 10.4,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID0742",
       "ec": 3.3,
       "hc": 7.4,
       "exh": 10.8,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID2275",
       "ec": 3.4,
       "hc": 7.2,
       "exh": 10.2,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID2027",
       "ec": 3.4,
       "hc": 7.6,
       "exh": 10.5,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID1710",
       "ec": 3.4,
       "hc": 7.4,
       "exh": 10.9,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID2236",
       "ec": 3.4,
       "hc": 7.8,
       "exh": 11.1,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID0911",
       "ec": 3.5,
       "hc": 7.6,
       "exh": 10.7,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID0767",
       "ec": 3.5,
       "hc": 7.3,
       "exh": 10.5,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID0162",
       "ec": 3.5,
       "hc": 7.5,
       "exh": 10.8,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID1694",
       "ec": 3.5,
       "hc": 7.8,
       "exh": 10.9,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID1127",
       "ec": 3.6,
       "hc": 6.3,
       "exh": 9.5,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID1640",
       "ec": 3.6,
       "hc": 6.9,
       "exh": 9.7,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID0945",
       "ec": 3.6,
       "hc": 7.2,
       "exh": 10.3,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID1314",
       "ec": 3.6,
       "hc": 8.2,
       "exh": 11.3,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID0273",
       "ec": 3.6,
       "hc": 7.8,
       "exh": 11.2,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID1219",
       "ec": 3.7,
       "hc": 7.1,
       "exh": 10.9,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID2285",
       "ec": 3.7,
       "hc": 7.3,
       "exh": 10.3,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID1136",
       "ec": 3.7,
       "hc": 7.3,
       "exh": 10.9,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID0614",
       "ec": 3.7,
       "hc": 6.8,
       "exh": 9.9,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID0798",
       "ec": 3.7,
       "hc": 8.3,
       "exh": 11.5,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID0884",
       "ec": 3.8,
       "hc": 7.1,
       "exh": 10.1,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID0026",
       "ec": 3.8,
       "hc": 8.1,
       "exh": 12.4,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID0316",
       "ec": 3.8,
       "hc": 10,
       "exh": 13,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID0183",
       "ec": 3.9,
       "hc": 6.8,
       "exh": 11.2,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID0188",
       "ec": 3.9,
       "hc": 5.6,
       "exh": 9.4,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID1761",
       "ec": 3.9,
       "hc": 7.5,
       "exh": 10.6,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID2327",
       "ec": 3.9,
       "hc": 7.6,
       "exh": 10.5,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID1838",
       "ec": 4,
       "hc": 7.1,
       "exh": 9.9,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID0664",
       "ec": 4,
       "hc": 10.1,
       "exh": 12.5,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID0730",
       "ec": 4,
       "hc": 8.7,
       "exh": 12.1,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID2227",
       "ec": 4,
       "hc": 8.3,
       "exh": 10.9,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID1267",
       "ec": 4.1,
       "hc": 6.8,
       "exh": 10,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID0251",
       "ec": 4.1,
       "hc": 7.4,
       "exh": 10.7,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID2278",
       "ec": 4.2,
       "hc": 7.3,
       "exh": 10.1,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID2102",
       "ec": 4.2,
       "hc": 7,
       "exh": 10.2,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID1279",
       "ec": 4.2,
       "hc": 7.2,
       "exh": 10.5,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID0972",
       "ec": 4.3,
       "hc": 6.9,
       "exh": 10,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID0697",
       "ec": 4.3,
       "hc": 7.1,
       "exh": 9.9,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID0157",
       "ec": 4.3,
       "hc": 5.7,
       "exh": 9.1,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID1719",
       "ec": 4.3,
       "hc": 7,
       "exh": 10,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID0155",
       "ec": 4.4,
       "hc": 7.8,
       "exh": 11.9,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID1948",
       "ec": 4.6,
       "hc": 6.3,
       "exh": 9.7,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID1718",
       "ec": 4.6,
       "hc": 7.3,
       "exh": 10.2,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID2415",
       "ec": 4.6,
       "hc": 7.3,
       "exh": 10.4,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID0883",
       "ec": 4.7,
       "hc": 6.6,
       "exh": 10,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID2381",
       "ec": 4.8,
       "hc": 7.4,
       "exh": 10.3,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID2336",
       "ec": 4.9,
       "hc": 8.3,
       "exh": 11.2,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID2405",
       "ec": 5.1,
       "hc": 7.4,
       "exh": 10,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID1263",
       "ec": 5.1,
       "hc": 7.2,
       "exh": 10.1,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID0458",
       "ec": 5.2,
       "hc": 8.2,
       "exh": 11.8,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID0646",
       "ec": 5.2,
       "hc": 9.3,
       "exh": 12.3,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID2261",
       "ec": 5.3,
       "hc": 9,
       "exh": 11.9,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID2133",
       "ec": 5.3,
       "hc": 7.4,
       "exh": 10,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID2253",
       "ec": 5.4,
       "hc": 7.6,
       "exh": 10.4,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID1408",
       "ec": 2.4,
       "hc": 6.8,
       "exh": 11.2,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID1299",
       "ec": 2.7,
       "hc": 7.8,
       "exh": 11.7,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID1944",
       "ec": 3.4,
       "hc": 7.2,
       "exh": 10.4,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID2202",
       "ec": 3.4,
       "hc": 6.9,
       "exh": 10.1,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID2181",
       "ec": 3.5,
       "hc": 7.1,
       "exh": 10.5,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID1389",
       "ec": 3.5,
       "hc": 7.1,
       "exh": 11.4,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID2408",
       "ec": 3.6,
       "hc": 7.2,
       "exh": 10.5,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID0936",
       "ec": 3.6,
       "hc": 7.4,
       "exh": 10.8,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID0360",
       "ec": 3.6,
       "hc": 6.9,
       "exh": 10.1,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID0195",
       "ec": 3.7,
       "hc": 3.6,
       "exh": 10.2,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID1419",
       "ec": 3.7,
       "hc": 7.3,
       "exh": 10.4,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID2346",
       "ec": 3.8,
       "hc": 8.4,
       "exh": 11.9,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID0815",
       "ec": 3.8,
       "hc": 7.7,
       "exh": 11,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID1758",
       "ec": 3.9,
       "hc": 7.2,
       "exh": 10.2,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID0341",
       "ec": 3.9,
       "hc": 8.4,
       "exh": 11.7,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID2431",
       "ec": 3.9,
       "hc": 7.8,
       "exh": 11,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID2429",
       "ec": 3.9,
       "hc": 6.9,
       "exh": 9.8,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID1824",
       "ec": 4,
       "hc": 7.9,
       "exh": 11.3,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID1466",
       "ec": 4,
       "hc": 7.6,
       "exh": 10.7,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID0899",
       "ec": 4,
       "hc": 7.2,
       "exh": 10.3,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID2280",
       "ec": 4,
       "hc": 7.5,
       "exh": 10.4,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID0907",
       "ec": 4,
       "hc": 7.6,
       "exh": 10.8,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID1365",
       "ec": 4,
       "hc": 8,
       "exh": 11.4,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID1698",
       "ec": 4.1,
       "hc": 7,
       "exh": 9.9,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID0922",
       "ec": 4.1,
       "hc": 6.6,
       "exh": 9.4,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID1899",
       "ec": 4.1,
       "hc": 7.3,
       "exh": 10.4,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID1555",
       "ec": 4.1,
       "hc": 7.7,
       "exh": 10.8,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID0174",
       "ec": 4.1,
       "hc": 7.3,
       "exh": 10.3,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID1205",
       "ec": 4.2,
       "hc": 7.2,
       "exh": 10.4,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID0991",
       "ec": 4.2,
       "hc": 8.3,
       "exh": 11.9,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID0173",
       "ec": 4.2,
       "hc": 6.9,
       "exh": 10.9,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID1934",
       "ec": 4.2,
       "hc": 8,
       "exh": 10.8,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID0648",
       "ec": 4.2,
       "hc": 8,
       "exh": 11.6,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID0677",
       "ec": 4.2,
       "hc": 8.8,
       "exh": 12,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID0889",
       "ec": 4.3,
       "hc": 7.3,
       "exh": 10.1,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID2009",
       "ec": 4.3,
       "hc": 7.5,
       "exh": 10.2,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID0931",
       "ec": 4.3,
       "hc": 6.9,
       "exh": 10,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID1930",
       "ec": 4.3,
       "hc": 7.6,
       "exh": 11,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID1348",
       "ec": 4.3,
       "hc": 7.9,
       "exh": 11,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID1583",
       "ec": 4.4,
       "hc": 7.9,
       "exh": 11.2,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID2332",
       "ec": 4.4,
       "hc": 7.6,
       "exh": 10.3,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID0817",
       "ec": 4.4,
       "hc": 7.2,
       "exh": 10.2,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID2083",
       "ec": 4.4,
       "hc": 7.7,
       "exh": 10.6,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID1159",
       "ec": 4.4,
       "hc": 8.2,
       "exh": 11.6,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID1633",
       "ec": 4.4,
       "hc": 8.2,
       "exh": 11.7,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID0569",
       "ec": 4.5,
       "hc": 7.5,
       "exh": 10.5,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID2139",
       "ec": 4.5,
       "hc": 7.3,
       "exh": 10.3,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID1232",
       "ec": 4.5,
       "hc": 8,
       "exh": 11.2,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID0836",
       "ec": 4.5,
       "hc": 7.2,
       "exh": 9.9,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID2207",
       "ec": 4.5,
       "hc": 7.6,
       "exh": 10.8,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID1322",
       "ec": 4.6,
       "hc": 8.8,
       "exh": 11.4,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID1599",
       "ec": 4.6,
       "hc": 7.2,
       "exh": 10.3,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID0745",
       "ec": 4.6,
       "hc": 8.2,
       "exh": 11.2,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID1383",
       "ec": 4.6,
       "hc": 8.2,
       "exh": 11.1,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID1085",
       "ec": 4.7,
       "hc": 7.7,
       "exh": 10.9,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID2137",
       "ec": 4.7,
       "hc": 7.6,
       "exh": 10.7,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID0363",
       "ec": 4.7,
       "hc": 7.2,
       "exh": 10.1,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID1386",
       "ec": 4.7,
       "hc": 7.6,
       "exh": 10.5,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID1833",
       "ec": 4.7,
       "hc": 7.5,
       "exh": 10.3,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID1647",
       "ec": 4.7,
       "hc": 8,
       "exh": 11.7,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID1893",
       "ec": 4.7,
       "hc": 8.1,
       "exh": 10.8,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID0920",
       "ec": 4.7,
       "hc": 7.9,
       "exh": 10.8,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID0504",
       "ec": 4.8,
       "hc": 8,
       "exh": 11.3,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID1278",
       "ec": 4.8,
       "hc": 7.8,
       "exh": 11,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID1735",
       "ec": 4.8,
       "hc": 7.8,
       "exh": 10.5,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID0781",
       "ec": 4.8,
       "hc": 7.8,
       "exh": 10.5,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID2360",
       "ec": 4.8,
       "hc": 8,
       "exh": 10.7,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID0725",
       "ec": 4.9,
       "hc": 7.2,
       "exh": 10.2,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID1248",
       "ec": 4.9,
       "hc": 8.4,
       "exh": 11.4,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID1869",
       "ec": 4.9,
       "hc": 8.2,
       "exh": 10.9,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID1803",
       "ec": 4.9,
       "hc": 8.5,
       "exh": 11.6,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID2420",
       "ec": 4.9,
       "hc": 8.2,
       "exh": 11.1,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID2375",
       "ec": 4.9,
       "hc": 7.4,
       "exh": 10.3,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID1342",
       "ec": 4.9,
       "hc": 8,
       "exh": 11.1,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID0717",
       "ec": 4.9,
       "hc": 8.3,
       "exh": 12.1,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID0080",
       "ec": 5,
       "hc": 8.3,
       "exh": 11.7,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID2406",
       "ec": 5,
       "hc": 7.7,
       "exh": 10.8,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID0846",
       "ec": 5,
       "hc": 8.1,
       "exh": 11.2,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID2001",
       "ec": 5,
       "hc": 7.4,
       "exh": 10.7,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID1049",
       "ec": 5,
       "hc": 7.8,
       "exh": 11.3,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID1447",
       "ec": 5,
       "hc": 8,
       "exh": 11,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID0216",
       "ec": 5,
       "hc": 8.7,
       "exh": 11.8,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID1954",
       "ec": 5.1,
       "hc": 8,
       "exh": 10.6,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID0050",
       "ec": 5.1,
       "hc": 7.7,
       "exh": 11.9,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID1968",
       "ec": 5.1,
       "hc": 7.4,
       "exh": 10.2,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID0322",
       "ec": 5.1,
       "hc": 8.4,
       "exh": 12,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID1320",
       "ec": 5.1,
       "hc": 7.5,
       "exh": 10.6,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID2353",
       "ec": 5.1,
       "hc": 7.9,
       "exh": 10.6,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID1099",
       "ec": 5.1,
       "hc": 7.8,
       "exh": 10.7,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID0774",
       "ec": 5.1,
       "hc": 7.4,
       "exh": 10.8,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID1942",
       "ec": 5.2,
       "hc": 8.9,
       "exh": 11.7,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID1483",
       "ec": 5.2,
       "hc": 8.3,
       "exh": 11.4,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID0756",
       "ec": 5.2,
       "hc": 8.7,
       "exh": 11.6,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID1856",
       "ec": 5.2,
       "hc": 8.1,
       "exh": 11.2,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID2199",
       "ec": 5.2,
       "hc": 7.7,
       "exh": 10.3,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID0693",
       "ec": 5.2,
       "hc": 8.2,
       "exh": 11.1,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID0184",
       "ec": 5.2,
       "hc": 9.5,
       "exh": 12.5,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID1617",
       "ec": 5.2,
       "hc": 7.8,
       "exh": 10.9,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID1593",
       "ec": 5.3,
       "hc": 7.9,
       "exh": 11.1,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID1432",
       "ec": 5.3,
       "hc": 8.1,
       "exh": 10.9,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID1282",
       "ec": 5.3,
       "hc": 8.8,
       "exh": 11.5,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID2116",
       "ec": 5.3,
       "hc": 7.8,
       "exh": 10.8,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID1879",
       "ec": 5.3,
       "hc": 7.3,
       "exh": 9.9,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID1271",
       "ec": 5.4,
       "hc": 6.8,
       "exh": 9.6,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID2330",
       "ec": 5.4,
       "hc": 7.6,
       "exh": 10.2,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID2173",
       "ec": 5.4,
       "hc": 7.3,
       "exh": 10.1,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID0462",
       "ec": 5.4,
       "hc": 7.4,
       "exh": 10.5,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID1498",
       "ec": 5.4,
       "hc": 7.7,
       "exh": 10.8,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID2151",
       "ec": 5.5,
       "hc": 8.8,
       "exh": 11.4,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID2127",
       "ec": 5.5,
       "hc": 10,
       "exh": 12.4,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID1557",
       "ec": 5.5,
       "hc": 8.1,
       "exh": 11.2,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID1703",
       "ec": 5.5,
       "hc": 8.1,
       "exh": 11,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID1863",
       "ec": 5.5,
       "hc": 9.1,
       "exh": 11.9,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID0958",
       "ec": 5.5,
       "hc": 8.9,
       "exh": 11.7,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID1960",
       "ec": 5.5,
       "hc": 7.9,
       "exh": 10.7,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID0656",
       "ec": 5.5,
       "hc": 8.8,
       "exh": 11.7,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID1053",
       "ec": 5.6,
       "hc": 8.4,
       "exh": 11.4,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID1817",
       "ec": 5.6,
       "hc": 8.1,
       "exh": 10.8,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID1270",
       "ec": 5.6,
       "hc": 7.8,
       "exh": 10.5,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID1649",
       "ec": 5.6,
       "hc": 8,
       "exh": 10.8,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID1530",
       "ec": 5.6,
       "hc": 8.2,
       "exh": 11.3,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID1308",
       "ec": 5.6,
       "hc": 8.6,
       "exh": 11.5,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID1083",
       "ec": 5.6,
       "hc": 8.8,
       "exh": 12,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID2281",
       "ec": 5.6,
       "hc": 8.3,
       "exh": 11,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID2159",
       "ec": 5.6,
       "hc": 7.8,
       "exh": 10.5,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID1139",
       "ec": 5.7,
       "hc": 8,
       "exh": 11,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID1201",
       "ec": 5.7,
       "hc": 7.5,
       "exh": 10.5,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID2314",
       "ec": 5.7,
       "hc": 8.2,
       "exh": 10.9,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID2259",
       "ec": 5.7,
       "hc": 8,
       "exh": 11.2,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID1765",
       "ec": 5.7,
       "hc": 8.1,
       "exh": 11.5,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID0723",
       "ec": 5.7,
       "hc": 10,
       "exh": 12.5,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID1721",
       "ec": 5.7,
       "hc": 8.1,
       "exh": 10.8,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID0464",
       "ec": 5.7,
       "hc": 9,
       "exh": 11.9,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID1634",
       "ec": 5.7,
       "hc": 8.3,
       "exh": 11.3,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID2106",
       "ec": 5.7,
       "hc": 8.5,
       "exh": 11.6,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID2091",
       "ec": 5.7,
       "hc": 8.7,
       "exh": 11.3,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID1145",
       "ec": 5.7,
       "hc": 8.1,
       "exh": 11,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID1539",
       "ec": 5.8,
       "hc": 8.1,
       "exh": 10.7,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID1691",
       "ec": 5.8,
       "hc": 8.7,
       "exh": 11.8,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID0302",
       "ec": 5.8,
       "hc": 7.9,
       "exh": 10.6,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID0577",
       "ec": 5.8,
       "hc": 8.6,
       "exh": 11.6,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID2190",
       "ec": 5.8,
       "hc": 9.4,
       "exh": 12.4,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID1577",
       "ec": 5.8,
       "hc": 7.9,
       "exh": 10.6,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID1966",
       "ec": 5.8,
       "hc": 7.5,
       "exh": 10.3,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID0548",
       "ec": 5.9,
       "hc": 8.7,
       "exh": 11.6,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID0071",
       "ec": 5.9,
       "hc": 9,
       "exh": 11.8,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID1562",
       "ec": 5.9,
       "hc": 8.9,
       "exh": 11.9,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID0130",
       "ec": 5.9,
       "hc": 7.9,
       "exh": 11.5,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID2271",
       "ec": 5.9,
       "hc": 9.4,
       "exh": 12.1,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID1724",
       "ec": 5.9,
       "hc": 8.1,
       "exh": 11.1,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID0869",
       "ec": 5.9,
       "hc": 8.2,
       "exh": 11.1,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID1579",
       "ec": 6,
       "hc": 7.8,
       "exh": 10.6,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID1739",
       "ec": 6,
       "hc": 8.7,
       "exh": 11.6,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID1783",
       "ec": 6,
       "hc": 8.6,
       "exh": 11.2,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID1391",
       "ec": 6,
       "hc": 7.6,
       "exh": 10.2,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID1190",
       "ec": 6.1,
       "hc": 8.7,
       "exh": 11.5,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID1303",
       "ec": 6.1,
       "hc": 7.7,
       "exh": 10.7,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID1181",
       "ec": 6.2,
       "hc": 8.1,
       "exh": 10.9,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID2411",
       "ec": 6.2,
       "hc": 8.2,
       "exh": 10.9,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID1974",
       "ec": 4.7,
       "hc": 7.8,
       "exh": 10.7,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID1020",
       "ec": 4.7,
       "hc": 7.8,
       "exh": 11.4,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID0553",
       "ec": 4.8,
       "hc": 9,
       "exh": 12.5,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID1671",
       "ec": 4.9,
       "hc": 7.7,
       "exh": 10.9,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID1958",
       "ec": 5,
       "hc": 7.7,
       "exh": 10.3,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID2234",
       "ec": 5.1,
       "hc": 7.8,
       "exh": 10.8,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID2298",
       "ec": 5.2,
       "hc": 7.8,
       "exh": 11.2,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID2096",
       "ec": 5.3,
       "hc": 7.9,
       "exh": 10.7,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID0682",
       "ec": 5.3,
       "hc": 7.8,
       "exh": 10.8,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID2243",
       "ec": 5.4,
       "hc": 8.3,
       "exh": 11,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID1875",
       "ec": 5.5,
       "hc": 9.8,
       "exh": 13.1,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID2101",
       "ec": 5.6,
       "hc": 8.1,
       "exh": 10.6,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID1677",
       "ec": 5.6,
       "hc": 7.9,
       "exh": 10.7,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID2333",
       "ec": 5.6,
       "hc": 8.3,
       "exh": 11.4,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID1858",
       "ec": 5.7,
       "hc": 8.5,
       "exh": 11.3,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID1358",
       "ec": 5.7,
       "hc": 8.2,
       "exh": 11.4,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID2085",
       "ec": 5.7,
       "hc": 8.6,
       "exh": 11.6,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID2277",
       "ec": 5.8,
       "hc": 8.8,
       "exh": 11.4,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID0478",
       "ec": 5.8,
       "hc": 8.4,
       "exh": 11.4,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID0891",
       "ec": 5.8,
       "hc": 9,
       "exh": 11.9,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID1344",
       "ec": 5.8,
       "hc": 8.7,
       "exh": 11.9,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID0593",
       "ec": 5.8,
       "hc": 8.7,
       "exh": 11.7,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID1961",
       "ec": 5.9,
       "hc": 9,
       "exh": 11.8,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID0610",
       "ec": 5.9,
       "hc": 7.4,
       "exh": 10.5,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID1385",
       "ec": 5.9,
       "hc": 8.7,
       "exh": 11.7,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID1706",
       "ec": 5.9,
       "hc": 9.1,
       "exh": 11.8,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID2338",
       "ec": 6,
       "hc": 9.2,
       "exh": 11.9,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID2373",
       "ec": 6,
       "hc": 8.6,
       "exh": 11.5,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID1035",
       "ec": 6,
       "hc": 8.3,
       "exh": 11.3,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID1885",
       "ec": 6,
       "hc": 8.5,
       "exh": 11.4,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID2392",
       "ec": 6,
       "hc": 8.7,
       "exh": 11.3,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID1997",
       "ec": 6,
       "hc": 8.7,
       "exh": 11.7,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID1474",
       "ec": 6,
       "hc": 9.5,
       "exh": 12.3,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID1727",
       "ec": 6,
       "hc": 9,
       "exh": 12.1,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID1575",
       "ec": 6.1,
       "hc": 8.6,
       "exh": 11.5,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID1772",
       "ec": 6.1,
       "hc": 8.9,
       "exh": 11.7,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID0968",
       "ec": 6.1,
       "hc": 8.2,
       "exh": 11.3,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID1284",
       "ec": 6.1,
       "hc": 9.1,
       "exh": 12.3,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID1991",
       "ec": 6.1,
       "hc": 8.8,
       "exh": 11.4,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID0822",
       "ec": 6.1,
       "hc": 8.9,
       "exh": 12.2,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID0769",
       "ec": 6.1,
       "hc": 8.9,
       "exh": 11.6,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID1217",
       "ec": 6.2,
       "hc": 9.5,
       "exh": 12.9,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID1330",
       "ec": 6.2,
       "hc": 8.7,
       "exh": 11.8,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID2370",
       "ec": 6.2,
       "hc": 8.3,
       "exh": 10.7,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID0339",
       "ec": 6.2,
       "hc": 9.6,
       "exh": 12.3,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID2349",
       "ec": 6.2,
       "hc": 8,
       "exh": 11.1,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID2399",
       "ec": 6.2,
       "hc": 9.4,
       "exh": 12.8,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID2320",
       "ec": 6.2,
       "hc": 8.5,
       "exh": 11.4,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID0616",
       "ec": 6.2,
       "hc": 8.7,
       "exh": 11.4,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID0983",
       "ec": 6.3,
       "hc": 8.4,
       "exh": 11.1,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID0116",
       "ec": 6.3,
       "hc": 8.2,
       "exh": 11.3,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID2398",
       "ec": 6.3,
       "hc": 9.6,
       "exh": 12.3,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID1679",
       "ec": 6.3,
       "hc": 8.6,
       "exh": 11.2,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID2418",
       "ec": 6.3,
       "hc": 9.4,
       "exh": 12,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID2238",
       "ec": 6.3,
       "hc": 8.1,
       "exh": 10.7,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID2218",
       "ec": 6.3,
       "hc": 8.9,
       "exh": 11.9,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID2215",
       "ec": 6.3,
       "hc": 9.1,
       "exh": 11.9,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID1256",
       "ec": 6.3,
       "hc": 8.3,
       "exh": 10.9,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID0824",
       "ec": 6.3,
       "hc": 9.1,
       "exh": 11.7,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID0483",
       "ec": 6.3,
       "hc": 8.3,
       "exh": 11.1,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID2161",
       "ec": 6.4,
       "hc": 8.7,
       "exh": 11.2,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID1729",
       "ec": 6.4,
       "hc": 9.4,
       "exh": 12,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID2125",
       "ec": 6.4,
       "hc": 9,
       "exh": 12.5,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID0063",
       "ec": 6.4,
       "hc": 8.8,
       "exh": 11.7,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID0008",
       "ec": 6.4,
       "hc": 10.2,
       "exh": 13.6,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID1504",
       "ec": 6.4,
       "hc": 9.2,
       "exh": 11.8,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID1541",
       "ec": 6.4,
       "hc": 8.4,
       "exh": 10.9,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID0381",
       "ec": 6.5,
       "hc": 9.5,
       "exh": 12.6,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID2089",
       "ec": 6.5,
       "hc": 8.2,
       "exh": 10.6,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID2255",
       "ec": 6.5,
       "hc": 9.2,
       "exh": 11.7,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID1983",
       "ec": 6.5,
       "hc": 9.3,
       "exh": 12,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID1972",
       "ec": 6.5,
       "hc": 8.8,
       "exh": 11.3,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID1840",
       "ec": 6.5,
       "hc": 9.2,
       "exh": 12,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID0706",
       "ec": 6.5,
       "hc": 8.8,
       "exh": 11.6,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID1806",
       "ec": 6.5,
       "hc": 8.7,
       "exh": 11.2,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID1079",
       "ec": 6.5,
       "hc": 9.7,
       "exh": 12.5,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID1602",
       "ec": 6.5,
       "hc": 8.5,
       "exh": 11.1,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID1161",
       "ec": 6.5,
       "hc": 8.8,
       "exh": 11.5,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID1185",
       "ec": 6.5,
       "hc": 8,
       "exh": 11.2,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID2251",
       "ec": 6.6,
       "hc": 11.5,
       "exh": 13.6,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID1638",
       "ec": 6.6,
       "hc": 9.5,
       "exh": 12.1,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID1932",
       "ec": 6.6,
       "hc": 8.8,
       "exh": 11.5,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID1987",
       "ec": 6.6,
       "hc": 8.8,
       "exh": 11.2,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID2424",
       "ec": 6.7,
       "hc": 8.6,
       "exh": 11.1,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID2292",
       "ec": 6.7,
       "hc": 9.3,
       "exh": 11.6,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID1286",
       "ec": 6.7,
       "hc": 9.4,
       "exh": 12.1,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID0924",
       "ec": 6.7,
       "hc": 9.7,
       "exh": 12.5,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID0850",
       "ec": 6.7,
       "hc": 8.9,
       "exh": 11.4,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID1481",
       "ec": 6.7,
       "hc": 9,
       "exh": 11.5,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID0318",
       "ec": 6.8,
       "hc": 10,
       "exh": 12.8,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID2246",
       "ec": 6.8,
       "hc": 9.5,
       "exh": 11.9,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID0716",
       "ec": 6.8,
       "hc": 9.5,
       "exh": 12.2,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID0854",
       "ec": 6.8,
       "hc": 9.5,
       "exh": 12.4,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID1223",
       "ec": 6.8,
       "hc": 9.2,
       "exh": 12,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID2343",
       "ec": 6.8,
       "hc": 9.3,
       "exh": 12.2,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID2260",
       "ec": 6.8,
       "hc": 9.3,
       "exh": 11.8,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID2384",
       "ec": 6.8,
       "hc": 9.6,
       "exh": 11.9,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID0710",
       "ec": 6.8,
       "hc": 9.2,
       "exh": 12,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID1502",
       "ec": 6.8,
       "hc": 8.4,
       "exh": 11.1,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID2393",
       "ec": 6.8,
       "hc": 9.2,
       "exh": 11.6,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID1059",
       "ec": 6.8,
       "hc": 11.9,
       "exh": 13.7,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID0951",
       "ec": 6.8,
       "hc": 9.4,
       "exh": 12.1,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID1470",
       "ec": 6.9,
       "hc": 8.8,
       "exh": 11.2,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID1536",
       "ec": 6.9,
       "hc": 9.3,
       "exh": 12.2,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID1153",
       "ec": 6.9,
       "hc": 8.4,
       "exh": 11,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID0996",
       "ec": 6.9,
       "hc": 9.7,
       "exh": 12.4,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID1397",
       "ec": 6.9,
       "hc": 9.6,
       "exh": 12.4,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID1748",
       "ec": 6.9,
       "hc": 9.3,
       "exh": 11.7,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID1163",
       "ec": 6.9,
       "hc": 9.9,
       "exh": 12.3,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID2170",
       "ec": 6.9,
       "hc": 9.6,
       "exh": 12.6,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID1335",
       "ec": 6.9,
       "hc": 10.7,
       "exh": 13.4,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID2279",
       "ec": 7,
       "hc": 9,
       "exh": 11.4,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID0280",
       "ec": 7,
       "hc": 10.1,
       "exh": 12.7,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID1011",
       "ec": 7,
       "hc": 8.9,
       "exh": 11.4,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID0613",
       "ec": 7,
       "hc": 9.3,
       "exh": 11.8,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID2386",
       "ec": 7,
       "hc": 9.2,
       "exh": 11.7,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID1629",
       "ec": 7,
       "hc": 9.1,
       "exh": 11.6,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID1438",
       "ec": 7,
       "hc": 9,
       "exh": 11.6,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID1421",
       "ec": 7,
       "hc": 10.2,
       "exh": 12.6,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID1234",
       "ec": 7,
       "hc": 9.5,
       "exh": 12.1,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID2350",
       "ec": 7,
       "hc": 9.7,
       "exh": 12.4,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID2076",
       "ec": 7,
       "hc": 8.9,
       "exh": 11.3,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID1356",
       "ec": 7.1,
       "hc": 9.8,
       "exh": 12.5,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID1097",
       "ec": 7.1,
       "hc": 9.2,
       "exh": 11.6,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID1767",
       "ec": 7.1,
       "hc": 10.3,
       "exh": 13,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID0848",
       "ec": 7.2,
       "hc": 9.9,
       "exh": 12,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID0164",
       "ec": 7.2,
       "hc": 9.6,
       "exh": 12.6,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID2400",
       "ec": 7.2,
       "hc": 9.6,
       "exh": 11.8,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID0123",
       "ec": 7.2,
       "hc": 10.4,
       "exh": 13,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID1683",
       "ec": 7.2,
       "hc": 9.7,
       "exh": 12.3,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID1495",
       "ec": 7.2,
       "hc": 9.8,
       "exh": 12.4,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID0852",
       "ec": 7.2,
       "hc": 9.4,
       "exh": 11.9,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID2252",
       "ec": 7.2,
       "hc": 9.4,
       "exh": 11.8,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID0065",
       "ec": 7.2,
       "hc": 11.1,
       "exh": 13.8,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID1316",
       "ec": 7.2,
       "hc": 9.6,
       "exh": 12.3,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID2423",
       "ec": 7.2,
       "hc": 9.5,
       "exh": 11.7,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID0721",
       "ec": 7.2,
       "hc": 10.6,
       "exh": 13.2,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID1770",
       "ec": 7.2,
       "hc": 10.1,
       "exh": 12.4,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID0878",
       "ec": 7.3,
       "hc": 9.8,
       "exh": 12.4,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID2426",
       "ec": 7.3,
       "hc": 9.4,
       "exh": 11.8,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID1295",
       "ec": 7.3,
       "hc": 9.6,
       "exh": 12.1,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID2361",
       "ec": 7.3,
       "hc": 9.7,
       "exh": 12,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID2328",
       "ec": 7.3,
       "hc": 9.7,
       "exh": 11.9,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID2295",
       "ec": 7.3,
       "hc": 9,
       "exh": 11.3,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID0807",
       "ec": 7.3,
       "hc": 10.4,
       "exh": 12.7,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID2357",
       "ec": 7.4,
       "hc": 9.6,
       "exh": 12.2,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID2369",
       "ec": 7.4,
       "hc": 9.1,
       "exh": 11.6,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID1608",
       "ec": 7.4,
       "hc": 9,
       "exh": 11.2,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID0673",
       "ec": 7.4,
       "hc": 9.8,
       "exh": 12.6,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID2274",
       "ec": 7.4,
       "hc": 10.2,
       "exh": 12.5,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID1129",
       "ec": 7.5,
       "hc": 9.6,
       "exh": 12,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID0981",
       "ec": 7.5,
       "hc": 9.8,
       "exh": 11.9,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID1573",
       "ec": 7.5,
       "hc": 9.6,
       "exh": 12,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID1115",
       "ec": 7.5,
       "hc": 10.2,
       "exh": 12.7,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID0420",
       "ec": 7.6,
       "hc": 11.1,
       "exh": 13.5,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID0627",
       "ec": 7.6,
       "hc": 9.9,
       "exh": 12.3,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID2130",
       "ec": 7.8,
       "hc": 10.1,
       "exh": 12.8,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID2379",
       "ec": 6,
       "hc": 9.8,
       "exh": 13.1,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID1854",
       "ec": 6.6,
       "hc": 9.9,
       "exh": 13,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID1978",
       "ec": 6.6,
       "hc": 9.5,
       "exh": 12,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID1653",
       "ec": 6.7,
       "hc": 10.2,
       "exh": 13.3,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID0809",
       "ec": 6.8,
       "hc": 10.4,
       "exh": 13.6,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID2329",
       "ec": 6.9,
       "hc": 9.7,
       "exh": 12.6,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID1017",
       "ec": 7.1,
       "hc": 10.1,
       "exh": 13,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID1372",
       "ec": 7.1,
       "hc": 10.2,
       "exh": 13,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID0874",
       "ec": 7.1,
       "hc": 10.1,
       "exh": 13.1,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID1830",
       "ec": 7.2,
       "hc": 9.8,
       "exh": 12.5,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID1585",
       "ec": 7.2,
       "hc": 9.2,
       "exh": 11.6,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID2104",
       "ec": 7.2,
       "hc": 9.5,
       "exh": 12.2,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID1636",
       "ec": 7.2,
       "hc": 9.8,
       "exh": 12.8,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID2038",
       "ec": 7.2,
       "hc": 9.4,
       "exh": 12,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID2322",
       "ec": 7.2,
       "hc": 9.9,
       "exh": 12.3,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID2319",
       "ec": 7.3,
       "hc": 10.9,
       "exh": 13.4,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID0947",
       "ec": 7.3,
       "hc": 10.5,
       "exh": 12.8,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID2390",
       "ec": 7.3,
       "hc": 9.8,
       "exh": 12.5,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID0919",
       "ec": 7.3,
       "hc": 10.1,
       "exh": 12.9,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID2342",
       "ec": 7.4,
       "hc": 9.9,
       "exh": 12.4,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID2034",
       "ec": 7.4,
       "hc": 9.6,
       "exh": 12,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID0526",
       "ec": 7.4,
       "hc": 10.3,
       "exh": 13.1,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID0960",
       "ec": 7.4,
       "hc": 10.2,
       "exh": 12.8,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID1453",
       "ec": 7.4,
       "hc": 10.4,
       "exh": 13.1,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID0977",
       "ec": 7.4,
       "hc": 9.8,
       "exh": 12.2,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID2248",
       "ec": 7.5,
       "hc": 9.4,
       "exh": 11.9,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID0608",
       "ec": 7.5,
       "hc": 9.4,
       "exh": 11.7,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID1569",
       "ec": 7.5,
       "hc": 9.8,
       "exh": 12.4,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID1814",
       "ec": 7.5,
       "hc": 9.8,
       "exh": 12.5,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID1120",
       "ec": 7.5,
       "hc": 9.7,
       "exh": 12.7,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID1508",
       "ec": 7.6,
       "hc": 10.2,
       "exh": 12.5,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID1310",
       "ec": 7.6,
       "hc": 9.8,
       "exh": 12.2,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID1561",
       "ec": 7.6,
       "hc": 9.3,
       "exh": 11.6,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID2372",
       "ec": 7.6,
       "hc": 10,
       "exh": 12.3,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID1413",
       "ec": 7.6,
       "hc": 9.8,
       "exh": 12.3,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID2074",
       "ec": 7.6,
       "hc": 10.2,
       "exh": 13.1,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID0022",
       "ec": 7.6,
       "hc": 9.7,
       "exh": 12,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID0704",
       "ec": 7.7,
       "hc": 10.1,
       "exh": 12.6,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID1257",
       "ec": 7.7,
       "hc": 9,
       "exh": 11.1,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID0489",
       "ec": 7.7,
       "hc": 10.6,
       "exh": 13.5,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID1061",
       "ec": 7.8,
       "hc": 10.5,
       "exh": 13,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID0240",
       "ec": 7.8,
       "hc": 13.6,
       "exh": 14.1,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID0566",
       "ec": 7.8,
       "hc": 10.2,
       "exh": 12.5,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID0701",
       "ec": 7.8,
       "hc": 10.9,
       "exh": 13.2,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID2267",
       "ec": 7.8,
       "hc": 9.8,
       "exh": 11.8,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID2070",
       "ec": 7.8,
       "hc": 9.9,
       "exh": 12.4,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID2365",
       "ec": 7.8,
       "hc": 10.2,
       "exh": 12.6,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID2371",
       "ec": 7.8,
       "hc": 10.3,
       "exh": 12.6,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID2283",
       "ec": 7.8,
       "hc": 10.1,
       "exh": 12.5,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID1956",
       "ec": 7.8,
       "hc": 9.5,
       "exh": 11.7,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID2316",
       "ec": 7.8,
       "hc": 10,
       "exh": 12.1,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID1423",
       "ec": 7.9,
       "hc": 10.2,
       "exh": 12.5,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID2387",
       "ec": 7.9,
       "hc": 10.4,
       "exh": 12.8,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID1289",
       "ec": 8,
       "hc": 8.7,
       "exh": 11.7,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID1610",
       "ec": 8,
       "hc": 10.6,
       "exh": 13.5,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID2049",
       "ec": 8,
       "hc": 10.6,
       "exh": 13.5,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID0855",
       "ec": 8,
       "hc": 10,
       "exh": 11.9,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID1460",
       "ec": 8,
       "hc": 10.3,
       "exh": 12.7,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID0793",
       "ec": 8,
       "hc": 10.4,
       "exh": 13.1,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID0185",
       "ec": 8,
       "hc": 10.9,
       "exh": 13.5,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID1380",
       "ec": 8,
       "hc": 9.9,
       "exh": 12.6,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID2031",
       "ec": 8,
       "hc": 10.1,
       "exh": 12.7,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID2374",
       "ec": 8.1,
       "hc": 10.8,
       "exh": 13.5,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID2359",
       "ec": 8.1,
       "hc": 10.5,
       "exh": 13.1,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID1458",
       "ec": 8.1,
       "hc": 10.1,
       "exh": 12.7,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID0829",
       "ec": 8.1,
       "hc": 10.9,
       "exh": 13.2,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID2440",
       "ec": 8.2,
       "hc": 9.8,
       "exh": 11.7,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID1819",
       "ec": 8.2,
       "hc": 10,
       "exh": 12.2,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID0621",
       "ec": 8.2,
       "hc": 10.5,
       "exh": 12.9,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID2163",
       "ec": 8.2,
       "hc": 11.1,
       "exh": 13.5,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID0018",
       "ec": 8.2,
       "hc": 11.8,
       "exh": 13.9,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID0256",
       "ec": 8.2,
       "hc": 10.8,
       "exh": 13.4,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID1003",
       "ec": 8.2,
       "hc": 10.7,
       "exh": 12.8,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID2242",
       "ec": 8.2,
       "hc": 9.7,
       "exh": 11.9,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID1895",
       "ec": 8.2,
       "hc": 10,
       "exh": 12.5,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID1559",
       "ec": 8.2,
       "hc": 11,
       "exh": 13.6,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID1700",
       "ec": 8.2,
       "hc": 11.1,
       "exh": 13.4,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID2247",
       "ec": 8.3,
       "hc": 10.3,
       "exh": 12.2,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID1055",
       "ec": 8.3,
       "hc": 10.3,
       "exh": 12.4,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID1791",
       "ec": 8.3,
       "hc": 10.5,
       "exh": 12.8,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID1013",
       "ec": 8.3,
       "hc": 10.4,
       "exh": 13.5,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID0695",
       "ec": 8.3,
       "hc": 10.6,
       "exh": 13.3,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID0285",
       "ec": 8.3,
       "hc": 10.8,
       "exh": 13,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID2334",
       "ec": 8.4,
       "hc": 10.7,
       "exh": 13,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID2154",
       "ec": 8.4,
       "hc": 9.9,
       "exh": 12.3,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID2258",
       "ec": 8.5,
       "hc": 10,
       "exh": 12.3,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID0118",
       "ec": 8.5,
       "hc": 10.4,
       "exh": 12.5,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID2114",
       "ec": 8.6,
       "hc": 10.6,
       "exh": 13.3,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID1763",
       "ec": 8.6,
       "hc": 10,
       "exh": 12.2,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID2192",
       "ec": 8.7,
       "hc": 10.7,
       "exh": 13,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID2111",
       "ec": 8.8,
       "hc": 11.4,
       "exh": 13.6,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID2081",
       "ec": 8.8,
       "hc": 10.6,
       "exh": 13.1,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID2439",
       "ec": 8.9,
       "hc": 10.3,
       "exh": 12.9,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID2276",
       "ec": 9.2,
       "hc": 10.2,
       "exh": 12.8,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID2240",
       "ec": 9.3,
       "hc": 10.4,
       "exh": 12.9,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID2268",
       "ec": 7.9,
       "hc": 10.5,
       "exh": 12.7,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID2326",
       "ec": 8.3,
       "hc": 10.9,
       "exh": 13.5,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID2029",
       "ec": 8.4,
       "hc": 10.1,
       "exh": 12.6,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID0956",
       "ec": 8.4,
       "hc": 11.6,
       "exh": 13.9,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID2397",
       "ec": 8.4,
       "hc": 10.8,
       "exh": 13,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID1443",
       "ec": 8.4,
       "hc": 9.9,
       "exh": 12.8,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID2339",
       "ec": 8.6,
       "hc": 10.4,
       "exh": 12.5,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID2404",
       "ec": 8.6,
       "hc": 10.1,
       "exh": 12.1,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID2225",
       "ec": 8.7,
       "hc": 10.2,
       "exh": 12.7,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID1552",
       "ec": 8.7,
       "hc": 10.9,
       "exh": 13.2,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID2401",
       "ec": 8.7,
       "hc": 10.4,
       "exh": 12.5,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID2256",
       "ec": 8.7,
       "hc": 10.5,
       "exh": 12.6,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID1178",
       "ec": 8.7,
       "hc": 11.1,
       "exh": 13.8,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID1245",
       "ec": 8.9,
       "hc": 11.1,
       "exh": 13.5,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID2402",
       "ec": 9.1,
       "hc": 10.7,
       "exh": 12.9,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID1183",
       "ec": 9.1,
       "hc": 10.3,
       "exh": 12.4,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID1776",
       "ec": 9.1,
       "hc": 10.8,
       "exh": 13.1,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID2266",
       "ec": 9.1,
       "hc": 11.6,
       "exh": 13.8,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID2348",
       "ec": 9.2,
       "hc": 11.1,
       "exh": 13.3,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID0200",
       "ec": 9.2,
       "hc": 11.7,
       "exh": 13.8,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID2036",
       "ec": 9.2,
       "hc": 11.1,
       "exh": 13.7,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID1702",
       "ec": 9.2,
       "hc": 12.2,
       "exh": 13.9,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID2358",
       "ec": 9.3,
       "hc": 11.5,
       "exh": 13.6,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID1588",
       "ec": 9.3,
       "hc": 10.6,
       "exh": 12.6,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID0438",
       "ec": 9.3,
       "hc": 11.2,
       "exh": 13.2,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID1327",
       "ec": 9.3,
       "hc": 13.4,
       "exh": 14.2,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID2018",
       "ec": 9.3,
       "hc": 11.1,
       "exh": 13.6,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID2352",
       "ec": 9.4,
       "hc": 11.6,
       "exh": 13.8,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID2143",
       "ec": 9.4,
       "hc": 10.1,
       "exh": 12.1,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID1093",
       "ec": 9.5,
       "hc": 11.1,
       "exh": 13,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID2264",
       "ec": 9.5,
       "hc": 11.2,
       "exh": 13.2,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID0520",
       "ec": 9.5,
       "hc": 10.5,
       "exh": 13.1,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID2301",
       "ec": 9.5,
       "hc": 10.8,
       "exh": 13,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID2413",
       "ec": 9.6,
       "hc": 10.9,
       "exh": 12.9,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID2363",
       "ec": 9.6,
       "hc": 11.6,
       "exh": 13.6,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID0801",
       "ec": 9.6,
       "hc": 11.7,
       "exh": 13.8,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID2436",
       "ec": 9.6,
       "hc": 11.2,
       "exh": 13.5,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID1940",
       "ec": 9.7,
       "hc": 11.8,
       "exh": 13.8,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID0642",
       "ec": 9.7,
       "hc": 11.2,
       "exh": 13.3,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID0350",
       "ec": 9.7,
       "hc": 11.5,
       "exh": 13.6,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID2351",
       "ec": 9.8,
       "hc": 11.7,
       "exh": 13.7,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID0355",
       "ec": 9.8,
       "hc": 12,
       "exh": 13.7,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID0776",
       "ec": 9.8,
       "hc": 11.4,
       "exh": 13.4,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID1166",
       "ec": 9.8,
       "hc": 11.8,
       "exh": 13.6,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID0939",
       "ec": 9.9,
       "hc": 11.4,
       "exh": 13.1,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID0127",
       "ec": 9.9,
       "hc": 11.8,
       "exh": 13.6,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID1527",
       "ec": 9.9,
       "hc": 12.6,
       "exh": 14,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID0913",
       "ec": 10.1,
       "hc": 11.8,
       "exh": 13.5,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID2269",
       "ec": 10.1,
       "hc": 12.1,
       "exh": 13.8,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID2263",
       "ec": 10.1,
       "hc": 11.7,
       "exh": 13.5,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID0431",
       "ec": 10.2,
       "hc": 12.5,
       "exh": 14,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID0629",
       "ec": 10.2,
       "hc": 11.4,
       "exh": 13.3,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID0650",
       "ec": 10.2,
       "hc": 11.3,
       "exh": 13.5,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID1665",
       "ec": 10.4,
       "hc": 12,
       "exh": 13.6,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID2391",
       "ec": 10.5,
       "hc": 10.9,
       "exh": 12.9,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID2177",
       "ec": 10.7,
       "hc": 11.9,
       "exh": 13.8,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID0054",
       "ec": 10.3,
       "hc": 13.3,
       "exh": 14,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID2024",
       "ec": 10.4,
       "hc": 12.2,
       "exh": 13.9,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID0840",
       "ec": 10.5,
       "hc": 12.4,
       "exh": 14,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID1072",
       "ec": 10.5,
       "hc": 12.9,
       "exh": 14,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID2366",
       "ec": 10.6,
       "hc": 12.2,
       "exh": 13.8,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID2273",
       "ec": 10.6,
       "hc": 13.5,
       "exh": 14.2,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID2315",
       "ec": 10.7,
       "hc": 11.9,
       "exh": 13.7,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID2270",
       "ec": 10.7,
       "hc": 13.6,
       "exh": 14.2,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID2262",
       "ec": 10.7,
       "hc": 11.5,
       "exh": 13.6,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID0592",
       "ec": 10.7,
       "hc": 12,
       "exh": 13.6,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID0523",
       "ec": 10.7,
       "hc": 12,
       "exh": 13.7,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID0436",
       "ec": 10.7,
       "hc": 13.3,
       "exh": 14.2,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID2355",
       "ec": 10.8,
       "hc": 12.1,
       "exh": 13.9,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID1370",
       "ec": 10.9,
       "hc": 13,
       "exh": 14.1,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID2344",
       "ec": 11,
       "hc": 12.9,
       "exh": 14.1,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID2321",
       "ec": 11,
       "hc": 12.3,
       "exh": 13.8,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID2377",
       "ec": 11,
       "hc": 12.9,
       "exh": 14,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID2376",
       "ec": 11,
       "hc": 12,
       "exh": 13.9,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID0633",
       "ec": 11.2,
       "hc": 13.4,
       "exh": 14.2,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID2305",
       "ec": 11.3,
       "hc": 12.8,
       "exh": 14,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID1620",
       "ec": 11.3,
       "hc": 12.5,
       "exh": 13.9,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID2347",
       "ec": 11.4,
       "hc": 12.7,
       "exh": 14.1,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID2324",
       "ec": 11.4,
       "hc": 13.3,
       "exh": 14.2,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID2385",
       "ec": 11.4,
       "hc": 12.7,
       "exh": 13.9,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID2438",
       "ec": 11.6,
       "hc": 12.7,
       "exh": 13.9,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID1754",
       "ec": 11.6,
       "hc": 12.9,
       "exh": 14.2,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID2318",
       "ec": 11.7,
       "hc": 12.8,
       "exh": 13.9,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID2300",
       "ec": 11.7,
       "hc": 12.9,
       "exh": 14,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID0476",
       "ec": 12.2,
       "hc": 13.3,
       "exh": 14.2,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID2477",
       "ec": null,
       "hc": null,
       "exh": null,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID2478",
       "ec": null,
       "hc": null,
       "exh": null,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID2479",
       "ec": null,
       "hc": null,
       "exh": null,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID2480",
       "ec": null,
       "hc": null,
       "exh": null,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID2481",
       "ec": null,
       "hc": null,
       "exh": null,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID2482",
       "ec": null,
       "hc": null,
       "exh": null,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID2483",
       "ec": null,
       "hc": null,
       "exh": null,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID2484",
       "ec": null,
       "hc": null,
       "exh": null,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID2486",
       "ec": null,
       "hc": null,
       "exh": null,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     },
     {
       "chartId": "CT_ID2487",
       "ec": null,
       "hc": null,
       "exh": null,
-      "lastUpdated": "2026-09-23T11:12:14.739Z"
+      "lastUpdated": "2026-10-02T11:43:12.854Z"
     }
   ]
 }

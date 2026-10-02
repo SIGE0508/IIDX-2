@@ -1,5 +1,5 @@
 import { CLEAR_LAMP_RANK } from "../domain/constants";
-import { effectiveDifficulty, isManagedChart } from "../domain/chart";
+import { isManagedChart } from "../domain/chart";
 import { validateScoreForChart } from "../domain/score";
 import type { ChartMaster, ClearLamp, HistoryEntry, PlayerChartRecord, SongMaster } from "../domain/types";
 import { escapeCsv, parseCsv } from "./csv";
@@ -12,9 +12,9 @@ export interface ClearTrackerImportPreview { changes: ClearTrackerImportChange[]
 const sameHeaders = (headers: readonly string[]) => headers.length === CLEAR_TRACKER_CSV_HEADERS.length && headers.every((header, index) => header === CLEAR_TRACKER_CSV_HEADERS[index]);
 const numberOrBlank = (value: string, label: string): number | undefined => { if (value === "") return undefined; if (!/^\d+$/.test(value)) throw new Error(`${label} must be a non-negative integer.`); return Number(value); };
 
-export function exportClearTrackerCsv(charts: readonly ChartMaster[], songs: readonly SongMaster[], unofficialByChartId: ReadonlyMap<string, number>, records: readonly PlayerChartRecord[]): string {
+export function exportClearTrackerCsv(charts: readonly ChartMaster[], songs: readonly SongMaster[], unofficialByChartId: ReadonlyMap<string, number | null>, records: readonly PlayerChartRecord[]): string {
   const songById = new Map(songs.map((song) => [song.songId, song])); const recordByChartId = new Map(records.map((record) => [record.chartId, record])); const lines = [CLEAR_TRACKER_CSV_HEADERS.join(",")];
-  for (const chart of charts.filter(isManagedChart)) { const song = songById.get(chart.songId); if (!song) throw new Error(`chart '${chart.chartId}' has no SongMaster.`); const record = recordByChartId.get(chart.chartId); const difficulty = effectiveDifficulty(chart, unofficialByChartId.has(chart.chartId) ? { difficulty: unofficialByChartId.get(chart.chartId)! } : null); lines.push([1, chart.chartId, song.title, chart.chartType, song.debutVersion ?? "", chart.officialLevel, difficulty, displayLamp(record?.clearLamp ?? "NO_PLAY"), record?.score ?? "", record?.bp ?? ""].map(escapeCsv).join(",")); }
+  for (const chart of charts.filter(isManagedChart)) { const song = songById.get(chart.songId); if (!song) throw new Error(`chart '${chart.chartId}' has no SongMaster.`); const record = recordByChartId.get(chart.chartId); const difficulty = unofficialByChartId.get(chart.chartId) ?? ""; lines.push([1, chart.chartId, song.title, chart.chartType, song.debutVersion ?? "", chart.officialLevel, difficulty, displayLamp(record?.clearLamp ?? "NO_PLAY"), record?.score ?? "", record?.bp ?? ""].map(escapeCsv).join(",")); }
   return `\uFEFF${lines.join("\r\n")}\r\n`;
 }
 export function previewClearTrackerCsv(text: string, playerId: string, charts: readonly ChartMaster[], currentRecords: readonly PlayerChartRecord[], now: string): ClearTrackerImportPreview {

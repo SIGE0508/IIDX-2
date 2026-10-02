@@ -23,10 +23,10 @@ export function validateChartMasterFile(value: unknown): ChartMasterFile {
   if (!isObject(value)) throw new Error("Chart master is invalid."); version(value, "Chart master");
   if (!Array.isArray(value.songs) || !Array.isArray(value.charts)) throw new Error("Chart master arrays are invalid.");
   const songs = value.songs.map((raw): SongMaster => {
-    if (!isObject(raw) || !isString(raw.songId) || !isString(raw.title) || (raw.debutVersion !== null && !isString(raw.debutVersion)) || !isObject(raw.aliases)) throw new Error("Song master record is invalid.");
+    if (!isObject(raw) || !isString(raw.songId) || !isString(raw.title) || (raw.debutVersion !== null && !isString(raw.debutVersion)) || !isNumber(raw.debutVersionNumber) || !Number.isInteger(raw.debutVersionNumber) || raw.debutVersionNumber <= 0 || !isObject(raw.aliases)) throw new Error("Song master record is invalid.");
     const aliases: Partial<Record<AliasSource, string[]>> = {};
     for (const source of ALIAS_SOURCES) { const list = raw.aliases[source]; if (list !== undefined) { if (!Array.isArray(list) || !list.every(isString)) throw new Error(`Song alias list for ${source} is invalid.`); aliases[source] = [...list]; } }
-    return { songId: raw.songId, title: raw.title, debutVersion: raw.debutVersion, aliases };
+    return { songId: raw.songId, title: raw.title, debutVersion: raw.debutVersion, debutVersionNumber: raw.debutVersionNumber, aliases };
   });
   const charts = value.charts.map((raw): ChartMaster => {
     if (!isObject(raw) || !isString(raw.chartId) || !isString(raw.songId) || !isOneOf(raw.chartType, CHART_TYPES) || !isNumber(raw.officialLevel) || !Number.isInteger(raw.officialLevel) || (raw.notes !== null && !isNumber(raw.notes)) || (isNumber(raw.notes) && (!Number.isInteger(raw.notes) || raw.notes <= 0)) || !isOneOf(raw.availability, AVAILABILITIES)) throw new Error("Chart master record is invalid.");
@@ -38,7 +38,7 @@ export function validateChartMasterFile(value: unknown): ChartMasterFile {
 }
 export function validateUnofficialMasterFile(value: unknown): UnofficialMasterFile {
   if (!isObject(value)) throw new Error("Unofficial master is invalid."); version(value, "Unofficial master"); if (!Array.isArray(value.records)) throw new Error("Unofficial records are invalid.");
-  const records = value.records.map((raw): UnofficialDifficultyRecord => { const record = chartReference(raw, "Unofficial"); if (!isNumber(record.difficulty)) throw new Error("Unofficial difficulty is invalid."); return { chartId: record.chartId as string, difficulty: record.difficulty, lastUpdated: record.lastUpdated as string }; }); unique(records, "chartId", "Unofficial master");
+  const records = value.records.map((raw): UnofficialDifficultyRecord => { const record = chartReference(raw, "Unofficial"); if (record.difficulty !== null && !isNumber(record.difficulty)) throw new Error("Unofficial difficulty is invalid."); return { chartId: record.chartId as string, difficulty: record.difficulty as number | null, lastUpdated: record.lastUpdated as string }; }); unique(records, "chartId", "Unofficial master");
   return { schemaVersion: MASTER_SCHEMA_VERSION, masterVersion: value.masterVersion, updatedAt: value.updatedAt, records };
 }
 export function validateEreterMasterFile(value: unknown): EreterMasterFile {

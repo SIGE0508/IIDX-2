@@ -19,15 +19,16 @@ function load(relativePath) {
 }
 
 const { calculateTraining } = load("src/training/engine.ts");
+const { radarPoint } = load("src/features/dashboard/radar-geometry.ts");
 const now = "2026-09-23T00:00:00.000Z";
-const player = (highestDpRank = "NINTH", notesRadar = null) => ({ playerId: "p", iidxId: null, playerName: null, highestDpRank, notesRadar, createdAt: now, updatedAt: now });
+const player = (highestDpRank = "NINTH", notesRadar = null, extras = {}) => ({ playerId: "p", iidxId: null, playerName: null, highestDpRank, notesRadar, ereterOverall: null, notesRadarDetails: { NOTES: [], CHORD: [], PEAK: [], CHARGE: [], SCRATCH: [], SOF_LAN: [] }, createdAt: now, updatedAt: now, ...extras });
 const chart = (chartId, officialLevel, difficulty, availability = "available") => ({ chart: { chartId, songId: `s-${chartId}`, chartType: "DPA", officialLevel, notes: 1000, availability }, unofficial: difficulty === null ? null : { chartId, difficulty, lastUpdated: now } });
 const record = (chartId, clearLamp) => ({ playerId: "p", chartId, clearLamp, score: 999999, bp: 999999, clearSource: "manual", scoreSource: "manual", bpSource: "manual", updatedAt: now });
 function master(items, ereter = [], radar = []) {
   const charts = items.map(item => item.chart);
   return {
     manifest: { schemaVersion: 1, masterVersion: "test", updatedAt: now, files: {} },
-    chartMaster: { schemaVersion: 1, masterVersion: "test", updatedAt: now, songs: charts.map(item => ({ songId: item.songId, title: item.chartId, debutVersion: null, aliases: {} })), charts },
+    chartMaster: { schemaVersion: 1, masterVersion: "test", updatedAt: now, songs: charts.map(item => ({ songId: item.songId, title: item.chartId, debutVersion: null, debutVersionNumber: 1, aliases: {} })), charts },
     unofficial: { schemaVersion: 1, masterVersion: "test", updatedAt: now, records: items.flatMap(item => item.unofficial ? [item.unofficial] : []) },
     ereter: { schemaVersion: 1, masterVersion: "test", updatedAt: now, records: ereter },
     notesRadar: { schemaVersion: 1, masterVersion: "test", updatedAt: now, records: radar },
@@ -114,6 +115,15 @@ test("ERETER EC/HC/EXH sort their own categories with missing values last", () =
   assert.deepEqual(result.recommendations.exhTargets.map(item => item.chartId), ["f"]);
 });
 
+test("HARD and EXH recommendations require their corresponding ERETER value", () => {
+  const items = [chart("hard-known", 12, 12.5), chart("hard-missing", 12, 12.5), chart("exh-known", 12, 12.5), chart("exh-missing", 12, 12.5)];
+  const records = [record("hard-known", "CLEAR"), record("hard-missing", "CLEAR"), record("exh-known", "HARD_CLEAR"), record("exh-missing", "HARD_CLEAR")];
+  const ereter = [{ chartId: "hard-known", ec: null, hc: 8, exh: null, lastUpdated: now }, { chartId: "exh-known", ec: null, hc: null, exh: 9, lastUpdated: now }];
+  const result = run(items, records, { rank: "KAIDEN", ereter });
+  assert.deepEqual(Array.from(result.recommendations.hardTargets, item => item.chartId), ["hard-known"]);
+  assert.deepEqual(Array.from(result.recommendations.exhTargets, item => item.chartId), ["exh-known"]);
+});
+
 test("cleanup prefers the nearest lower band", () => {
   const lower = many(4, "lower-", 12, 12.0);
   const nearer = many(4, "nearer-", 12, 12.1);
@@ -127,7 +137,7 @@ test("cleanup prefers the nearest lower band", () => {
 test("Radar absence keeps normal recommendations but disables challenge and attribute practice", () => {
   const items = [chart("main", 12, 12), chart("next", 12, 12.1)];
   const result = run(items, [record("main", "FAILED")], { rank: "TENTH" });
-  assert.equal(result.recommendations.clearTargets.length, 1);
+  assert.equal(result.recommendations.clearTargets.length, 2);
   assert.equal(result.recommendations.challengeTargets.length, 0);
   assert.equal(result.recommendations.attributePracticeTargets.length, 0);
   assert.equal(result.attributePracticeAvailable, false);
@@ -155,10 +165,49 @@ test("level 11 challenge prioritizes level 11 before a level 12 introduction cha
   assert.deepEqual(result.recommendations.challengeTargets.map(item => item.chartId), ["challenge11", "intro12"]);
 });
 
-test("attribute practice follows distance, above-on-tie, current-band, then chartId", () => {
+test("attribute practice uses bounded basic, standard and challenge bands", () => {
   const attrs = { NOTES: 100, CHORD: 0, PEAK: 0, CHARGE: 0, SCRATCH: 0, SOF_LAN: 0 };
   const radar = (chartId, value) => ({ chartId, values: { NOTES: value, CHORD: 0, PEAK: 0, CHARGE: 0, SCRATCH: 0, SOF_LAN: 0 }, verified: true, lastUpdated: now });
-  const items = [chart("below", 12, 12.2), chart("above", 12, 12.4), chart("current-b", 12, 12.3), chart("current-a", 12, 12.3)];
-  const result = run(items, [record("below", "EASY_CLEAR"), record("current-a", "FAILED")], { rank: "CHUDEN", playerRadar: attrs, radar: [radar("below", 95), radar("above", 105), radar("current-b", 110), radar("current-a", 110)], attribute: "NOTES" });
-  assert.deepEqual(result.recommendations.attributePracticeTargets.map(item => item.chartId), ["above", "below", "current-a", "current-b"]);
+  const items = [chart("basic", 12, 12.2), chart("standard-a", 12, 12.3), chart("standard-b", 12, 12.4), chart("challenge-a", 12, 12.5), chart("challenge-b", 12, 12.6), chart("too-high", 12, 12.7)];
+  const result = run(items, [record("basic", "EASY_CLEAR"), record("standard-a", "EASY_CLEAR"), record("standard-b", "EASY_CLEAR"), record("challenge-a", "FAILED"), record("challenge-b", "FAILED"), record("too-high", "FAILED")], { rank: "CHUDEN", playerRadar: attrs, radar: [radar("basic", 95), radar("standard-a", 105), radar("standard-b", 110), radar("challenge-a", 100), radar("challenge-b", 120), radar("too-high", 999)], attribute: "NOTES" });
+  assert.deepEqual(Array.from(result.recommendations.attributePracticeTargets, item => item.chartId), ["basic", "standard-b", "standard-a", "challenge-b"]);
+  assert.deepEqual(Array.from(result.recommendations.attributePracticeTargets, item => item.reason), ["ATTRIBUTE_BASIC", "ATTRIBUTE_STANDARD", "ATTRIBUTE_STANDARD", "ATTRIBUTE_CHALLENGE"]);
+  assert.equal(result.recommendations.attributePracticeTargets.some(item => item.chartId === "too-high"), false);
+});
+
+test("clear targets supplement only the next band and personal ERETER changes only candidate order", () => {
+  const main = [chart("main-high", 12, 12.5), chart("main-near", 12, 12.5)];
+  const next = [chart("next", 12, 12.6)];
+  const afterNext = [chart("after-next", 12, 12.7)];
+  const ereter = [
+    { chartId: "main-high", ec: 8.5, hc: null, exh: null, lastUpdated: now },
+    { chartId: "main-near", ec: 8.02, hc: null, exh: null, lastUpdated: now },
+    { chartId: "next", ec: 8.1, hc: null, exh: null, lastUpdated: now },
+    { chartId: "after-next", ec: 8.2, hc: null, exh: null, lastUpdated: now },
+  ];
+  const result = calculateTraining({ player: player("KAIDEN", null, { ereterOverall: 8.02 }), records: [], master: master([...main, ...next, ...afterNext], ereter) });
+  assert.deepEqual(result.recommendations.clearTargets.map(item => item.chartId), ["main-near", "main-high", "next"]);
+  assert.equal(result.recommendations.clearTargets.some(item => item.chartId === "after-next"), false);
+});
+
+test("attribute practice excludes zero selected-attribute Radar and does not fill outside its bands", () => {
+  const attrs = { NOTES: 100, CHORD: 0, PEAK: 0, CHARGE: 0, SCRATCH: 0, SOF_LAN: 0 };
+  const values = (chartId, notes) => ({ chartId, values: { NOTES: notes, CHORD: 0, PEAK: 0, CHARGE: 0, SCRATCH: 0, SOF_LAN: 0 }, verified: true, lastUpdated: now });
+  const items = [chart("main", 12, 12.5), chart("zero", 12, 12.4), chart("valid", 12, 12.4), chart("outside", 12, 12.0)];
+  const result = run(items, [record("main", "FAILED"), record("zero", "EASY_CLEAR"), record("valid", "EASY_CLEAR"), record("outside", "EASY_CLEAR")], { rank: "KAIDEN", playerRadar: attrs, radar: [values("main", 20), values("zero", 0), values("valid", 90), values("outside", 999)], attribute: "NOTES" });
+  assert.deepEqual(Array.from(result.recommendations.attributePracticeTargets, item => item.chartId), ["outside", "valid", "main"]);
+});
+
+test("PLAYER radar geometry keeps the 100 baseline fixed and uses the requested axis order", () => {
+  const top50 = radarPoint("NOTES", 50);
+  const top100 = radarPoint("NOTES", 100);
+  const top120 = radarPoint("NOTES", 120);
+  const top150 = radarPoint("NOTES", 150);
+  const top200 = radarPoint("NOTES", 200);
+  assert.equal(top50[0], 150); assert.equal(top100[0], 150); assert.equal(top200[0], 150);
+  assert.equal(top50[1], 120); assert.equal(top100[1], 90); assert.equal(top120[1], 78); assert.equal(top150[1], 60); assert.equal(top200[1], 30);
+  const peak = radarPoint("PEAK", 100); const scratch = radarPoint("SCRATCH", 100); const sofLan = radarPoint("SOF_LAN", 100);
+  assert.ok(peak[0] > 150 && peak[1] < 150);
+  assert.ok(scratch[0] > 150 && scratch[1] > 150);
+  assert.ok(sofLan[0] === 150 && sofLan[1] > 150);
 });

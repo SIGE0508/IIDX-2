@@ -12,4 +12,4 @@ export function roundDifficultyToTenths(value: number): number {
   const sign = value < 0 ? -1 : 1;
   return sign * Math.floor(Math.abs(value) * 10 + 0.5 + 1e-9) / 10;
 }
-export const effectiveDifficulty = (chart: Pick<ChartMaster, "officialLevel">, unofficial: Pick<UnofficialDifficultyRecord, "difficulty"> | null | undefined) => unofficial == null ? chart.officialLevel : roundDifficultyToTenths(unofficial.difficulty);
+export const effectiveDifficulty = (chart: Pick<ChartMaster, "officialLevel">, unofficial: Pick<UnofficialDifficultyRecord, "difficulty"> | null | undefined) => unofficial?.difficulty == null ? chart.officialLevel : roundDifficultyToTenths(unofficial.difficulty);

@@ -18,7 +18,7 @@ function load(relativePath) {
 const validation = load("src/storage/validation.ts");
 const migrations = load("src/storage/migrations.ts");
 const now = "2026-09-23T00:00:00.000Z";
-const player = { playerId: "player-1", iidxId: null, playerName: null, highestDpRank: "NINTH", notesRadar: null, createdAt: now, updatedAt: now };
+const player = { playerId: "player-1", iidxId: null, playerName: null, highestDpRank: "NINTH", notesRadar: null, ereterOverall: null, notesRadarDetails: { NOTES: [], CHORD: [], PEAK: [], CHARGE: [], SCRATCH: [], SOF_LAN: [] }, createdAt: now, updatedAt: now };
 
 test("validates a user-data commit before IndexedDB is opened", () => {
   assert.doesNotThrow(() => validation.assertUserDataCommit({ players: [player], playerChartRecords: [{ playerId: "player-1", chartId: "chart-1", clearLamp: "CLEAR", score: null, bp: null, clearSource: null, scoreSource: null, bpSource: null, updatedAt: now }] }));
@@ -37,5 +37,5 @@ test("refuses an incomplete legacy migration plan and unsupported serialized sch
   const storage = { getItem: (key) => key === migrations.LEGACY_LAMPS_STORAGE_KEY ? JSON.stringify({ unknown: "ec" }) : null };
   const plan = migrations.planLegacyLocalStorageMigration(storage, "player-1", () => null, now);
   assert.deepEqual([...plan.unresolvedKeys], ["unknown"]);
-  assert.throws(() => migrations.migrateSerializedUserData({ schemaVersion: 2, payload: {} }), /future schema/);
+  assert.throws(() => migrations.migrateSerializedUserData({ schemaVersion: 3, payload: {} }), /future schema/);
 });

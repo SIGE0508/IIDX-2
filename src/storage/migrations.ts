@@ -71,6 +71,9 @@ export interface SerializedUserDataV1 { schemaVersion: 1; payload: UserDataCommi
 export function migrateSerializedUserData(value: unknown): UserDataCommit {
   if (!object(value) || typeof value.schemaVersion !== "number" || !object(value.payload)) throw new Error("Serialized user data envelope is invalid.");
   if (value.schemaVersion > USER_DATA_SCHEMA_VERSION) throw new Error("Serialized user data uses an unsupported future schema version.");
-  if (value.schemaVersion !== 1) throw new Error(`No migration is registered from schema version ${value.schemaVersion}.`);
-  const payload = value.payload as UserDataCommit; assertUserDataCommit(payload); return payload;
+  if (value.schemaVersion !== 1 && value.schemaVersion !== 2) throw new Error(`No migration is registered from schema version ${value.schemaVersion}.`);
+  const raw = value.payload as UserDataCommit;
+  const emptyDetails = () => Object.fromEntries(["NOTES", "CHORD", "PEAK", "CHARGE", "SCRATCH", "SOF_LAN"].map(attribute => [attribute, []]));
+  const payload: UserDataCommit = { ...raw, players: (raw.players ?? []).map(player => ({ ...player, ereterOverall: player.ereterOverall ?? null, notesRadarDetails: player.notesRadarDetails ?? emptyDetails() })) };
+  assertUserDataCommit(payload); return payload;
 }

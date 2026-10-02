@@ -67,7 +67,7 @@ test("PLAYER aggregate excludes unavailable charts and NO_PLAY, and radar total 
 
 test("PLAYER profile can change only profile fields, including highest DP rank, without touching play records", async () => {
   const repository = new MemoryRepository();
-  const player = { playerId: "player-1", iidxId: null, playerName: null, highestDpRank: "NINTH", notesRadar: null, createdAt: now, updatedAt: now };
+  const player = { playerId: "player-1", iidxId: null, playerName: null, highestDpRank: "NINTH", notesRadar: null, ereterOverall: null, notesRadarDetails: { NOTES: [], CHORD: [], PEAK: [], CHARGE: [], SCRATCH: [], SOF_LAN: [] }, createdAt: now, updatedAt: now };
   const recordsBefore = [{ playerId: "player-1", chartId: "c12", clearLamp: "HARD_CLEAR", score: 3000, bp: 12 }];
   const updated = await setup.updatePlayerProfile(repository, player, { playerName: "TEST", iidxId: "1234-5678", highestDpRank: "CHUDEN" }, "2026-09-24T00:00:00.000Z");
   assert.equal(updated.highestDpRank, "CHUDEN");
@@ -80,13 +80,26 @@ test("PLAYER profile can change only profile fields, including highest DP rank, 
 
 test("PLAYER NOTES RADAR updates the existing Player field without changing rank or play records", async () => {
   const repository = new MemoryRepository();
-  const player = { playerId: "player-1", iidxId: "1234-5678", playerName: "TEST", highestDpRank: "CHUDEN", notesRadar: null, createdAt: now, updatedAt: now };
+  const player = { playerId: "player-1", iidxId: "1234-5678", playerName: "TEST", highestDpRank: "CHUDEN", notesRadar: null, ereterOverall: null, notesRadarDetails: { NOTES: [], CHORD: [], PEAK: [], CHARGE: [], SCRATCH: [], SOF_LAN: [] }, createdAt: now, updatedAt: now };
   const values = { NOTES: 100, CHORD: 90, PEAK: 80, CHARGE: 70, SCRATCH: 60, SOF_LAN: 50 };
   const updated = await setup.updatePlayerRadar(repository, player, values, "2026-09-24T00:00:00.000Z");
   assert.deepEqual(JSON.parse(JSON.stringify(updated.notesRadar)), values);
   assert.equal(updated.highestDpRank, "CHUDEN");
   assert.equal(updated.iidxId, "1234-5678");
   assert.equal(repository.players[0].highestDpRank, "CHUDEN");
+});
+
+test("PLAYER saves nullable personal ERETER and at most ten unique Radar details per attribute", async () => {
+  const repository = new MemoryRepository();
+  const player = { playerId: "player-1", iidxId: null, playerName: null, highestDpRank: "NINTH", notesRadar: null, ereterOverall: null, notesRadarDetails: { NOTES: [], CHORD: [], PEAK: [], CHARGE: [], SCRATCH: [], SOF_LAN: [] }, createdAt: now, updatedAt: now };
+  const withEreter = await setup.updatePlayerEreterOverall(repository, player, 8.02, now);
+  assert.equal(withEreter.ereterOverall, 8.02);
+  const details = { NOTES: Array.from({ length: 10 }, (_, index) => ({ chartId: `c${index}`, value: 100 - index })), CHORD: [], PEAK: [], CHARGE: [], SCRATCH: [], SOF_LAN: [] };
+  const withDetails = await setup.updatePlayerRadarDetails(repository, withEreter, details, now);
+  assert.equal(withDetails.notesRadarDetails.NOTES.length, 10);
+  await assert.rejects(() => setup.updatePlayerRadarDetails(repository, withDetails, { ...details, NOTES: [...details.NOTES, { chartId: "extra", value: 1 }] }, now), /invalid/);
+  await assert.rejects(() => setup.updatePlayerRadarDetails(repository, withDetails, { ...details, NOTES: [{ chartId: "same", value: 1 }, { chartId: "same", value: 2 }] }, now), /invalid/);
+  assert.equal((await setup.updatePlayerEreterOverall(repository, withDetails, null, now)).ereterOverall, null);
 });
 
 test("malformed or unsupported draft payload is rejected without normalization", () => {

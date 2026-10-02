@@ -78,12 +78,13 @@ function buildChartMaster(rows) {
     if (chartIds.has(chartId)) throw new Error(`${prefix}: duplicate chartId '${chartId}'.`); chartIds.add(chartId);
     const incomingAliases = { officialCsv: aliases(values["公式CSV Alias"]), unofficialDifficulty: aliases(values["非公式Alias"]), ereter: aliases(values["ereter Alias"]), notesRadar: aliases(values["Radar Alias"]) };
     const oldSong = songs.get(songId);
-    if (oldSong && (oldSong.title !== title || oldSong.debutVersion !== (values["初出Ver"].trim() || null))) throw new Error(`${prefix}: songId '${songId}' conflicts with an earlier title or debut version.`);
-    const song = oldSong ?? { songId, title, debutVersion: values["初出Ver"].trim() || null, aliases: { officialCsv: [], unofficialDifficulty: [], ereter: [], notesRadar: [] } };
+    const debutVersionNumber = integer(values["初出Ver（数）"], `${prefix}: 初出Ver（数）`, { positive: true });
+    if (oldSong && (oldSong.title !== title || oldSong.debutVersion !== (values["初出Ver"].trim() || null) || oldSong.debutVersionNumber !== debutVersionNumber)) throw new Error(`${prefix}: songId '${songId}' conflicts with an earlier title or debut version.`);
+    const song = oldSong ?? { songId, title, debutVersion: values["初出Ver"].trim() || null, debutVersionNumber, aliases: { officialCsv: [], unofficialDifficulty: [], ereter: [], notesRadar: [] } };
     for (const source of Object.keys(incomingAliases)) song.aliases[source] = [...new Set([...song.aliases[source], ...incomingAliases[source]])];
     songs.set(songId, song);
     charts.push({ chartId, songId, chartType, officialLevel, notes: notes(values.Notes, `${prefix} Notes`), availability: values.availability });
-    sourceRows.set(chartId, { chartId, songId, title, chartType, officialLevel, debutVersion: values["初出Ver"].trim(), debutVersionNumber: values["初出Ver（数）"].trim() });
+    sourceRows.set(chartId, { chartId, songId, title, chartType, officialLevel, debutVersion: values["初出Ver"].trim(), debutVersionNumber: String(debutVersionNumber) });
   }
   const bySong = new Map([...songs.values()].map((song) => [song.songId, song]));
   const uniqueness = new Map();
@@ -99,7 +100,7 @@ function buildExternal(inputs, master, updatedAt) {
   const ereterRows = externalRows(inputs.ereter, master.sourceRows, "CHART_ID", "ERETER", [["SongID", "songId"], ["曲名", "title"], ["譜面", "chartType"]]);
   const radarRows = externalRows(inputs.radar, master.sourceRows, "chartId", "NOTES_RADAR", [["SongID", "songId"], ["タイトル", "title"], ["譜面", "chartType"], ["公式LV", "officialLevel"], ["初出Ver", "debutVersion"], ["初出Ver(数)", "debutVersionNumber"]]);
   return {
-    unofficial: unofficialRows.map(({ chartId, row, values }) => ({ chartId, difficulty: finite(values["非公式難易度表"], `UNOFFICIAL row ${row} 非公式難易度表`), lastUpdated: updatedAt })),
+    unofficial: unofficialRows.map(({ chartId, row, values }) => ({ chartId, difficulty: finite(values["非公式難易度表"], `UNOFFICIAL row ${row} 非公式難易度表`, { nullable: true }), lastUpdated: updatedAt })),
     ereter: ereterRows.map(({ chartId, row, values }) => ({ chartId, ec: finite(values.EC, `ERETER row ${row} EC`, { nullable: true, star: true }), hc: finite(values.HC, `ERETER row ${row} HC`, { nullable: true, star: true }), exh: finite(values.EXH, `ERETER row ${row} EXH`, { nullable: true, star: true }), lastUpdated: updatedAt })),
     radar: radarRows.map(({ chartId, row, values }) => ({ chartId, values: { NOTES: finite(values.NOTES, `NOTES_RADAR row ${row} NOTES`), CHORD: finite(values.CHORD, `NOTES_RADAR row ${row} CHORD`), PEAK: finite(values.PEAK, `NOTES_RADAR row ${row} PEAK`), CHARGE: finite(values.CHARGE, `NOTES_RADAR row ${row} CHARGE`), SCRATCH: finite(values.SCRATCH, `NOTES_RADAR row ${row} SCRATCH`), SOF_LAN: finite(values["SOF-LAN"], `NOTES_RADAR row ${row} SOF-LAN`) }, verified: true, lastUpdated: updatedAt })),
   };

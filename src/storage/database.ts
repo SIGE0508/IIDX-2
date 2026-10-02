@@ -24,12 +24,31 @@ export function applySchemaV1(database: IDBDatabase, transaction: IDBTransaction
   meta.put({ key: USER_DATA_SCHEMA_META_KEY, value: USER_DATA_SCHEMA_VERSION, updatedAt: new Date().toISOString() });
 }
 
+/** Adds only nullable/default Player fields. Existing records, keys, and stores remain intact. */
+export function applySchemaV2(database: IDBDatabase, transaction: IDBTransaction): void {
+  const players = transaction.objectStore("players");
+  const request = players.openCursor();
+  request.onsuccess = () => {
+    const cursor = request.result;
+    if (!cursor) return;
+    const raw = cursor.value as Record<string, unknown>;
+    const details = raw.notesRadarDetails && typeof raw.notesRadarDetails === "object" ? raw.notesRadarDetails : Object.fromEntries(["NOTES", "CHORD", "PEAK", "CHARGE", "SCRATCH", "SOF_LAN"].map(attribute => [attribute, []]));
+    cursor.update({ ...raw, ereterOverall: typeof raw.ereterOverall === "number" && Number.isFinite(raw.ereterOverall) && raw.ereterOverall >= 0 ? raw.ereterOverall : null, notesRadarDetails: details });
+    cursor.continue();
+  };
+  transaction.objectStore("appMeta").put({ key: USER_DATA_SCHEMA_META_KEY, value: USER_DATA_SCHEMA_VERSION, updatedAt: new Date().toISOString() });
+}
+
 /** databaseName is injectable only for isolated browser integration tests. */
 export function openTrackerDatabase(factory: IDBFactory = globalThis.indexedDB, databaseName: string = INDEXED_DB_NAME): Promise<IDBDatabase> {
   if (!factory) return Promise.reject(new Error("IndexedDB is unavailable in this browser."));
   return new Promise((resolve, reject) => {
     const request = factory.open(databaseName, INDEXED_DB_VERSION);
-    request.onupgradeneeded = () => applySchemaV1(request.result, request.transaction!);
+    request.onupgradeneeded = event => {
+      const transaction = request.transaction!;
+      applySchemaV1(request.result, transaction);
+      if (event.oldVersion < 2) applySchemaV2(request.result, transaction);
+    };
     request.onsuccess = () => resolve(request.result);
     request.onerror = () => reject(request.error ?? new Error("Failed to open IndexedDB."));
     request.onblocked = () => reject(new Error("IndexedDB upgrade is blocked by another open application tab."));
