@@ -33,9 +33,12 @@ export function assertPlayer(value: unknown): asserts value is Player {
   if (!object(value) || !nonBlank(value.playerId) || !nullableString(value.iidxId) || !nullableString(value.playerName) || !oneOf(value.highestDpRank, HIGHEST_DP_RANKS) || (value.notesRadar !== null && !radar(value.notesRadar)) || !nullableFinite(value.ereterOverall) || (finite(value.ereterOverall) && value.ereterOverall < 0) || !radarDetails(value.notesRadarDetails) || !iso(value.createdAt) || !iso(value.updatedAt)) throw new Error("Player record is invalid.");
 }
 export function assertPlayerChartRecord(value: unknown): asserts value is PlayerChartRecord {
+  if (object(value) && [value.previousScore, value.previousBp].some(item => item !== undefined && item !== null && (!finite(item) || !Number.isSafeInteger(item) || item < 0))) throw new Error("Previous SCORE/BP is invalid.");
   if (!object(value) || !nonBlank(value.playerId) || !nonBlank(value.chartId) || !oneOf(value.clearLamp, CLEAR_LAMPS) || !nullableFinite(value.score) || (finite(value.score) && (!Number.isSafeInteger(value.score) || value.score < 0)) || !nullableFinite(value.bp) || (finite(value.bp) && (!Number.isInteger(value.bp) || value.bp < 0)) || (value.clearSource !== null && !oneOf(value.clearSource, RECORD_SOURCES)) || (value.scoreSource !== null && !oneOf(value.scoreSource, RECORD_SOURCES)) || (value.bpSource !== null && !oneOf(value.bpSource, RECORD_SOURCES)) || !iso(value.updatedAt)) throw new Error("PlayerChartRecord is invalid.");
 }
 export function assertHistoryEntry(value: unknown): asserts value is HistoryEntry {
+  const validUpdate = (update: unknown, lower: boolean): boolean => update === undefined || (object(update) && (update.before === null || (finite(update.before) && Number.isSafeInteger(update.before) && update.before >= 0)) && finite(update.after) && Number.isSafeInteger(update.after) && update.after >= 0 && (update.before === null || (lower ? update.after < update.before : update.after > update.before)));
+  if (object(value) && (!validUpdate(value.scoreUpdate, false) || !validUpdate(value.bpUpdate, true))) throw new Error("History score/BP update is invalid.");
   if (!object(value) || !nonBlank(value.historyId) || !nonBlank(value.playerId) || !nonBlank(value.chartId) || !iso(value.date) || !oneOf(value.oldLamp, CLEAR_LAMPS) || !oneOf(value.newLamp, CLEAR_LAMPS) || !oneOf(value.source, RECORD_SOURCES)) throw new Error("History entry is invalid.");
 }
 export function assertEreterPersonalHistory(value: unknown): asserts value is EreterPersonalHistory {

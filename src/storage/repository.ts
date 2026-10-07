@@ -1,4 +1,5 @@
 import type { EreterPersonalHistory, HistoryEntry, Player, PlayerChartRecord, SetupDraft } from "../domain/types";
+import { resetRecordScoreBp } from "../domain/record-reset";
 import { openTrackerDatabase, requestResult, runTransaction, STORE_NAMES, transactionDone, type StoreName } from "./database";
 import { assertAppMetaEntry, assertEreterPersonalHistory, assertHistoryEntry, assertPlayer, assertPlayerChartRecord, assertSetupDraft, assertUiSetting, assertUserDataCommit, type AppMetaEntry, type UiSetting, type UserDataCommit } from "./validation";
 
@@ -7,6 +8,33 @@ export class UserDataRepository {
   constructor(private readonly database: IDBDatabase) {}
   static async open(): Promise<UserDataRepository> { return new UserDataRepository(await openTrackerDatabase()); }
   close(): void { this.database.close(); }
+  /** Reads and updates the selected player's records in one transaction. */
+  async resetScoreBp(playerId: string, now: string): Promise<void> {
+    if (!playerId.trim() || Number.isNaN(Date.parse(now))) throw new Error("Reset target or timestamp is invalid.");
+    await runTransaction(this.database, ["playerChartRecords"], "readwrite", transaction => {
+      const request = transaction.objectStore("playerChartRecords").index("byPlayerId").openCursor(IDBKeyRange.only(playerId));
+      request.onsuccess = () => {
+        const cursor = request.result;
+        if (!cursor) return;
+        try {
+          const record = cursor.value;
+          assertPlayerChartRecord(record);
+          if (record.score !== null || record.bp !== null) {
+            const next = resetRecordScoreBp(record, now);
+            assertPlayerChartRecord(next);
+            cursor.update(next);
+          }
+          cursor.continue();
+        } catch { transaction.abort(); }
+      };
+    });
+  }
+  /** Explicitly confirmed full reset; only the seven user-data stores exist here. */
+  async initializeAllUserData(): Promise<void> {
+    await runTransaction(this.database, STORE_NAMES, "readwrite", transaction => {
+      for (const name of STORE_NAMES) transaction.objectStore(name).clear();
+    });
+  }
   async getPlayer(playerId: string): Promise<Player | undefined> { return this.get("players", playerId) as Promise<Player | undefined>; }
   async getPlayerChartRecord(playerId: string, chartId: string): Promise<PlayerChartRecord | undefined> { return this.get("playerChartRecords", [playerId, chartId]) as Promise<PlayerChartRecord | undefined>; }
   async getAppMeta(key: string): Promise<AppMetaEntry | undefined> { return this.get("appMeta", key) as Promise<AppMetaEntry | undefined>; }

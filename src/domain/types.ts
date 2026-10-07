@@ -51,6 +51,9 @@ export interface PlayerChartRecord {
   clearLamp: ClearLamp;
   score: number | null;
   bp: number | null;
+  /** Missing on legacy records means no previous value has been saved. */
+  previousScore?: number | null;
+  previousBp?: number | null;
   clearSource: RecordSource | null;
   scoreSource: RecordSource | null;
   bpSource: RecordSource | null;
@@ -63,6 +66,9 @@ export interface HistoryEntry {
   chartId: string;
   oldLamp: ClearLamp;
   newLamp: ClearLamp;
+  /** Optional on Ver.1.0 entries; null before denotes first registration. */
+  scoreUpdate?: { before: number | null; after: number };
+  bpUpdate?: { before: number | null; after: number };
   source: RecordSource;
 }
 export type SetupRegistrationMethod = "official_csv" | "manual" | "later";

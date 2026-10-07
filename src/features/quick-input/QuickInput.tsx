@@ -54,6 +54,7 @@ export function QuickInput({ charts, records, selectedChartId, onSave, onCancel 
       <p className="hint">SCORE: 現在値 {existing?.score ?? "未登録"} / 最大値 {maxScore ?? "Notes未登録のため上限なし"}。現在値より高い値だけ更新します。</p>
       <label>BP（空欄は変更なし）<input inputMode="numeric" value={bpText} onChange={event => setBpText(event.target.value)} /></label>
       <p className="hint">BP: 現在値 {existing?.bp ?? "未登録"}。現在値より低い値だけ更新します。</p>
+      <p className="hint">前回SCORE: {existing?.previousScore ?? "未登録"} / 前回BP: {existing?.previousBp ?? "未登録"}</p>
     </>}
     {!scoreValid && <p role="alert">SCOREは最大値 {maxScore} 以下の整数で入力してください。</p>}
     {!bpValid && <p role="alert">BPは0以上の整数で入力してください。</p>}

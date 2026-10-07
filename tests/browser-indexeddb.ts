@@ -1,5 +1,7 @@
 import { openTrackerDatabase, runTransaction, STORE_NAMES, transactionDone } from "../src/storage/database";
 import { enqueueInitialSetup, UserDataRepository } from "../src/storage/repository";
+import { commitRecordImport } from "../src/import/operations";
+import { createBackup, parseBackup, restoreBackup } from "../src/import/backup";
 import type { Player, PlayerChartRecord, SetupDraft } from "../src/domain/types";
 
 const result = document.querySelector<HTMLPreElement>("#result")!;
@@ -79,7 +81,45 @@ async function main(): Promise<void> {
   } catch { /* Validation failure is expected before any store is cleared. */ }
   ok((await reloadedRepository.getPlayer(player.playerId))?.highestDpRank === "NINTH", "Invalid restore must preserve existing Player data.");
 
+  await reloadedRepository.saveHistory({ historyId: "legacy-lamp", playerId: player.playerId, chartId: record.chartId, oldLamp: "EASY_CLEAR", newLamp: "CLEAR", date: now, source: "manual" });
+  const scoredRecord = { ...record, score: 1500, bp: 50 };
+  await commitRecordImport(reloadedRepository, player.playerId, [scoredRecord], [record], "official_csv", now, () => "numeric-initial");
+  const savedHistory = await reloadedRepository.listHistory(player.playerId);
+  ok(savedHistory.length === 2 && savedHistory.some(entry => entry.scoreUpdate?.before === null && entry.bpUpdate?.after === 50), "Initial SCORE/BP must persist in one combined history alongside the legacy entry.");
+  const snapshot = parseBackup(JSON.stringify(await createBackup(reloadedRepository, now)));
+  await restoreBackup(reloadedRepository, snapshot, now);
+  ok((await reloadedRepository.listHistory(player.playerId)).length === 2, "Backup restore must retain legacy and combined history.");
+  try {
+    await runTransaction(reloaded, ["playerChartRecords", "history"], "readwrite", transaction => {
+      transaction.objectStore("playerChartRecords").put({ ...scoredRecord, score: 1600 });
+      transaction.objectStore("history").put({ ...savedHistory[0], historyId: "aborted-history" });
+      transaction.abort();
+    });
+  } catch { /* Abort is expected. */ }
+  ok((await reloadedRepository.getPlayerChartRecord(player.playerId, record.chartId))?.score === 1500 && (await reloadedRepository.listHistory(player.playerId)).length === 2, "Abort must preserve both chart records and history.");
+  const otherPlayer = { ...player, playerId: "other-player" };
+  await reloadedRepository.commit({ players: [otherPlayer], playerChartRecords: [{ ...scoredRecord, playerId: otherPlayer.playerId }] });
+  await reloadedRepository.resetScoreBp(player.playerId, now);
+  const reset = await reloadedRepository.getPlayerChartRecord(player.playerId, record.chartId);
+  ok(reset?.score === null && reset.bp === null && reset.previousScore === 1500 && reset.previousBp === 50, "Reset must archive current values.");
+  ok((await reloadedRepository.listHistory(player.playerId)).length === 2, "Reset must not create history.");
+  ok((await reloadedRepository.getPlayerChartRecord(otherPlayer.playerId, record.chartId))?.score === 1500, "Reset must not change another player.");
+  await reloadedRepository.resetScoreBp(player.playerId, now);
+  ok((await reloadedRepository.getPlayerChartRecord(player.playerId, record.chartId))?.previousScore === 1500, "Repeated reset must preserve archived values.");
+  await restoreBackup(reloadedRepository, parseBackup(JSON.stringify(await createBackup(reloadedRepository, now))), now);
+  ok((await reloadedRepository.getPlayerChartRecord(player.playerId, record.chartId))?.previousBp === 50, "Backup restore must preserve archived values.");
+  await reloadedRepository.saveAppMeta({ key: "reset-test", value: true, updatedAt: now });
+  await reloadedRepository.saveUiSetting({ key: "reset-test", value: true });
+  await reloadedRepository.saveSetupDraft(draft);
+  await reloadedRepository.saveEreterPersonalHistory({ playerId: player.playerId, iidxId: "12345678", playerName: "test", fetchedAt: now, records: [] });
+  await reloadedRepository.initializeAllUserData();
+  for (const store of STORE_NAMES) {
+    const transaction = reloaded.transaction(store, "readonly");
+    const request = transaction.objectStore(store).count();
+    await transactionDone(transaction);
+    ok(request.result === 0, `Full initialization must clear ${store}.`);
+  }
   reloaded.close(); await removeDatabase(dbName);
-  result.textContent = "PASS\nstore creation / v1-to-v2 upgrade\nsave and reload\ntransaction abort atomicity\nsetup finalization atomicity\ninvalid restore preserves existing data";
+  result.textContent = "PASS\nstore creation / v1-to-v2 upgrade\nsave and reload\ntransaction abort atomicity\nsetup finalization atomicity\ninvalid restore preserves existing data\nlegacy and combined HISTORY backup restore\nselected-player SCORE/BP reset\nrepeated reset retains previous values\nprevious values backup restore\nall seven user-data stores initialized";
 }
 main().catch((error: unknown) => { result.textContent = `FAIL\n${error instanceof Error ? error.stack ?? error.message : String(error)}`; });
