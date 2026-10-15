@@ -7,6 +7,7 @@ import path from "node:path";
 import test from "node:test";
 import ts from "typescript";
 import vm from "node:vm";
+import { createHash } from "node:crypto";
 
 const root = path.resolve(import.meta.dirname, "..");
 const cache = new Map();
@@ -62,10 +63,83 @@ test("generator emits a Phase 0-compatible development master from header-based 
     write("UNOFFICIAL.csv", "chartId,songID,タイトル,譜面,公式レベル,初出Ver,初出Ver（数）,非公式難易度表\nc1,s1,Song,DPA,12,1st,1,\n"),
     write("ERETER.csv", "CHART_ID,SongID,曲名,譜面,EC,HC,EXH\nc1,s1,Song,DPA,★0.7,,\n"),
     write("NOTES_RADAR.csv", "chartId,SongID,タイトル,譜面,公式LV,初出Ver,初出Ver(数),NOTES,CHORD,PEAK,CHARGE,SCRATCH,SOF-LAN\nc1,s1,Song,DPA,12,1st,1,1,2,3,4,5,6\n"),
+    write("radar_data.csv", "chartId,確認済み\nc1,TRUE\n"),
   ]);
   try {
     execFileSync(process.execPath, [path.join(root, "scripts/generate-masters.mjs"), "--input", input, "--output", output, "--generated-at", updatedAt], { encoding: "utf8" });
     const fetcher = async (url) => JSON.parse(await readFile(path.join(output, path.basename(url)), "utf8"));
     const loaded = await loader.loadMasterSet(fetcher); assert.equal(loaded.chartMaster.charts[0].notes, null); assert.equal(loaded.chartMaster.songs[0].debutVersionNumber, 1); assert.equal(loaded.unofficial.records[0].difficulty, null); assert.equal(loaded.ereter.records[0].ec, 0.7); assert.equal(loaded.notesRadar.records[0].values.SOF_LAN, 6);
   } finally { await rm(folder, { recursive: true, force: true }); }
+});
+
+test("Radar confirmation is mandatory and FALSE never publishes even populated values", async () => {
+  const folder = await mkdtemp(path.join(tmpdir(), "iidx-radar-confirmation-"));
+  const input = path.join(folder, "input"); const output = path.join(folder, "output");
+  await mkdir(input);
+  const write = (name, text) => writeFile(path.join(input, name), text);
+  const generate = () => execFileSync(process.execPath, [path.join(root, "scripts/generate-masters.mjs"), "--input", input, "--output", output, "--generated-at", updatedAt], { encoding: "utf8", stdio: "pipe" });
+  try {
+    await Promise.all([
+      write("CHART_MASTER.csv", "chartId,songID,タイトル,譜面,公式レベル,初出Ver,初出Ver（数）,Notes,availability,公式CSV Alias,非公式Alias,ereter Alias,Radar Alias,備考\nc1,s1,Song,DPA,12,1st,1,,available,,,,,\nc2,s2,Other,DPA,11,1st,1,,available,,,,,\n"),
+      write("UNOFFICIAL.csv", "chartId,songID,タイトル,譜面,公式レベル,初出Ver,初出Ver（数）,非公式難易度表\n"),
+      write("ERETER.csv", "CHART_ID,SongID,曲名,譜面,EC,HC,EXH\n"),
+      write("NOTES_RADAR.csv", "chartId,SongID,タイトル,譜面,公式LV,初出Ver,初出Ver(数),NOTES,CHORD,PEAK,CHARGE,SCRATCH,SOF-LAN\nc1,s1,Song,DPA,12,1st,1,100,0.00,50,0,10,0\nc2,s2,Other,DPA,11,1st,1,200,100,100,100,100,100\n"),
+      write("radar_data.csv", "chartId,SongID,タイトル,譜面,確認済み\nc1,stale,Old title,DPA,TRUE\nc2,s2,Other,DPA,FALSE\n"),
+    ]);
+    generate();
+    const published = JSON.parse(await readFile(path.join(output, "notes-radar.json"), "utf8"));
+    assert.equal(published.records.length, 1);
+    assert.equal(published.records[0].chartId, "c1");
+    assert.equal(published.records[0].values.CHORD, 0);
+    assert.equal(published.records[0].verified, true);
+    assert.equal(JSON.parse(await readFile(path.join(output, "chart-master.json"), "utf8")).charts.length, 2);
+    for (const invalid of [
+      "chartId,確認済み\nc1,\nc2,FALSE\n",
+      "chartId,確認済み\nc1,true\nc2,FALSE\n",
+      "chartId,確認済み\nc1,TRUE\n",
+      "chartId,確認済み\nc1,TRUE\nc1,FALSE\nc2,FALSE\n",
+      "chartId,確認済み\nc1,TRUE\nc2,FALSE\nmissing,TRUE\n",
+      "chartId\nc1\nc2\n",
+      "chartId,譜面,確認済み\nc1,DPH,TRUE\nc2,DPA,FALSE\n",
+    ]) {
+      await write("radar_data.csv", invalid);
+      assert.throws(generate);
+      assert.equal(await readFile(path.join(output, "notes-radar.json"), "utf8"), JSON.stringify(published, null, 2) + "\n");
+    }
+    await rm(path.join(input, "radar_data.csv"));
+    assert.throws(generate);
+  } finally { await rm(folder, { recursive: true, force: true }); }
+});
+
+test("October Radar sync preserves all existing identities, aliases and availability", async () => {
+  const readMaster = name => JSON.parse(readFileSync(path.join(root, "public/masters/v1", name), "utf8"));
+  const set = validation.validateMasterSet({ manifest: readMaster("manifest.json"), chartMaster: readMaster("chart-master.json"), unofficial: readMaster("unofficial.json"), ereter: readMaster("ereter.json"), notesRadar: readMaster("notes-radar.json") });
+  const hash = value => createHash("sha256").update(JSON.stringify(value)).digest("hex");
+  // Fingerprints of the complete Ver.1.1.0 master arrays, excluding only new IDs.
+  assert.equal(hash(set.chartMaster.charts.filter(row => Number(row.chartId.slice(5)) < 2488)), "08b50a5d06d60284d7a1803de529b12bfb6907e6d273770dd17f9cf5810ffe27");
+  assert.equal(hash(set.chartMaster.songs.filter(row => Number(row.songId.slice(1)) < 1764)), "e2c400ee835a6e7d29f126e0892f8483aa746f024d90e2f768bc9020d5db88ac");
+  assert.equal(set.chartMaster.charts.length, 2491);
+  assert.equal(set.notesRadar.records.length, 2080);
+  const radarMap = new Map(set.notesRadar.records.map(row => [row.chartId, row]));
+  assert.equal(radarMap.get("CT_ID0125").values.SOF_LAN, 177.65);
+  const statusLines = readFileSync(path.join(root, "data/master-input/radar_data.csv"), "utf8").trim().split(/\r?\n/);
+  // IDs and TRUE/FALSE are checked through published membership, not CSV title parsing.
+  const falseIds = statusLines.slice(1).filter(line => /,FALSE,/.test(line)).map(line => line.split(",")[0]);
+  assert.equal(falseIds.length, 411);
+  for (const id of falseIds) assert.equal(radarMap.has(id), false);
+  for (const id of ["CT_ID2488", "CT_ID2489", "CT_ID2490", "CT_ID2491", "CT_ID2492", "CT_ID2493"]) {
+    const item = set.chartMaster.charts.find(row => row.chartId === id);
+    const song = set.chartMaster.songs.find(row => row.songId === item.songId);
+    assert.equal(lookup.resolveChart({ title: song.title, chartType: item.chartType, source: "officialCsv" }, set.chartMaster.songs, set.chartMaster.charts).chart.chartId, id);
+    assert.equal(radarMap.has(id), true);
+    assert.equal(chart.effectiveDifficulty(item, set.unofficial.records.find(row => row.chartId === id)), item.officialLevel);
+  }
+  const { calculateTraining } = load("src/training/engine.ts");
+  const player = { playerId: "test", highestDpRank: "CHUDEN", notesRadar: { NOTES: 100, CHORD: 100, PEAK: 100, CHARGE: 100, SCRATCH: 100, SOF_LAN: 100 }, ereterOverall: null, notesRadarDetails: {} };
+  const inputBefore = JSON.stringify(set);
+  for (const attribute of Object.keys(player.notesRadar)) {
+    const result = calculateTraining({ player, records: [], master: set, selectedAttribute: attribute });
+    for (const item of result.recommendations.attributePracticeTargets) assert.ok(radarMap.get(item.chartId).values[attribute] > 0);
+  }
+  assert.equal(JSON.stringify(set), inputBefore);
 });

@@ -75,6 +75,13 @@ http://127.0.0.1:4173/tests/browser-indexeddb.html
 
 入力CSVは `data/master-input/`、生成先JSONは `public/masters/v1/` です。
 
+入力は `CHART_MASTER.csv` / `UNOFFICIAL.csv` / `ERETER.csv` / `NOTES_RADAR.csv` / `radar_data.csv` の5ファイルです。
+`radar_data.csv` の `chartId` と `確認済み`（TRUE/FALSE）を参照し、TRUEのRadarだけを配布します。
+フラグ欠落・不正値・重複・未照合は生成エラーです。TRUEの0.00は実値0として保持し、FALSEは一部入力済みでも配布しません。
+識別情報はCHART_MASTER／NOTES_RADARを正とし、radar_dataの古いsongID・曲名は警告として報告しても既存IDを変更しません。譜面種別の不一致はエラーです。
+元シートの更新を取り込む際も、既存のID・Alias・availabilityを消さず、新規譜面と承認済みの値だけを反映してください。
+2026-10-15同期時点ではradar_dataのsongID不一致163件・曲名不一致1件が残っています（元シートは未変更）。
+
 ```powershell
 npm run generate:masters
 ```
