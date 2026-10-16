@@ -10,12 +10,14 @@ const INPUT_FILES = {
   unofficial: "UNOFFICIAL.csv",
   ereter: "ERETER.csv",
   radar: "NOTES_RADAR.csv",
+  radarStatus: "radar_data.csv",
 };
 const HEADERS = {
   chart: ["chartId", "songID", "タイトル", "譜面", "公式レベル", "初出Ver", "初出Ver（数）", "Notes", "availability", "公式CSV Alias", "非公式Alias", "ereter Alias", "Radar Alias", "備考"],
   unofficial: ["chartId", "songID", "タイトル", "譜面", "公式レベル", "初出Ver", "初出Ver（数）", "非公式難易度表"],
   ereter: ["CHART_ID", "SongID", "曲名", "譜面", "EC", "HC", "EXH"],
   radar: ["chartId", "SongID", "タイトル", "譜面", "公式LV", "初出Ver", "初出Ver(数)", "NOTES", "CHORD", "PEAK", "CHARGE", "SCRATCH", "SOF-LAN"],
+  radarStatus: ["chartId", "確認済み"],
 };
 const TYPES = new Set(["DPN", "DPH", "DPA", "DPL"]);
 const AVAILABILITY = new Set(["available", "unavailable", "unknown"]);
@@ -99,17 +101,37 @@ function buildExternal(inputs, master, updatedAt) {
   const unofficialRows = externalRows(inputs.unofficial, master.sourceRows, "chartId", "UNOFFICIAL", [["songID", "songId"], ["タイトル", "title"], ["譜面", "chartType"], ["公式レベル", "officialLevel"], ["初出Ver", "debutVersion"], ["初出Ver（数）", "debutVersionNumber"]]);
   const ereterRows = externalRows(inputs.ereter, master.sourceRows, "CHART_ID", "ERETER", [["SongID", "songId"], ["曲名", "title"], ["譜面", "chartType"]]);
   const radarRows = externalRows(inputs.radar, master.sourceRows, "chartId", "NOTES_RADAR", [["SongID", "songId"], ["タイトル", "title"], ["譜面", "chartType"], ["公式LV", "officialLevel"], ["初出Ver", "debutVersion"], ["初出Ver(数)", "debutVersionNumber"]]);
+  // radar_data supplies only explicit confirmation by chartId. Its descriptive
+  // metadata can be stale; canonical identity is validated above, not rewritten.
+  noDuplicate(inputs.radarStatus, "chartId", "radar_data");
+  const radarIds = new Set(radarRows.map(record => record.chartId));
+  const confirmed = new Map();
+  let songIdMismatches = 0;
+  let titleMismatches = 0;
+  for (const { row, values } of inputs.radarStatus) {
+    const chartId = required(values.chartId, `radar_data row ${row} chartId`);
+    if (!radarIds.has(chartId)) throw new Error(`radar_data row ${row}: chartId '${chartId}' is not in NOTES_RADAR.`);
+    const flag = values["確認済み"].trim();
+    if (flag !== "TRUE" && flag !== "FALSE") throw new Error(`radar_data row ${row}: 確認済み must be TRUE or FALSE.`);
+    const reference = master.sourceRows.get(chartId);
+    if (values["譜面"] !== undefined && values["譜面"].trim() !== reference.chartType) throw new Error(`radar_data row ${row}: chart type does not match CHART_MASTER '${chartId}'.`);
+    if (values.SongID !== undefined && values.SongID.trim() !== reference.songId) songIdMismatches += 1;
+    if (values["タイトル"] !== undefined && values["タイトル"].trim() !== reference.title) titleMismatches += 1;
+    confirmed.set(chartId, flag === "TRUE");
+  }
+  for (const { chartId } of radarRows) if (!confirmed.has(chartId)) throw new Error(`radar_data: confirmation is missing for chartId '${chartId}'.`);
+  if (songIdMismatches || titleMismatches) console.warn(`radar_data metadata discrepancies: songID=${songIdMismatches}, title=${titleMismatches}; CHART_MASTER/NOTES_RADAR identity retained.`);
   return {
     unofficial: unofficialRows.map(({ chartId, row, values }) => ({ chartId, difficulty: finite(values["非公式難易度表"], `UNOFFICIAL row ${row} 非公式難易度表`, { nullable: true }), lastUpdated: updatedAt })),
     ereter: ereterRows.map(({ chartId, row, values }) => ({ chartId, ec: finite(values.EC, `ERETER row ${row} EC`, { nullable: true, star: true }), hc: finite(values.HC, `ERETER row ${row} HC`, { nullable: true, star: true }), exh: finite(values.EXH, `ERETER row ${row} EXH`, { nullable: true, star: true }), lastUpdated: updatedAt })),
-    radar: radarRows.map(({ chartId, row, values }) => ({ chartId, values: { NOTES: finite(values.NOTES, `NOTES_RADAR row ${row} NOTES`), CHORD: finite(values.CHORD, `NOTES_RADAR row ${row} CHORD`), PEAK: finite(values.PEAK, `NOTES_RADAR row ${row} PEAK`), CHARGE: finite(values.CHARGE, `NOTES_RADAR row ${row} CHARGE`), SCRATCH: finite(values.SCRATCH, `NOTES_RADAR row ${row} SCRATCH`), SOF_LAN: finite(values["SOF-LAN"], `NOTES_RADAR row ${row} SOF-LAN`) }, verified: true, lastUpdated: updatedAt })),
+    radar: radarRows.filter(({ chartId }) => confirmed.get(chartId)).map(({ chartId, row, values }) => ({ chartId, values: { NOTES: finite(values.NOTES, `NOTES_RADAR row ${row} NOTES`), CHORD: finite(values.CHORD, `NOTES_RADAR row ${row} CHORD`), PEAK: finite(values.PEAK, `NOTES_RADAR row ${row} PEAK`), CHARGE: finite(values.CHARGE, `NOTES_RADAR row ${row} CHARGE`), SCRATCH: finite(values.SCRATCH, `NOTES_RADAR row ${row} SCRATCH`), SOF_LAN: finite(values["SOF-LAN"], `NOTES_RADAR row ${row} SOF-LAN`) }, verified: true, lastUpdated: updatedAt })),
   };
 }
 async function main() {
   const option = args(process.argv.slice(2)); const input = path.resolve(option.input); const output = path.resolve(option.output); const updatedAt = new Date(option.generatedAt).toISOString();
   const read = async (file) => readFile(path.join(input, file), "utf8");
-  const [chartText, unofficialText, ereterText, radarText] = await Promise.all([read(INPUT_FILES.chart), read(INPUT_FILES.unofficial), read(INPUT_FILES.ereter), read(INPUT_FILES.radar)]);
-  const chart = buildChartMaster(records(chartText, HEADERS.chart, "CHART_MASTER")); const external = buildExternal({ unofficial: records(unofficialText, HEADERS.unofficial, "UNOFFICIAL"), ereter: records(ereterText, HEADERS.ereter, "ERETER"), radar: records(radarText, HEADERS.radar, "NOTES_RADAR") }, chart, updatedAt);
+  const [chartText, unofficialText, ereterText, radarText, radarStatusText] = await Promise.all([read(INPUT_FILES.chart), read(INPUT_FILES.unofficial), read(INPUT_FILES.ereter), read(INPUT_FILES.radar), read(INPUT_FILES.radarStatus)]);
+  const chart = buildChartMaster(records(chartText, HEADERS.chart, "CHART_MASTER")); const external = buildExternal({ unofficial: records(unofficialText, HEADERS.unofficial, "UNOFFICIAL"), ereter: records(ereterText, HEADERS.ereter, "ERETER"), radar: records(radarText, HEADERS.radar, "NOTES_RADAR"), radarStatus: records(radarStatusText, HEADERS.radarStatus, "radar_data") }, chart, updatedAt);
   const files = { "chart-master.json": envelope(option.version, updatedAt, { songs: chart.songs, charts: chart.charts }), "unofficial.json": envelope(option.version, updatedAt, { records: external.unofficial }), "ereter.json": envelope(option.version, updatedAt, { records: external.ereter }), "notes-radar.json": envelope(option.version, updatedAt, { records: external.radar }) };
   const manifest = envelope(option.version, updatedAt, { generatedAt: updatedAt, files: Object.fromEntries(Object.entries(files).map(([name, file]) => [name, { path: name, masterVersion: option.version, recordCount: name === "chart-master.json" ? file.charts.length : file.records.length }])) });
   await mkdir(output, { recursive: true });

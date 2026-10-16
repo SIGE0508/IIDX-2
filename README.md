@@ -75,6 +75,16 @@ http://127.0.0.1:4173/tests/browser-indexeddb.html
 
 入力CSVは `data/master-input/`、生成先JSONは `public/masters/v1/` です。
 
+入力は `CHART_MASTER.csv` / `UNOFFICIAL.csv` / `ERETER.csv` / `NOTES_RADAR.csv` / `radar_data.csv` の5ファイルです。
+`radar_data.csv` の `chartId` と `確認済み`（TRUE/FALSE）を参照し、TRUEのRadarだけを配布します。
+フラグ欠落・不正値・重複・未照合は生成エラーです。TRUEの0.00は実値0として保持し、FALSEは一部入力済みでも配布しません。
+識別情報はCHART_MASTER／NOTES_RADARを正とし、radar_dataの古いsongID・曲名は警告として報告しても既存IDを変更しません。譜面種別の不一致はエラーです。
+元シートの更新を取り込む際も、既存のID・Alias・availabilityを消さず、新規譜面と承認済みの値だけを反映してください。
+PR #1対象の2,491譜面について、修正後の元シートとradar_dataのsongID・曲名はすべて一致しています。確認済み2,080譜面を配布し、未確認411譜面は配布Radarから除外します。
+今回の再同期はsongID163セルと曲名1セルのみです。その後の新規4譜面とNotes追加入力8件は別更新とし、このPRには取り込みません。元シートは編集しません。
+
+挑戦枠は現行のRadar必須条件を維持します。未確認譜面の候補除外、Radar順位付けの評価順、次帯が空の場合の扱いは今後の改善課題であり、この更新では推薦アルゴリズムを変更しません。
+
 ```powershell
 npm run generate:masters
 ```

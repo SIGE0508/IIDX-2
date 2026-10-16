@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "masterVersion": "0.1.0-dev",
-  "updatedAt": "2026-10-02T11:43:12.854Z",
+  "masterVersion": "2026.10.15",
+  "updatedAt": "2026-10-15T12:13:48.950Z",
   "songs": [
     {
       "songId": "S000001",
@@ -21283,6 +21283,54 @@
         "ereter": [],
         "notesRadar": []
       }
+    },
+    {
+      "songId": "S001764",
+      "title": "History of dj TAKA - single style collection -",
+      "debutVersion": "ZINRAI",
+      "debutVersionNumber": 34,
+      "aliases": {
+        "officialCsv": [],
+        "unofficialDifficulty": [],
+        "ereter": [],
+        "notesRadar": []
+      }
+    },
+    {
+      "songId": "S001765",
+      "title": "moffing 猫叉Master meets β2 黒パカミックス",
+      "debutVersion": "ZINRAI",
+      "debutVersionNumber": 34,
+      "aliases": {
+        "officialCsv": [],
+        "unofficialDifficulty": [],
+        "ereter": [],
+        "notesRadar": []
+      }
+    },
+    {
+      "songId": "S001766",
+      "title": "Fly Above-20th Anniversary Mix-",
+      "debutVersion": "ZINRAI",
+      "debutVersionNumber": 34,
+      "aliases": {
+        "officialCsv": [],
+        "unofficialDifficulty": [],
+        "ereter": [],
+        "notesRadar": []
+      }
+    },
+    {
+      "songId": "S001767",
+      "title": "gigadelic(WILD STYLE)",
+      "debutVersion": "ZINRAI",
+      "debutVersionNumber": 34,
+      "aliases": {
+        "officialCsv": [],
+        "unofficialDifficulty": [],
+        "ereter": [],
+        "notesRadar": []
+      }
     }
   ],
   "charts": [
@@ -41164,6 +41212,54 @@
       "chartType": "DPL",
       "officialLevel": 12,
       "notes": 1752,
+      "availability": "available"
+    },
+    {
+      "chartId": "CT_ID2488",
+      "songId": "S001764",
+      "chartType": "DPH",
+      "officialLevel": 10,
+      "notes": 1385,
+      "availability": "available"
+    },
+    {
+      "chartId": "CT_ID2489",
+      "songId": "S001764",
+      "chartType": "DPA",
+      "officialLevel": 12,
+      "notes": 1806,
+      "availability": "available"
+    },
+    {
+      "chartId": "CT_ID2490",
+      "songId": "S001765",
+      "chartType": "DPA",
+      "officialLevel": 11,
+      "notes": 1385,
+      "availability": "available"
+    },
+    {
+      "chartId": "CT_ID2491",
+      "songId": "S001766",
+      "chartType": "DPA",
+      "officialLevel": 10,
+      "notes": 1162,
+      "availability": "available"
+    },
+    {
+      "chartId": "CT_ID2492",
+      "songId": "S001767",
+      "chartType": "DPH",
+      "officialLevel": 10,
+      "notes": 938,
+      "availability": "available"
+    },
+    {
+      "chartId": "CT_ID2493",
+      "songId": "S001767",
+      "chartType": "DPA",
+      "officialLevel": 12,
+      "notes": 1583,
       "availability": "available"
     }
   ]
