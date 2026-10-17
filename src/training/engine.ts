@@ -111,15 +111,26 @@ export function calculateTraining(input: TrainingInput): TrainingResult {
   const strongAttributes = getStrongAttributes(input.player.notesRadar);
   let challengeCandidates: Array<{ chart: TrainingChart; score: number }> = [];
   if (mainBand !== null && mainBand < 12.7 && strongAttributes.length === 2) {
-    const challengeBand = roundDifficultyToTenths(mainBand + 0.1);
-    let scope = charts.filter(chart => sameBand(chart.effectiveDifficulty, challengeBand));
+    let scope = charts.filter(chart => chart.effectiveDifficulty > mainBand! && chart.effectiveDifficulty <= 12.7);
     if (mode === "PERFORMANCE" && phase === 12) scope = scope.filter(chart => chart.officialLevel === 12);
     else if (mode === "PERFORMANCE" && phase === 11) scope = scope.filter(chart => chart.officialLevel === 11 || (chart.officialLevel === 12 && chart.effectiveDifficulty < 12));
     else if (mode === "PERFORMANCE") scope = scope.filter(chart => chart.officialLevel === phase);
-    challengeCandidates = scope.filter(chart => !achieved(chart) && radar.has(chart.chartId)).map(chart => ({ chart, score: strongAttributes.reduce((sum, attribute) => sum + radar.get(chart.chartId)!.values[attribute], 0) / 2 }));
+    // Choose the next existing band before lamp/Radar filtering. An unusable
+    // next band must not silently escalate the challenge to a harder band.
+    const challengeBand = scope.reduce<number | null>((next, chart) => next === null || chart.effectiveDifficulty < next ? chart.effectiveDifficulty : next, null);
+    challengeCandidates = scope.filter(chart => challengeBand !== null && sameBand(chart.effectiveDifficulty, challengeBand) && !achieved(chart) && radar.has(chart.chartId)).map(chart => ({ chart, score: strongAttributes.reduce((sum, attribute) => sum + radar.get(chart.chartId)!.values[attribute], 0) / 2 }));
     challengeCandidates.sort((left, right) => {
       if (phase === 11 && left.chart.officialLevel !== right.chart.officialLevel) return left.chart.officialLevel === 11 ? -1 : 1;
-      return sortByEreter("ec")(left.chart, right.chart) || right.score - left.score || stable(left.chart, right.chart);
+      // Unlike the other categories, challenge ties compare Radar before chartId.
+      const leftEc = ereterValue(left.chart, "ec"); const rightEc = ereterValue(right.chart, "ec");
+      if (leftEc === null && rightEc !== null) return 1;
+      if (leftEc !== null && rightEc === null) return -1;
+      if (leftEc !== null && rightEc !== null) {
+        const personal = input.player.ereterOverall;
+        const difference = (personal === null ? 0 : Math.abs(leftEc - personal) - Math.abs(rightEc - personal)) || leftEc - rightEc;
+        if (difference !== 0) return difference;
+      }
+      return right.score - left.score || stable(left.chart, right.chart);
     });
   }
   const challengeTargets = challengeCandidates.slice(0, TRAINING_LIMITS.challenge).map(({ chart, score }) => recommendation(chart, "CHALLENGE", "STRONG_ATTRIBUTE", targetLamp(chart), null, score, [...strongAttributes]));
