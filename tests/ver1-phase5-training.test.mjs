@@ -165,6 +165,92 @@ test("level 11 challenge prioritizes level 11 before a level 12 introduction cha
   assert.deepEqual(result.recommendations.challengeTargets.map(item => item.chartId), ["challenge11", "intro12"]);
 });
 
+const challengeAttrs = { NOTES: 100, CHORD: 90, PEAK: 1, CHARGE: 1, SCRATCH: 1, SOF_LAN: 1 };
+const challengeRadar = (chartId, value) => ({ chartId, values: { NOTES: value, CHORD: value, PEAK: 0, CHARGE: 0, SCRATCH: 0, SOF_LAN: 0 }, verified: true, lastUpdated: now });
+const challengeEc = (chartId, ec) => ({ chartId, ec, hc: null, exh: null, lastUpdated: now });
+
+for (const [from, to, level, rank] of [[10.7, 11, 10, "NINTH"], [11.2, 11.4, 11, "NINTH"], [11.8, 12, 11, "NINTH"], [12, 12.1, 12, "TENTH"], [12.6, 12.7, 12, "KAIDEN"]]) {
+  test(`challenge selects existing band ${from} -> ${to} without changing progress`, () => {
+    const ten = level === 11 ? many(4, "passed-ten-", 10, 10.7) : [];
+    const items = [...ten, chart("main", level, from), chart("next", level, to), chart("too-high", level, to + 0.3)];
+    const records = [...ten.map(item => record(item.chart.chartId, "CLEAR")), record("main", "FAILED")];
+    const result = run(items, records, { rank, playerRadar: challengeAttrs, radar: [challengeRadar("next", 10), challengeRadar("too-high", 100)] });
+    assert.equal(result.mode, "PERFORMANCE");
+    assert.equal(result.phase, level);
+    assert.equal(result.mainBand, from);
+    assert.deepEqual(Array.from(result.recommendations.challengeTargets, item => item.chartId), ["next"]);
+  });
+}
+
+test("challenge applies performance level scope before selecting the next existing band", () => {
+  const ten = many(4, "ten-", 10, 10.7);
+  const items = [...ten, chart("main", 11, 11.8), chart("wrong-level", 10, 11.9), chart("same-level", 11, 12), chart("next-phase", 12, 12)];
+  const records = [...ten.map(item => record(item.chart.chartId, "CLEAR")), record("main", "FAILED")];
+  const result = run(items, records, { playerRadar: challengeAttrs, radar: [challengeRadar("wrong-level", 100), challengeRadar("same-level", 1), challengeRadar("next-phase", 100)] });
+  assert.equal(result.phase, 11);
+  assert.deepEqual(Array.from(result.recommendations.challengeTargets, item => item.chartId), ["same-level"]);
+  const level10 = run([chart("main", 10, 10.7), chart("wrong", 11, 11), chart("allowed", 10, 11.2)], [record("main", "FAILED")], { playerRadar: challengeAttrs, radar: [challengeRadar("wrong", 100), challengeRadar("allowed", 1)] });
+  assert.equal(level10.phase, 10);
+  assert.deepEqual(Array.from(level10.recommendations.challengeTargets, item => item.chartId), ["allowed"]);
+  const level12 = run([chart("main", 12, 12), chart("wrong", 11, 12.1), chart("allowed", 12, 12.2)], [record("main", "FAILED")], { rank: "TENTH", playerRadar: challengeAttrs, radar: [challengeRadar("wrong", 100), challengeRadar("allowed", 1)] });
+  assert.equal(level12.phase, 12);
+  assert.deepEqual(Array.from(level12.recommendations.challengeTargets, item => item.chartId), ["allowed"]);
+});
+
+test("initial challenge preserves cross-level and outside-initial-range eligibility", () => {
+  const result = run([chart("main", 10, 11.6), chart("outside-range", 12, 11.8)], [], { playerRadar: challengeAttrs, radar: [challengeRadar("outside-range", 10)] });
+  assert.equal(result.mode, "INITIAL");
+  assert.equal(result.phase, 10);
+  assert.equal(result.mainBand, 11.6);
+  assert.deepEqual(Array.from(result.recommendations.challengeTargets, item => item.chartId), ["outside-range"]);
+});
+
+test("challenge never skips the next band just because Radar or unmet lamps are absent", () => {
+  for (const lamp of ["FAILED", "CLEAR"]) {
+    const items = [chart("main", 10, 10.7), chart("blocked", 10, 11), chart("higher", 10, 11.2)];
+    const radar = [challengeRadar("higher", 100), ...(lamp === "CLEAR" ? [challengeRadar("blocked", 10)] : [])];
+    const result = run(items, [record("main", "FAILED"), record("blocked", lamp)], { playerRadar: challengeAttrs, radar });
+    assert.equal(result.recommendations.challengeTargets.length, 0);
+  }
+});
+
+test("challenge ignores unavailable bands, includes unknown, falls back and enforces 12.7 cap", () => {
+  const result = run([chart("main", 11, 11.6), chart("removed", 11, 11.9, "unavailable"), chart("fallback", 12, null, "unknown")], [], { playerRadar: challengeAttrs, radar: [challengeRadar("removed", 100), challengeRadar("fallback", 10)] });
+  assert.equal(result.mode, "INITIAL");
+  assert.deepEqual(Array.from(result.recommendations.challengeTargets, item => item.chartId), ["fallback"]);
+  assert.equal(result.recommendations.challengeTargets[0].effectiveDifficulty, 12);
+  const capped = run([chart("main", 12, 12.6), chart("above-cap", 12, 12.8)], [record("main", "FAILED")], { rank: "KAIDEN", playerRadar: challengeAttrs, radar: [challengeRadar("above-cap", 100)] });
+  assert.equal(capped.recommendations.challengeTargets.length, 0);
+});
+
+test("challenge compares Radar before chartId for equal and missing EC, stably across input order", () => {
+  for (const ec of [null, 8]) {
+    const items = [chart("main", 12, 12), chart("a-low", 12, 12.1), chart("z-high", 12, 12.1), chart("b-low", 12, 12.1)];
+    const options = { rank: "TENTH", playerRadar: challengeAttrs, ereter: ec === null ? [] : [challengeEc("a-low", ec), challengeEc("z-high", ec), challengeEc("b-low", ec)], radar: [challengeRadar("a-low", 10), challengeRadar("z-high", 20), challengeRadar("b-low", 10)] };
+    for (const ordered of [items, [items[0], ...items.slice(1).reverse()]]) {
+      const result = run(ordered, [record("main", "FAILED")], options);
+      assert.deepEqual(Array.from(result.recommendations.challengeTargets, item => item.chartId), ["z-high", "a-low", "b-low"]);
+    }
+  }
+});
+
+test("challenge keeps EC presence, personal distance and EC ahead of Radar", () => {
+  const items = [chart("main", 12, 12), ...["missing", "far", "higher-tie", "lower-tie", "closest"].map(id => chart(id, 12, 12.1))];
+  const input = { player: player("TENTH", challengeAttrs, { ereterOverall: 8 }), records: [record("main", "FAILED")], master: master(items, [challengeEc("far", 6), challengeEc("higher-tie", 9), challengeEc("lower-tie", 7), challengeEc("closest", 8)], [challengeRadar("missing", 999), challengeRadar("far", 500), challengeRadar("higher-tie", 200), challengeRadar("lower-tie", 1), challengeRadar("closest", 0)]) };
+  const before = JSON.stringify(input);
+  const result = calculateTraining(input);
+  assert.deepEqual(Array.from(result.recommendations.challengeTargets, item => item.chartId), ["closest", "lower-tie", "higher-tie", "far", "missing"]);
+  assert.equal(JSON.stringify(input), before);
+  const noPersonal = calculateTraining({ ...input, player: { ...input.player, ereterOverall: null } });
+  assert.deepEqual(Array.from(noPersonal.recommendations.challengeTargets, item => item.chartId), ["far", "lower-tie", "closest", "higher-tie", "missing"]);
+});
+
+test("challenge preserves official level priority ahead of EC and Radar", () => {
+  const ten = many(4, "ten-", 10, 10.7);
+  const result = run([...ten, chart("main", 11, 11.4), chart("same", 11, 11.6), chart("intro", 12, 11.6)], ten.map(item => record(item.chart.chartId, "CLEAR")), { playerRadar: challengeAttrs, ereter: [challengeEc("intro", 1)], radar: [challengeRadar("same", 1), challengeRadar("intro", 100)] });
+  assert.deepEqual(Array.from(result.recommendations.challengeTargets, item => item.chartId), ["same", "intro"]);
+});
+
 test("attribute practice uses bounded basic, standard and challenge bands", () => {
   const attrs = { NOTES: 100, CHORD: 0, PEAK: 0, CHARGE: 0, SCRATCH: 0, SOF_LAN: 0 };
   const radar = (chartId, value) => ({ chartId, values: { NOTES: value, CHORD: 0, PEAK: 0, CHARGE: 0, SCRATCH: 0, SOF_LAN: 0 }, verified: true, lastUpdated: now });
