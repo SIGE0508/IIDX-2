@@ -12,7 +12,7 @@ Googleスプレッドシートを元に、次の5ファイルをUTF-8 CSVとし�
 
 `radar_data.csv`の必須列は`chartId`と`確認済み`です。確認済みはTRUE/FALSEで指定します。フラグ欠落・不正値・chartId重複・未照合は生成エラーです。
 
-現在は元シートの17列（chartId / SongID / タイトル / 譜面 / LV / 初出Ver / 初出Ver(数) / 確認済み / ノーツ数 / 不足項目 / 不足項目数 / NOTES / CHORD / PEAK / CHARGE / SCRATCH / SOF-LAN）を保持しています。存在しない列を推測で追加しません。
+現在は元シートの21列を保持しています。従来の17列（chartId / SongID / タイトル / 譜面 / LV / 初出Ver / 初出Ver(数) / 確認済み / ノーツ数 / 不足項目 / 不足項目数 / NOTES / CHORD / PEAK / CHARGE / SCRATCH / SOF-LAN）に、未更新 / 新規更新 / 楽曲データ出典 / レーダー照合が追加されています。追加4列は管理情報で、配布可否は引き続きchartIdと確認済みから決めます。存在しない列を推測で追加しません。
 
 TRUEの譜面だけを`notes-radar.json`に`verified: true`として出力します。確認済みの0.00は実値0として保持します。FALSEは一部に数値があっても配布せず、自動でTRUEへ変更しません。他のマスターから譜面を削除する意味ではありません。
 
@@ -23,9 +23,9 @@ UNOFFICIALの難易度空欄はnullとして出力します。ERETERは個人履
 生成コマンド:
 
 ```powershell
-npm run generate:masters -- --version 2026.10.15
+npm run generate:masters -- --version 2026.10.24
 ```
 
 masterVersionはアプリのバージョンと独立しています。省略時は開発用`0.1.0-dev`です。出力先は`public/masters/v1/`で、chart-master / unofficial / ereter / notes-radarの4 JSONとmanifestを生成します。JSONは手編集しません。
 
-PR #1対象は2,491譜面、確認済み2,080譜面、未確認411譜面です。修正後の元シートとのsongID・曲名不一致は0件です。後から追加された4譜面とNotes8件は今回の同期対象外です。
+2026-10-24更新は2,495譜面、確認済み2,259譜面、未確認236譜面です。前回保留した新規4譜面とNotes8件も反映しています。ERETERは763件で、追加3件の空欄はnullとして扱います。ERETER.csvにはレベル / 初出Ver / Ver数の説明列が追加されていますが、生成器は既存のヘッダー名で参照します。

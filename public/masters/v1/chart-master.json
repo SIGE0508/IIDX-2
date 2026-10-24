@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "masterVersion": "2026.10.15",
-  "updatedAt": "2026-10-15T12:13:48.950Z",
+  "masterVersion": "2026.10.24",
+  "updatedAt": "2026-10-24T07:57:09.142Z",
   "songs": [
     {
       "songId": "S000001",
@@ -21331,6 +21331,42 @@
         "ereter": [],
         "notesRadar": []
       }
+    },
+    {
+      "songId": "S001768",
+      "title": "GOLD RUSH (all-or-nothing MIX)",
+      "debutVersion": "ZINRAI",
+      "debutVersionNumber": 34,
+      "aliases": {
+        "officialCsv": [],
+        "unofficialDifficulty": [],
+        "ereter": [],
+        "notesRadar": []
+      }
+    },
+    {
+      "songId": "S001769",
+      "title": "I'm so Happy (20th Anniv.Mix)",
+      "debutVersion": "ZINRAI",
+      "debutVersionNumber": 34,
+      "aliases": {
+        "officialCsv": [],
+        "unofficialDifficulty": [],
+        "ereter": [],
+        "notesRadar": []
+      }
+    },
+    {
+      "songId": "S001770",
+      "title": "恋する☆宇宙戦争っ!! (恋する★ハードコアRemix)",
+      "debutVersion": "ZINRAI",
+      "debutVersionNumber": 34,
+      "aliases": {
+        "officialCsv": [],
+        "unofficialDifficulty": [],
+        "ereter": [],
+        "notesRadar": []
+      }
     }
   ],
   "charts": [
@@ -41131,7 +41167,7 @@
       "songId": "S001726",
       "chartType": "DPA",
       "officialLevel": 12,
-      "notes": null,
+      "notes": 1431,
       "availability": "available"
     },
     {
@@ -41139,7 +41175,7 @@
       "songId": "S001727",
       "chartType": "DPA",
       "officialLevel": 12,
-      "notes": null,
+      "notes": 1602,
       "availability": "available"
     },
     {
@@ -41147,7 +41183,7 @@
       "songId": "S001728",
       "chartType": "DPA",
       "officialLevel": 12,
-      "notes": null,
+      "notes": 1585,
       "availability": "available"
     },
     {
@@ -41155,7 +41191,7 @@
       "songId": "S001762",
       "chartType": "DPA",
       "officialLevel": 12,
-      "notes": null,
+      "notes": 1508,
       "availability": "available"
     },
     {
@@ -41163,7 +41199,7 @@
       "songId": "S001729",
       "chartType": "DPA",
       "officialLevel": 12,
-      "notes": null,
+      "notes": 2009,
       "availability": "available"
     },
     {
@@ -41171,7 +41207,7 @@
       "songId": "S001731",
       "chartType": "DPA",
       "officialLevel": 12,
-      "notes": null,
+      "notes": 1940,
       "availability": "available"
     },
     {
@@ -41179,7 +41215,7 @@
       "songId": "S001732",
       "chartType": "DPA",
       "officialLevel": 12,
-      "notes": null,
+      "notes": 1588,
       "availability": "available"
     },
     {
@@ -41187,7 +41223,7 @@
       "songId": "S001733",
       "chartType": "DPA",
       "officialLevel": 12,
-      "notes": null,
+      "notes": 1638,
       "availability": "available"
     },
     {
@@ -41260,6 +41296,38 @@
       "chartType": "DPA",
       "officialLevel": 12,
       "notes": 1583,
+      "availability": "available"
+    },
+    {
+      "chartId": "CT_ID2494",
+      "songId": "S001768",
+      "chartType": "DPA",
+      "officialLevel": 11,
+      "notes": 1342,
+      "availability": "available"
+    },
+    {
+      "chartId": "CT_ID2495",
+      "songId": "S001769",
+      "chartType": "DPA",
+      "officialLevel": 11,
+      "notes": 1275,
+      "availability": "available"
+    },
+    {
+      "chartId": "CT_ID2496",
+      "songId": "S001770",
+      "chartType": "DPH",
+      "officialLevel": 10,
+      "notes": 1257,
+      "availability": "available"
+    },
+    {
+      "chartId": "CT_ID2497",
+      "songId": "S001770",
+      "chartType": "DPA",
+      "officialLevel": 12,
+      "notes": 1806,
       "availability": "available"
     }
   ]
