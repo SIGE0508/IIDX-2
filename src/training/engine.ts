@@ -2,7 +2,7 @@ import { effectiveDifficulty, isTrainingEligibleChart, roundDifficultyToTenths }
 import { RADAR_ATTRIBUTES, meetsLamp } from "../domain/constants";
 import type { ChartMaster, ClearLamp, EreterChartDataRecord, NotesRadarRecord, PlayerChartRecord, RadarAttribute } from "../domain/types";
 import { INITIAL_TRAINING_RANGES, LEVEL_12_BANDS, PERFORMANCE_START_LEVEL, TRAINING_DATA_COVERAGE_THRESHOLD, TRAINING_LIMITS, TRAINING_PROGRESS_THRESHOLD } from "./constants";
-import type { TrainingChart, TrainingInput, TrainingProgress, TrainingRate, TrainingRecommendation, TrainingResult } from "./types";
+import type { TrainingCalculation, TrainingChart, TrainingInput, TrainingProgress, TrainingRate, TrainingRecommendation, TrainingResult } from "./types";
 
 const sameBand = (left: number, right: number) => Math.round(left * 10) === Math.round(right * 10);
 const targetLamp = (chart: Pick<ChartMaster, "officialLevel">): ClearLamp => chart.officialLevel === 12 ? "EASY_CLEAR" : "CLEAR";
@@ -28,6 +28,10 @@ export function getStrongAttributes(values: Readonly<Record<RadarAttribute, numb
 }
 
 export function calculateTraining(input: TrainingInput): TrainingResult {
+  return calculateTrainingWithCandidates(input).training;
+}
+
+export function calculateTrainingWithCandidates(input: TrainingInput): TrainingCalculation {
   const records = new Map(input.records.filter(record => record.playerId === input.player.playerId).map(record => [record.chartId, record]));
   const unofficial = new Map(input.master.unofficial.records.map(record => [record.chartId, record]));
   const ereter = new Map(input.master.ereter.records.map(record => [record.chartId, record]));
@@ -93,20 +97,24 @@ export function calculateTraining(input: TrainingInput): TrainingResult {
     const supplements = clearScope.filter(chart => sameBand(chart.effectiveDifficulty, supplementBand) && !achieved(chart)).sort(sortByEreter("ec"));
     clearCandidates.push(...supplements);
   }
-  const clearTargets = clearCandidates.slice(0, TRAINING_LIMITS.clear).map(chart => recommendation(chart, "CLEAR_TARGET", mode === "INITIAL" ? "INITIAL_BAND" : "MAIN_BAND", targetLamp(chart), chart.officialLevel === 12 ? ereterValue(chart, "ec") : null));
+  const clearTargetsAll = clearCandidates.map(chart => recommendation(chart, "CLEAR_TARGET", mode === "INITIAL" ? "INITIAL_BAND" : "MAIN_BAND", targetLamp(chart), chart.officialLevel === 12 ? ereterValue(chart, "ec") : null));
+  const clearTargets = clearTargetsAll.slice(0, TRAINING_LIMITS.clear);
 
   let cleanupCandidates: TrainingChart[] = [];
   if (mode === "PERFORMANCE" && mainBand !== null) {
     cleanupCandidates = charts.filter(chart => chart.officialLevel === phase && chart.effectiveDifficulty < mainBand! && (phase !== 12 || chart.effectiveDifficulty >= 12) && !achieved(chart));
     cleanupCandidates.sort((left, right) => right.effectiveDifficulty - left.effectiveDifficulty || (phase === 12 ? sortByEreter("ec")(left, right) : stable(left, right)));
   }
-  const cleanupTargets = cleanupCandidates.slice(0, TRAINING_LIMITS.cleanup).map(chart => recommendation(chart, "CLEANUP", "LOWER_BAND", targetLamp(chart), ereterValue(chart, "ec")));
+  const cleanupTargetsAll = cleanupCandidates.map(chart => recommendation(chart, "CLEANUP", "LOWER_BAND", targetLamp(chart), ereterValue(chart, "ec")));
+  const cleanupTargets = cleanupTargetsAll.slice(0, TRAINING_LIMITS.cleanup);
 
   const hardScope = mode === "INITIAL" ? initialCharts : charts;
   const hardCandidates = phase === 12 ? hardScope.filter(chart => chart.officialLevel === 12 && (chart.currentLamp === "EASY_CLEAR" || chart.currentLamp === "CLEAR") && ereterValue(chart, "hc") !== null).sort(sortByEreter("hc")) : [];
-  const hardTargets = hardCandidates.slice(0, TRAINING_LIMITS.hard).map(chart => recommendation(chart, "HARD_TARGET", "HARD_UPGRADE", "HARD_CLEAR", ereterValue(chart, "hc")));
+  const hardTargetsAll = hardCandidates.map(chart => recommendation(chart, "HARD_TARGET", "HARD_UPGRADE", "HARD_CLEAR", ereterValue(chart, "hc")));
+  const hardTargets = hardTargetsAll.slice(0, TRAINING_LIMITS.hard);
   const exhCandidates = phase === 12 ? hardScope.filter(chart => chart.officialLevel === 12 && chart.currentLamp === "HARD_CLEAR" && ereterValue(chart, "exh") !== null).sort(sortByEreter("exh")) : [];
-  const exhTargets = exhCandidates.slice(0, TRAINING_LIMITS.exh).map(chart => recommendation(chart, "EXH_TARGET", "EXH_UPGRADE", "EX_HARD_CLEAR", ereterValue(chart, "exh")));
+  const exhTargetsAll = exhCandidates.map(chart => recommendation(chart, "EXH_TARGET", "EXH_UPGRADE", "EX_HARD_CLEAR", ereterValue(chart, "exh")));
+  const exhTargets = exhTargetsAll.slice(0, TRAINING_LIMITS.exh);
 
   const strongAttributes = getStrongAttributes(input.player.notesRadar);
   let challengeCandidates: Array<{ chart: TrainingChart; score: number }> = [];
@@ -133,7 +141,8 @@ export function calculateTraining(input: TrainingInput): TrainingResult {
       return right.score - left.score || stable(left.chart, right.chart);
     });
   }
-  const challengeTargets = challengeCandidates.slice(0, TRAINING_LIMITS.challenge).map(({ chart, score }) => recommendation(chart, "CHALLENGE", "STRONG_ATTRIBUTE", targetLamp(chart), null, score, [...strongAttributes]));
+  const challengeTargetsAll = challengeCandidates.map(({ chart, score }) => recommendation(chart, "CHALLENGE", "STRONG_ATTRIBUTE", targetLamp(chart), null, score, [...strongAttributes]));
+  const challengeTargets = challengeTargetsAll.slice(0, TRAINING_LIMITS.challenge);
 
   let attributePracticeCandidates: Array<{ chart: TrainingChart; percentile: number; playable: number; detailThreshold: boolean; value: number }> = [];
   if (mainBand !== null && input.player.notesRadar && input.selectedAttribute) {
@@ -164,5 +173,6 @@ export function calculateTraining(input: TrainingInput): TrainingResult {
     .sort((left, right) => right.percentile - left.percentile || right.value - left.value || Number(right.detailThreshold) - Number(left.detailThreshold) || right.playable - left.playable || stable(left.chart, right.chart))
     .slice(0, group.limit).map(({ chart, value }) => recommendation(chart, "ATTRIBUTE_PRACTICE", group.reason, targetLamp(chart), null, value, input.selectedAttribute ? [input.selectedAttribute] : []))));
 
-  return { playerId: input.player.playerId, mode, initialRange, coverage, phase, mainBand, officialProgress, level12Progress, introductionBands, strongAttributes, attributePracticeAvailable: input.player.notesRadar !== null, recommendations: { clearTargets, cleanupTargets, hardTargets, exhTargets, challengeTargets, attributePracticeTargets } };
+  const training: TrainingResult = { playerId: input.player.playerId, mode, initialRange, coverage, phase, mainBand, officialProgress, level12Progress, introductionBands, strongAttributes, attributePracticeAvailable: input.player.notesRadar !== null, recommendations: { clearTargets, cleanupTargets, hardTargets, exhTargets, challengeTargets, attributePracticeTargets } };
+  return { training, charts, ereter, candidates: { clearTargets: clearTargetsAll, cleanupTargets: cleanupTargetsAll, hardTargets: hardTargetsAll, exhTargets: exhTargetsAll, challengeTargets: challengeTargetsAll } };
 }

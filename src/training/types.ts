@@ -1,4 +1,4 @@
-import type { ChartMaster, ClearLamp, HighestDpRank, Player, PlayerChartRecord, RadarAttribute } from "../domain/types";
+import type { ChartMaster, ClearLamp, EreterChartDataRecord, HighestDpRank, Player, PlayerChartRecord, RadarAttribute } from "../domain/types";
 import type { MasterSet } from "../master/types";
 
 export type TrainingMode = "INITIAL" | "PERFORMANCE";
@@ -46,3 +46,11 @@ export interface TrainingChart extends ChartMaster {
 }
 
 export type RankRangeMap = Readonly<Record<HighestDpRank, InitialTrainingRange>>;
+
+/** Ephemeral calculation detail; not a user-data contract. */
+export interface TrainingCalculation {
+  training: TrainingResult;
+  charts: readonly TrainingChart[];
+  ereter: ReadonlyMap<string, EreterChartDataRecord>;
+  candidates: Record<"clearTargets" | "cleanupTargets" | "hardTargets" | "exhTargets" | "challengeTargets", readonly TrainingRecommendation[]>;
+}
