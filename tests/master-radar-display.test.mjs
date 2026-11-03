@@ -31,8 +31,9 @@ test("TRACKER renders all October and November additions and retains charts with
   const master = { chartMaster: read("chart-master.json"), unofficial: read("unofficial.json"), ereter: read("ereter.json"), notesRadar: read("notes-radar.json"), manifest: read("manifest.json") };
   const { TrackerScreen } = load(path.join(root, "src/features/dashboard/Screens.tsx"));
   const records = new Map();
+  const { createTrackerFilters } = load(path.join(root, "src/features/dashboard/tracker.ts"));
   const before = JSON.stringify(master);
-  const html = renderToStaticMarkup(React.createElement(TrackerScreen, { master, records, onSelect: () => {} }));
+  const html = renderToStaticMarkup(React.createElement(TrackerScreen, { master, records, onSelect: () => {}, filters: createTrackerFilters(), onFiltersChange: () => {}, expandedChartIds: new Set(), onToggleRadar: () => {} }));
   const songs = new Map(master.chartMaster.songs.map(row => [row.songId, row]));
   const radarIds = new Set(master.notesRadar.records.map(row => row.chartId));
   const newCharts = master.chartMaster.charts.filter(row => Number(row.chartId.slice(5)) >= 2488);
