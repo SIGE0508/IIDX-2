@@ -10,12 +10,12 @@
 
 各JSONのschemaVersion / masterVersion / updatedAtを維持しています。確認済みの0.00は実値0として出力し、未確認値をverifiedとして出力しません。未確認譜面もchart-master等には残り、プレイヤー記録を削除しません。
 
-現在のmasterVersionは`2026.10.24`、schemaVersionは1です。件数はchart-masterのchartsが2,495、unofficialが2,495、ereterが763、notes-radarが2,259です。未確認236譜面はnotes-radarだけから除外します。
+現在のmasterVersionは`2026.11.01`、schemaVersionは1です。件数はchart-masterのchartsが2,503、unofficialが2,503、ereterが765、notes-radarが2,496です。未確認7譜面はnotes-radarだけから除外します。
 
 ```powershell
-npm run generate:masters -- --version 2026.10.24
+npm run generate:masters -- --version 2026.11.01
 ```
 
 masterVersionはアプリのバージョンと独立しています。生成器は共通マスターの参照整合性を検証します。再生成後は関連テスト・型チェック・通常ビルド・Pagesビルドを確認してください。
 
-2026-10-24更新では新規4譜面、既存Notes追加8件、非公式難易度変更44件を反映しています。Radarは180件追加・1件除外で、CT_ID0327は確認済みFALSEのため配布Radarから除外します（譜面本体・ユーザー記録は削除しません）。再現性テストでは生成済みmanifestのmasterVersionとgeneratedAtを指定して一時フォルダへ再生成し、5 JSONの完全一致を確認します。
+2026-11-01更新では新規6曲・8譜面、非公式難易度の未設定解消13件、ERETER追加2件を反映しています。Radarは既存232譜面の確認完了と新規5譜面で計237件追加、確認解除・除外は0件です。CT_ID0327も確認済みTRUEとして配布します。未確認のCT_ID0631 / CT_ID2144 / CT_ID2439 / CT_ID2440 / CT_ID2502 / CT_ID2504 / CT_ID2505は譜面本体を保持し、Radarのみ除外します。再現性テストでは生成済みmanifestのmasterVersionとgeneratedAtを指定して一時フォルダへ再生成し、5 JSONの完全一致を確認します。
