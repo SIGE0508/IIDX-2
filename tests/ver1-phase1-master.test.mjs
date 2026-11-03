@@ -121,21 +121,21 @@ test("October Radar sync preserves all existing identities, aliases and availabi
   for (const [id, notes] of addedNotes) assert.equal(set.chartMaster.charts.find(row => row.chartId === id).notes, notes);
   assert.equal(hash(set.chartMaster.charts.filter(row => Number(row.chartId.slice(5)) < 2488).map(row => addedNotes.has(row.chartId) ? { ...row, notes: null } : row)), "08b50a5d06d60284d7a1803de529b12bfb6907e6d273770dd17f9cf5810ffe27");
   assert.equal(hash(set.chartMaster.songs.filter(row => Number(row.songId.slice(1)) < 1764)), "e2c400ee835a6e7d29f126e0892f8483aa746f024d90e2f768bc9020d5db88ac");
-  assert.equal(set.chartMaster.charts.length, 2495);
-  assert.equal(set.notesRadar.records.length, 2259);
+  assert.equal(set.chartMaster.charts.length, 2503);
+  assert.equal(set.notesRadar.records.length, 2496);
   const radarMap = new Map(set.notesRadar.records.map(row => [row.chartId, row]));
   assert.equal(radarMap.get("CT_ID0125").values.SOF_LAN, 177.65);
   const statusLines = readFileSync(path.join(root, "data/master-input/radar_data.csv"), "utf8").trim().split(/\r?\n/);
   // IDs and TRUE/FALSE are checked through published membership, not CSV title parsing.
   const falseIds = statusLines.slice(1).filter(line => /,FALSE,/.test(line)).map(line => line.split(",")[0]);
-  assert.equal(falseIds.length, 236);
+  assert.equal(falseIds.length, 7);
   for (const id of falseIds) assert.equal(radarMap.has(id), false);
   for (const id of ["CT_ID2488", "CT_ID2489", "CT_ID2490", "CT_ID2491", "CT_ID2492", "CT_ID2493"]) {
     const item = set.chartMaster.charts.find(row => row.chartId === id);
     const song = set.chartMaster.songs.find(row => row.songId === item.songId);
     assert.equal(lookup.resolveChart({ title: song.title, chartType: item.chartType, source: "officialCsv" }, set.chartMaster.songs, set.chartMaster.charts).chart.chartId, id);
     assert.equal(radarMap.has(id), true);
-    const expectedDifficulty = { CT_ID2488: 10.5, CT_ID2489: 12.1, CT_ID2490: 11.6, CT_ID2491: 10, CT_ID2492: 10, CT_ID2493: 12 };
+    const expectedDifficulty = { CT_ID2488: 10.5, CT_ID2489: 12.1, CT_ID2490: 11.6, CT_ID2491: 10, CT_ID2492: 10, CT_ID2493: 12.2 };
     assert.equal(chart.effectiveDifficulty(item, set.unofficial.records.find(row => row.chartId === id)), expectedDifficulty[id]);
   }
   const { calculateTraining } = load("src/training/engine.ts");
@@ -148,12 +148,12 @@ test("October Radar sync preserves all existing identities, aliases and availabi
   assert.equal(JSON.stringify(set), inputBefore);
 });
 
-test("October 24 distribution includes four new charts, confirmed Radar and nullable auxiliary data", () => {
+test("November distribution retains October additions with the newly confirmed difficulty values", () => {
   const read = name => JSON.parse(readFileSync(path.join(root, "public/masters/v1", name), "utf8"));
   const set = validation.validateMasterSet({ manifest: read("manifest.json"), chartMaster: read("chart-master.json"), unofficial: read("unofficial.json"), ereter: read("ereter.json"), notesRadar: read("notes-radar.json") });
-  assert.equal(set.manifest.masterVersion, "2026.10.24");
-  assert.equal(set.unofficial.records.length, 2495);
-  assert.equal(set.ereter.records.length, 763);
+  assert.equal(set.manifest.masterVersion, "2026.11.01");
+  assert.equal(set.unofficial.records.length, 2503);
+  assert.equal(set.ereter.records.length, 765);
   const charts = new Map(set.chartMaster.charts.map(row => [row.chartId, row]));
   const unofficial = new Map(set.unofficial.records.map(row => [row.chartId, row.difficulty]));
   const radar = new Map(set.notesRadar.records.map(row => [row.chartId, row]));
@@ -161,23 +161,63 @@ test("October 24 distribution includes four new charts, confirmed Radar and null
     const item = charts.get(id);
     assert.equal(item.songId, songId); assert.equal(item.chartType, type); assert.equal(item.officialLevel, level);
     assert.equal(item.notes, notes); assert.equal(item.availability, "available");
-    assert.equal(unofficial.get(id), null); assert.equal(chart.effectiveDifficulty(item, { difficulty: null }), level);
+    const expectedDifficulty = { CT_ID2494: 11.8, CT_ID2495: 10.7, CT_ID2496: 10, CT_ID2497: 12.4 };
+    assert.equal(unofficial.get(id), expectedDifficulty[id]); assert.equal(chart.effectiveDifficulty(item, { difficulty: null }), level);
     assert.equal(radar.get(id).verified, true);
     const song = set.chartMaster.songs.find(row => row.songId === songId);
     assert.equal(lookup.resolveChart({ title: song.title, chartType: type, source: "officialCsv" }, set.chartMaster.songs, set.chartMaster.charts).chart.chartId, id);
   }
   assert.equal(unofficial.get("CT_ID2485"), 11.4); assert.equal(unofficial.get("CT_ID2486"), 12.3); assert.equal(unofficial.get("CT_ID2487"), 12.5);
-  assert.equal(set.unofficial.records.filter(row => row.difficulty === null).length, 13);
+  assert.equal(set.unofficial.records.filter(row => row.difficulty === null).length, 6);
   for (const id of ["CT_ID2489", "CT_ID2493", "CT_ID2497"]) {
     const row = set.ereter.records.find(row => row.chartId === id);
     assert.equal(row.ec, null); assert.equal(row.hc, null); assert.equal(row.exh, null);
   }
-  assert.equal(radar.has("CT_ID0327"), false);
+  assert.equal(radar.get("CT_ID0327").verified, true);
+  assert.equal(radar.get("CT_ID0327").values.CHORD, 42.01);
+  assert.equal(radar.get("CT_ID0327").values.SOF_LAN, 57.14);
   assert.equal(charts.has("CT_ID0327"), true);
   assert.equal(radar.get("CT_ID1273").values.NOTES, 103.42);
   assert.equal(radar.get("CT_ID2496").values.CHARGE, 0);
   assert.equal(radar.get("CT_ID1642").values.CHARGE, 162.30);
   assert.equal(radar.get("CT_ID1859").values.SOF_LAN, 173.38);
+});
+
+test("November 1 master preserves October identities and outputs only the confirmed Radar set", () => {
+  const read = name => JSON.parse(readFileSync(path.join(root, "public/masters/v1", name), "utf8"));
+  const set = validation.validateMasterSet({ manifest: read("manifest.json"), chartMaster: read("chart-master.json"), unofficial: read("unofficial.json"), ereter: read("ereter.json"), notesRadar: read("notes-radar.json") });
+  const hash = value => createHash("sha256").update(JSON.stringify(value)).digest("hex");
+  // Entire October 24 arrays: all existing IDs, Notes, aliases and availability.
+  assert.equal(hash(set.chartMaster.charts.filter(row => Number(row.chartId.slice(5)) < 2498)), "93d58fd1986d7bd5f100cf6e8bc9bf8db8a78b09200b08ed9fa46cec6a533a32");
+  assert.equal(hash(set.chartMaster.songs.filter(row => Number(row.songId.slice(1)) < 1771)), "f3438129a812217c05fe25d9a8d9b3a8e6d655494f143258e19a9d48dd6f8df6");
+  assert.equal(set.chartMaster.songs.length, 1774);
+  const charts = new Map(set.chartMaster.charts.map(row => [row.chartId, row]));
+  const radar = new Map(set.notesRadar.records.map(row => [row.chartId, row]));
+  const difficulty = new Map(set.unofficial.records.map(row => [row.chartId, row.difficulty]));
+  const unconfirmed = ["CT_ID0631", "CT_ID2144", "CT_ID2439", "CT_ID2440", "CT_ID2502", "CT_ID2504", "CT_ID2505"];
+  assert.equal(set.chartMaster.charts.length - set.notesRadar.records.length, unconfirmed.length);
+  for (const id of unconfirmed) { assert.equal(charts.has(id), true); assert.equal(radar.has(id), false); }
+  for (const [id, songId, type, level, notes] of [
+    ["CT_ID2498", "S001771", "DPA", 11, 1363], ["CT_ID2499", "S001772", "DPA", 11, 1533],
+    ["CT_ID2500", "S001773", "DPH", 10, 914], ["CT_ID2501", "S001773", "DPA", 12, 1286],
+    ["CT_ID2502", "S001774", "DPH", 10, null], ["CT_ID2503", "S001774", "DPA", 12, 1915],
+    ["CT_ID2504", "S001775", "DPA", 10, 1305], ["CT_ID2505", "S001776", "DPA", 10, 1154],
+  ]) {
+    const item = charts.get(id);
+    assert.equal(item.songId, songId); assert.equal(item.chartType, type); assert.equal(item.officialLevel, level);
+    assert.equal(item.notes, notes); assert.equal(item.availability, "available");
+    assert.equal(radar.has(id), !unconfirmed.includes(id));
+    const song = set.chartMaster.songs.find(row => row.songId === songId);
+    assert.equal(lookup.resolveChart({ title: song.title, chartType: type, source: "officialCsv" }, set.chartMaster.songs, set.chartMaster.charts).chart.chartId, id);
+  }
+  for (const [id, value] of [["CT_ID2477", 12.1], ["CT_ID2478", 12.4], ["CT_ID2479", 12.1], ["CT_ID2480", 12.1], ["CT_ID2481", 12.4], ["CT_ID2482", 12.3], ["CT_ID2483", 12.2], ["CT_ID2484", 12.3], ["CT_ID2493", 12.2], ["CT_ID2494", 11.8], ["CT_ID2495", 10.7], ["CT_ID2496", 10], ["CT_ID2497", 12.4]]) assert.equal(difficulty.get(id), value);
+  for (const id of ["CT_ID2501", "CT_ID2503"]) {
+    const item = set.ereter.records.find(row => row.chartId === id);
+    assert.equal(item.ec, null); assert.equal(item.hc, null); assert.equal(item.exh, null);
+  }
+  assert.equal(radar.get("CT_ID2498").values.SOF_LAN, 0);
+  for (const row of set.notesRadar.records) assert.equal(row.verified, true);
+  for (const file of [set.chartMaster, set.unofficial, set.ereter, set.notesRadar]) { assert.equal(file.schemaVersion, 1); assert.equal(file.masterVersion, set.manifest.masterVersion); }
 });
 
 test("current input CSV regenerates every distributed master exactly and loads through the loader", async () => {

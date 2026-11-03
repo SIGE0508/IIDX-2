@@ -1,28 +1,28 @@
 {
   "schemaVersion": 1,
-  "masterVersion": "2026.10.24",
-  "updatedAt": "2026-10-24T07:57:09.142Z",
-  "generatedAt": "2026-10-24T07:57:09.142Z",
+  "masterVersion": "2026.11.01",
+  "updatedAt": "2026-11-01T06:23:09.045Z",
+  "generatedAt": "2026-11-01T06:23:09.045Z",
   "files": {
     "chart-master.json": {
       "path": "chart-master.json",
-      "masterVersion": "2026.10.24",
-      "recordCount": 2495
+      "masterVersion": "2026.11.01",
+      "recordCount": 2503
     },
     "unofficial.json": {
       "path": "unofficial.json",
-      "masterVersion": "2026.10.24",
-      "recordCount": 2495
+      "masterVersion": "2026.11.01",
+      "recordCount": 2503
     },
     "ereter.json": {
       "path": "ereter.json",
-      "masterVersion": "2026.10.24",
-      "recordCount": 763
+      "masterVersion": "2026.11.01",
+      "recordCount": 765
     },
     "notes-radar.json": {
       "path": "notes-radar.json",
-      "masterVersion": "2026.10.24",
-      "recordCount": 2259
+      "masterVersion": "2026.11.01",
+      "recordCount": 2496
     }
   }
 }

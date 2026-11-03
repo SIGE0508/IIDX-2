@@ -26,7 +26,7 @@ function load(filename) {
   return module.exports;
 }
 
-test("TRACKER renders all ten October additions and retains charts without distributed Radar", () => {
+test("TRACKER renders all October and November additions and retains charts without distributed Radar", () => {
   const read = name => JSON.parse(readFileSync(path.join(root, "public/masters/v1", name), "utf8"));
   const master = { chartMaster: read("chart-master.json"), unofficial: read("unofficial.json"), ereter: read("ereter.json"), notesRadar: read("notes-radar.json"), manifest: read("manifest.json") };
   const { TrackerScreen } = load(path.join(root, "src/features/dashboard/Screens.tsx"));
@@ -36,7 +36,7 @@ test("TRACKER renders all ten October additions and retains charts without distr
   const songs = new Map(master.chartMaster.songs.map(row => [row.songId, row]));
   const radarIds = new Set(master.notesRadar.records.map(row => row.chartId));
   const newCharts = master.chartMaster.charts.filter(row => Number(row.chartId.slice(5)) >= 2488);
-  assert.equal(newCharts.length, 10);
+  assert.equal(newCharts.length, 18);
   for (const chart of newCharts) {
     const text = renderToStaticMarkup(React.createElement("strong", null, songs.get(chart.songId).title));
     assert.ok(html.includes(`${text} <small>${chart.chartType} / ☆${chart.officialLevel}`));

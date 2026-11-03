@@ -23,9 +23,9 @@ UNOFFICIALの難易度空欄はnullとして出力します。ERETERは個人履
 生成コマンド:
 
 ```powershell
-npm run generate:masters -- --version 2026.10.24
+npm run generate:masters -- --version 2026.11.01
 ```
 
 masterVersionはアプリのバージョンと独立しています。省略時は開発用`0.1.0-dev`です。出力先は`public/masters/v1/`で、chart-master / unofficial / ereter / notes-radarの4 JSONとmanifestを生成します。JSONは手編集しません。
 
-2026-10-24更新は2,495譜面、確認済み2,259譜面、未確認236譜面です。前回保留した新規4譜面とNotes8件も反映しています。ERETERは763件で、追加3件の空欄はnullとして扱います。ERETER.csvにはレベル / 初出Ver / Ver数の説明列が追加されていますが、生成器は既存のヘッダー名で参照します。
+2026-11-01更新は2,503譜面、確認済み2,496譜面、未確認7譜面です。新規6曲・8譜面、非公式難易度の未設定解消13件、ERETER追加2件を反映しています。ERETERは765件で、追加2件のEC / HC / EXH空欄はnullとして扱います。Vairocana DPHのNotesは914、未確認の露照陀仏 DPHのNotes空欄はnullです。ERETER.csvのレベル / 初出Ver / Ver数は説明列で、生成器は既存のヘッダー名で参照します。

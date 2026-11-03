@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "masterVersion": "2026.10.24",
-  "updatedAt": "2026-10-24T07:57:09.142Z",
+  "masterVersion": "2026.11.01",
+  "updatedAt": "2026-11-01T06:23:09.045Z",
   "songs": [
     {
       "songId": "S000001",
@@ -21367,6 +21367,78 @@
         "ereter": [],
         "notesRadar": []
       }
+    },
+    {
+      "songId": "S001771",
+      "title": "HAMSTER",
+      "debutVersion": "ZINRAI",
+      "debutVersionNumber": 34,
+      "aliases": {
+        "officialCsv": [],
+        "unofficialDifficulty": [],
+        "ereter": [],
+        "notesRadar": []
+      }
+    },
+    {
+      "songId": "S001772",
+      "title": "えびばでわったいむ",
+      "debutVersion": "ZINRAI",
+      "debutVersionNumber": 34,
+      "aliases": {
+        "officialCsv": [],
+        "unofficialDifficulty": [],
+        "ereter": [],
+        "notesRadar": []
+      }
+    },
+    {
+      "songId": "S001773",
+      "title": "Vairocana",
+      "debutVersion": "ZINRAI",
+      "debutVersionNumber": 34,
+      "aliases": {
+        "officialCsv": [],
+        "unofficialDifficulty": [],
+        "ereter": [],
+        "notesRadar": []
+      }
+    },
+    {
+      "songId": "S001774",
+      "title": "露照陀仏",
+      "debutVersion": "ZINRAI",
+      "debutVersionNumber": 34,
+      "aliases": {
+        "officialCsv": [],
+        "unofficialDifficulty": [],
+        "ereter": [],
+        "notesRadar": []
+      }
+    },
+    {
+      "songId": "S001775",
+      "title": "HORIZON BEATZ",
+      "debutVersion": "Sparkle Shower",
+      "debutVersionNumber": 33,
+      "aliases": {
+        "officialCsv": [],
+        "unofficialDifficulty": [],
+        "ereter": [],
+        "notesRadar": []
+      }
+    },
+    {
+      "songId": "S001776",
+      "title": "SILKY BRAVE",
+      "debutVersion": "Sparkle Shower",
+      "debutVersionNumber": 33,
+      "aliases": {
+        "officialCsv": [],
+        "unofficialDifficulty": [],
+        "ereter": [],
+        "notesRadar": []
+      }
     }
   ],
   "charts": [
@@ -41328,6 +41400,70 @@
       "chartType": "DPA",
       "officialLevel": 12,
       "notes": 1806,
+      "availability": "available"
+    },
+    {
+      "chartId": "CT_ID2498",
+      "songId": "S001771",
+      "chartType": "DPA",
+      "officialLevel": 11,
+      "notes": 1363,
+      "availability": "available"
+    },
+    {
+      "chartId": "CT_ID2499",
+      "songId": "S001772",
+      "chartType": "DPA",
+      "officialLevel": 11,
+      "notes": 1533,
+      "availability": "available"
+    },
+    {
+      "chartId": "CT_ID2500",
+      "songId": "S001773",
+      "chartType": "DPH",
+      "officialLevel": 10,
+      "notes": 914,
+      "availability": "available"
+    },
+    {
+      "chartId": "CT_ID2501",
+      "songId": "S001773",
+      "chartType": "DPA",
+      "officialLevel": 12,
+      "notes": 1286,
+      "availability": "available"
+    },
+    {
+      "chartId": "CT_ID2502",
+      "songId": "S001774",
+      "chartType": "DPH",
+      "officialLevel": 10,
+      "notes": null,
+      "availability": "available"
+    },
+    {
+      "chartId": "CT_ID2503",
+      "songId": "S001774",
+      "chartType": "DPA",
+      "officialLevel": 12,
+      "notes": 1915,
+      "availability": "available"
+    },
+    {
+      "chartId": "CT_ID2504",
+      "songId": "S001775",
+      "chartType": "DPA",
+      "officialLevel": 10,
+      "notes": 1305,
+      "availability": "available"
+    },
+    {
+      "chartId": "CT_ID2505",
+      "songId": "S001776",
+      "chartType": "DPA",
+      "officialLevel": 10,
+      "notes": 1154,
       "availability": "available"
     }
   ]
