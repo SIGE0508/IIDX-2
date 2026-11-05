@@ -10,7 +10,7 @@ const dbName = `iidx-clear-tracker-browser-test-${crypto.randomUUID()}`;
 const player: Player = { playerId: "browser-player", iidxId: null, playerName: null, highestDpRank: "NINTH", notesRadar: null, ereterOverall: null, notesRadarDetails: { NOTES: [], CHORD: [], PEAK: [], CHARGE: [], SCRATCH: [], SOF_LAN: [] }, createdAt: now, updatedAt: now };
 const record: PlayerChartRecord = { playerId: player.playerId, chartId: "browser-chart", clearLamp: "CLEAR", score: null, bp: null, clearSource: "manual", scoreSource: null, bpSource: null, updatedAt: now };
 const draft: SetupDraft = { playerId: player.playerId, step: "final_confirmation", highestDpRank: "NINTH", selectedRegistrationMethod: "later", payload: { version: 1, stagedRecords: [] }, updatedAt: now };
-const ok = (condition: unknown, message: string): asserts condition => { if (!condition) throw new Error(message); };
+function ok(condition: unknown, message: string): asserts condition { if (!condition) throw new Error(message); }
 const removeDatabase = (name: string) => new Promise<void>((resolve, reject) => { const request = indexedDB.deleteDatabase(name); request.onsuccess = () => resolve(); request.onerror = () => reject(request.error); request.onblocked = () => reject(new Error("Test database deletion was blocked.")); });
 const openLegacyV1 = (name: string) => new Promise<void>((resolve, reject) => {
   const request = indexedDB.open(name, 1);
