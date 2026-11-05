@@ -1,10 +1,11 @@
+import { NextPlayAddButton, type NextPlayActions } from "./NextPlay";
 import { RADAR_DISPLAY_ORDER } from "../../domain/constants";
 import { formatEreterValue } from "../../domain/ereter";
 import type { ClearLamp } from "../../domain/types";
 import { formatTrackerRadarValue, type TrackerEntry } from "./tracker";
 
-export function TrackerChartRow({ entry, lamp, expanded, onSelect, onToggleRadar }: {
-  entry: TrackerEntry; lamp: ClearLamp; expanded: boolean;
+export function TrackerChartRow({ entry, lamp, expanded, onSelect, onToggleRadar, nextPlay }: {
+  nextPlay?: NextPlayActions; entry: TrackerEntry; lamp: ClearLamp; expanded: boolean;
   onSelect: (chartId: string) => void; onToggleRadar: (chartId: string) => void;
 }) {
   const { chart, title, difficulty, ereter, radar } = entry;
@@ -25,6 +26,7 @@ export function TrackerChartRow({ entry, lamp, expanded, onSelect, onToggleRadar
         aria-expanded={expanded} aria-controls={panelId} onClick={() => onToggleRadar(chart.chartId)}>
         NOTES RADAR {expanded ? "閉じる" : "開く"}
       </button>
+      {nextPlay && <NextPlayAddButton chartId={chart.chartId} label={title + " " + chart.chartType} actions={nextPlay} />}
     </div>
     <div className="tracker-radar-panel" id={panelId} role="region" aria-labelledby={buttonId} hidden={!expanded}>
       {expanded && <dl className="tracker-radar-values">

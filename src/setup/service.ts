@@ -82,21 +82,21 @@ export async function replaceSetupStagedRecords(repository: UserDataRepository, 
 export function radarTotal(values: PlayerRadarValues): number { return RADAR_ATTRIBUTES.reduce((total, attribute) => total + values[attribute], 0); }
 export async function updatePlayerProfile(repository: UserDataRepository, player: Player, patch: PlayerProfilePatch, now: string): Promise<Player> {
   assertTimestamp(now); if (!isRank(patch.highestDpRank)) throw new Error("Highest DP rank is invalid.");
-  const updated: Player = { ...player, ...patch, updatedAt: now }; await repository.savePlayer(updated); return updated;
+  return repository.updatePlayer(player.playerId, latest => ({ ...latest, playerName: patch.playerName, iidxId: patch.iidxId, highestDpRank: patch.highestDpRank, updatedAt: now }));
 }
 export async function updatePlayerRadar(repository: UserDataRepository, player: Player, notesRadar: PlayerRadarValues, now: string): Promise<Player> {
   assertTimestamp(now); if (!RADAR_ATTRIBUTES.every((attribute) => Number.isFinite(notesRadar[attribute]))) throw new Error("All player NOTES RADAR values must be finite numbers.");
-  const updated: Player = { ...player, notesRadar: { ...notesRadar }, updatedAt: now }; await repository.savePlayer(updated); return updated;
+  return repository.updatePlayer(player.playerId, latest => ({ ...latest, notesRadar: { ...notesRadar }, updatedAt: now }));
 }
 export async function updatePlayerEreterOverall(repository: UserDataRepository, player: Player, ereterOverall: number | null, now: string): Promise<Player> {
   assertTimestamp(now); if (ereterOverall !== null && (!Number.isFinite(ereterOverall) || ereterOverall < 0)) throw new Error("Personal ERETER value must be a non-negative finite number.");
-  const updated: Player = { ...player, ereterOverall, updatedAt: now }; await repository.savePlayer(updated); return updated;
+  return repository.updatePlayer(player.playerId, latest => ({ ...latest, ereterOverall, updatedAt: now }));
 }
 export async function updatePlayerRadarDetails(repository: UserDataRepository, player: Player, details: PlayerRadarDetails, now: string): Promise<Player> {
   assertTimestamp(now);
   if (!RADAR_ATTRIBUTES.every(attribute => Array.isArray(details[attribute]) && details[attribute].length <= 10 && details[attribute].every(item => item.chartId.trim() && Number.isFinite(item.value) && item.value >= 0) && new Set(details[attribute].map(item => item.chartId)).size === details[attribute].length)) throw new Error("Player NOTES RADAR details are invalid.");
   const copied = Object.fromEntries(RADAR_ATTRIBUTES.map(attribute => [attribute, details[attribute].map(item => ({ ...item }))])) as unknown as PlayerRadarDetails;
-  const updated: Player = { ...player, notesRadarDetails: copied, updatedAt: now }; await repository.savePlayer(updated); return updated;
+  return repository.updatePlayer(player.playerId, latest => ({ ...latest, notesRadarDetails: copied, updatedAt: now }));
 }
 /** Common PLAYER aggregate: managed, currently playable ☆10–12 charts only. */
 export function summarizePlayerPlayData(charts: readonly ChartMaster[], records: readonly PlayerChartRecord[]): PlayerPlayDataSummary {

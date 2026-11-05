@@ -1,3 +1,4 @@
+import { assertPlayList } from "../domain/play-list";
 import { CLEAR_LAMPS, HIGHEST_DP_RANKS, RADAR_ATTRIBUTES, RECORD_SOURCES, SETUP_REGISTRATION_METHODS } from "../domain/constants";
 import type { EreterPersonalHistory, HistoryEntry, Player, PlayerChartRecord, SetupDraft } from "../domain/types";
 
@@ -30,6 +31,7 @@ const radarDetails = (value: unknown): boolean => object(value) && RADAR_ATTRIBU
 });
 
 export function assertPlayer(value: unknown): asserts value is Player {
+  if (object(value) && value.playList !== undefined) assertPlayList(value.playList);
   if (!object(value) || !nonBlank(value.playerId) || !nullableString(value.iidxId) || !nullableString(value.playerName) || !oneOf(value.highestDpRank, HIGHEST_DP_RANKS) || (value.notesRadar !== null && !radar(value.notesRadar)) || !nullableFinite(value.ereterOverall) || (finite(value.ereterOverall) && value.ereterOverall < 0) || !radarDetails(value.notesRadarDetails) || !iso(value.createdAt) || !iso(value.updatedAt)) throw new Error("Player record is invalid.");
 }
 export function assertPlayerChartRecord(value: unknown): asserts value is PlayerChartRecord {

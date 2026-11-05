@@ -53,6 +53,27 @@ export class UserDataRepository {
     assertUserDataCommit(commit); const stores = storesFor(commit); if (stores.length === 0) return;
     await runTransaction(this.database, stores, "readwrite", (transaction) => { for (const store of stores) { const objectStore = transaction.objectStore(store); for (const entry of commit[store] ?? []) objectStore.put(entry); } });
   }
+  /** Synchronous updater runs against the latest Player inside a single readwrite transaction. */
+  async updatePlayer(playerId: string, update: (latest: Player) => Player): Promise<Player> {
+    if (!playerId.trim()) throw new Error("PLAYERが指定されていません。");
+    let updated: Player | undefined;
+    let failure: unknown;
+    await runTransaction(this.database, ["players"], "readwrite", transaction => {
+      const store = transaction.objectStore("players"), request = store.get(playerId);
+      request.onsuccess = () => {
+        try {
+          if (!request.result) throw new Error("PLAYERが見つかりません。");
+          assertPlayer(request.result);
+          const createdAt = request.result.createdAt;
+          updated = update(request.result);
+          assertPlayer(updated);
+          if (updated.playerId !== playerId || updated.createdAt !== createdAt) throw new Error("PLAYERの識別情報は変更できません。");
+          store.put(updated);
+        } catch (error) { failure = error; transaction.abort(); }
+      };
+    }).catch(error => { throw failure ?? error; });
+    return updated!;
+  }
   async savePlayer(player: Player): Promise<void> { assertPlayer(player); await this.commit({ players: [player] }); }
   async savePlayerChartRecord(record: PlayerChartRecord): Promise<void> { assertPlayerChartRecord(record); await this.commit({ playerChartRecords: [record] }); }
   async saveHistory(entry: HistoryEntry): Promise<void> { assertHistoryEntry(entry); await this.commit({ history: [entry] }); }

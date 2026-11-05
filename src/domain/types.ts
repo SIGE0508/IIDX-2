@@ -32,7 +32,10 @@ export interface PlayerRadarDetail { chartId: string; value: number; }
 export type PlayerRadarDetails = Record<RadarAttribute, PlayerRadarDetail[]>;
 
 /** User-owned data. Shared masters never contain these records. */
+export interface PlayListEntry { chartId: string; memo: string; }
 export interface Player {
+  /** Missing on older Players means an empty NEXT PLAY list; insertion order is preserved. */
+  playList?: PlayListEntry[];
   playerId: string;
   iidxId: string | null;
   playerName: string | null;

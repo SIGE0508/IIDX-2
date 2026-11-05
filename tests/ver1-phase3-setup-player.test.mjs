@@ -26,6 +26,7 @@ class MemoryRepository {
   async deleteSetupDraft(playerId) { this.deletions.push(playerId); this.drafts.delete(playerId); }
   async completeInitialSetup(player, records) { this.players.push(structuredClone(player)); this.records.push(...structuredClone(records)); this.drafts.delete(player.playerId); }
   async savePlayer(player) { this.players.push(structuredClone(player)); }
+  async updatePlayer(id, update) { const current=this.players.findLast(p=>p.playerId===id); if(!current)throw Error("missing PLAYER"); const next=update(structuredClone(current)); this.players=this.players.filter(p=>p.playerId!==id); this.players.push(structuredClone(next)); return next; }
 }
 
 test("setup can start, resume and finish later route without records or HISTORY", async () => {
@@ -68,6 +69,7 @@ test("PLAYER aggregate excludes unavailable charts and NO_PLAY, and radar total 
 test("PLAYER profile can change only profile fields, including highest DP rank, without touching play records", async () => {
   const repository = new MemoryRepository();
   const player = { playerId: "player-1", iidxId: null, playerName: null, highestDpRank: "NINTH", notesRadar: null, ereterOverall: null, notesRadarDetails: { NOTES: [], CHORD: [], PEAK: [], CHARGE: [], SCRATCH: [], SOF_LAN: [] }, createdAt: now, updatedAt: now };
+  await repository.savePlayer(player);
   const recordsBefore = [{ playerId: "player-1", chartId: "c12", clearLamp: "HARD_CLEAR", score: 3000, bp: 12 }];
   const updated = await setup.updatePlayerProfile(repository, player, { playerName: "TEST", iidxId: "1234-5678", highestDpRank: "CHUDEN" }, "2026-09-24T00:00:00.000Z");
   assert.equal(updated.highestDpRank, "CHUDEN");
@@ -81,6 +83,7 @@ test("PLAYER profile can change only profile fields, including highest DP rank, 
 test("PLAYER NOTES RADAR updates the existing Player field without changing rank or play records", async () => {
   const repository = new MemoryRepository();
   const player = { playerId: "player-1", iidxId: "1234-5678", playerName: "TEST", highestDpRank: "CHUDEN", notesRadar: null, ereterOverall: null, notesRadarDetails: { NOTES: [], CHORD: [], PEAK: [], CHARGE: [], SCRATCH: [], SOF_LAN: [] }, createdAt: now, updatedAt: now };
+  await repository.savePlayer(player);
   const values = { NOTES: 100, CHORD: 90, PEAK: 80, CHARGE: 70, SCRATCH: 60, SOF_LAN: 50 };
   const updated = await setup.updatePlayerRadar(repository, player, values, "2026-09-24T00:00:00.000Z");
   assert.deepEqual(JSON.parse(JSON.stringify(updated.notesRadar)), values);
@@ -92,6 +95,7 @@ test("PLAYER NOTES RADAR updates the existing Player field without changing rank
 test("PLAYER saves nullable personal ERETER and at most ten unique Radar details per attribute", async () => {
   const repository = new MemoryRepository();
   const player = { playerId: "player-1", iidxId: null, playerName: null, highestDpRank: "NINTH", notesRadar: null, ereterOverall: null, notesRadarDetails: { NOTES: [], CHORD: [], PEAK: [], CHARGE: [], SCRATCH: [], SOF_LAN: [] }, createdAt: now, updatedAt: now };
+  await repository.savePlayer(player);
   const withEreter = await setup.updatePlayerEreterOverall(repository, player, 8.02, now);
   assert.equal(withEreter.ereterOverall, 8.02);
   const details = { NOTES: Array.from({ length: 10 }, (_, index) => ({ chartId: `c${index}`, value: 100 - index })), CHORD: [], PEAK: [], CHARGE: [], SCRATCH: [], SOF_LAN: [] };

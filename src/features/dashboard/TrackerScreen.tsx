@@ -1,3 +1,4 @@
+import type { NextPlayActions } from "./NextPlay";
 import { useMemo, useState } from "react";
 import { CLEAR_LAMPS } from "../../domain/constants";
 import type { PlayerChartRecord } from "../../domain/types";
@@ -5,8 +6,8 @@ import type { MasterSet } from "../../master/types";
 import { TrackerChartRow } from "./TrackerChartRow";
 import { buildTrackerEntries, filterTrackerEntries, type TrackerFilters, type TrackerSort } from "./tracker";
 
-export function TrackerScreen({ master, records, onSelect, filters, onFiltersChange, expandedChartIds, onToggleRadar }: {
-  master: MasterSet; records: ReadonlyMap<string, PlayerChartRecord>; onSelect: (chartId: string) => void;
+export function TrackerScreen({ master, records, onSelect, filters, onFiltersChange, expandedChartIds, onToggleRadar, nextPlay }: {
+  nextPlay?: NextPlayActions; master: MasterSet; records: ReadonlyMap<string, PlayerChartRecord>; onSelect: (chartId: string) => void;
   filters: TrackerFilters; onFiltersChange: (filters: TrackerFilters) => void;
   expandedChartIds: ReadonlySet<string>; onToggleRadar: (chartId: string) => void;
 }) {
@@ -49,6 +50,6 @@ export function TrackerScreen({ master, records, onSelect, filters, onFiltersCha
     <p className="hint">{rows.length}譜面</p>
     {rows.map(entry => <TrackerChartRow key={entry.chart.chartId} entry={entry}
       lamp={records.get(entry.chart.chartId)?.clearLamp ?? "NO_PLAY"}
-      expanded={expandedChartIds.has(entry.chart.chartId)} onSelect={onSelect} onToggleRadar={onToggleRadar} />)}
+      nextPlay={nextPlay} expanded={expandedChartIds.has(entry.chart.chartId)} onSelect={onSelect} onToggleRadar={onToggleRadar} />)}
   </section>;
 }
