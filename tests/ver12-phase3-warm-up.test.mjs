@@ -206,3 +206,85 @@ test("HOME UI roles ordered, missing difficulty explicit, sibling action avoids 
   const row=renderToStaticMarkup(React.createElement(WarmUpRow,{item:simple("light","LIGHT",{difficulty:null}),master,onSelect(){},actions:React.createElement("button",{},"future action")}));
   assert.ok(row.includes("非公式 —"));assert.equal((row.match(/<button/g)||[]).length,2);assert.ok(!/<button[^>]*>(?:(?!<\/button>)[\s\S])*<button/.test(row));
 });
+
+test("top-30 pool fills three distinct roles at all supported candidate counts", () => {
+  for (const count of [0, 1, 2, 3, 17, 30, 31, 100]) {
+    const pool = poolOf(...["LIGHT", "BASIC", "ACCURACY"].map(role =>
+      Array.from({ length: count }, (_, i) => simple("chart-" + i, role))));
+    const drawItems = draw.selectWarmUp(pool, [], [], () => 0.5);
+    assert.equal(drawItems.length, Math.min(3, count));
+    assert.equal(new Set(ids(drawItems)).size, drawItems.length);
+    assert.ok(drawItems.every(item => Number(item.chartId.slice(6)) < 30));
+  }
+});
+
+test("short pools reuse older history and still avoid the immediately preceding chart", () => {
+  for (const size of [1, 2, 3]) {
+    const pool = poolOf(Array.from({ length: size }, (_, i) => simple(String(i))));
+    let state = draw.synchronizeWarmUp(draw.createWarmUpState(), "p", pool, [], () => 0.5);
+    for (let i = 0; i < 8; i++) {
+      const previous = state;
+      state = draw.replaceWarmUp(state, pool, [], () => 0.5);
+      if (size === 1) assert.equal(state, previous);
+      else assert.notEqual(state.items[0].chartId, previous.items[0].chartId);
+    }
+  }
+});
+
+const seededWarmUp = initial => {
+  let seed = initial;
+  return () => ((seed = (Math.imul(seed, 1664525) + 1013904223) >>> 0) / 4294967296);
+};
+test("ten replacements avoid the last three displays and diversify across fixed seeds", () => {
+  const pool = poolOf(...["LIGHT", "BASIC", "ACCURACY"].map(role =>
+    Array.from({ length: 42 }, (_, i) => simple(role + i, role))));
+  for (const seed of [1, 42, 20261106, 0x12345678, 0xffffffff]) {
+    const random = seededWarmUp(seed), nextIds = ["LIGHT0", "BASIC0", "ACCURACY0"];
+    let state = draw.synchronizeWarmUp(draw.createWarmUpState(), "p", pool, nextIds, random);
+    const observed = new Map();
+    for (let i = 0; i < 10; i++) {
+      state = draw.replaceWarmUp(state, pool, nextIds, random);
+      assert.ok(state.history.length <= 3);
+      for (const item of state.items) {
+        assert.ok(!state.history.flat().includes(item.chartId));
+        assert.ok(!nextIds.includes(item.chartId));
+        assert.ok(Number(item.chartId.slice(item.role.length)) < 30);
+        const counts = observed.get(item.role) ?? new Map();
+        counts.set(item.chartId, (counts.get(item.chartId) ?? 0) + 1);
+        observed.set(item.role, counts);
+      }
+    }
+    for (const counts of observed.values()) {
+      assert.ok(counts.size >= 6);
+      assert.ok(Math.max(...counts.values()) <= 3);
+    }
+  }
+});
+
+test("sampling favors higher rank and penalizes a measured BP-rate gap", () => {
+  const random = seededWarmUp(42);
+  const pool = poolOf([simple("best", "LIGHT", { bpRate: 0 }), simple("near", "LIGHT", { bpRate: 0.0001 }),
+    simple("far", "LIGHT", { bpRate: 0.03 })]);
+  const counts = { best: 0, near: 0, far: 0 };
+  for (let i = 0; i < 2000; i++) counts[draw.selectWarmUp(pool, [], [], random)[0].chartId]++;
+  assert.ok(counts.best > counts.near);
+  assert.ok(counts.far > 0 && counts.far < counts.near / 3);
+  const withMissing = poolOf([...pool.roles.LIGHT, simple("missing")]);
+  assert.equal(draw.selectWarmUp(withMissing, [], ["best", "near"], () => 0.5)[0].chartId, "far");
+});
+
+test("history records a display once, prunes invalid charts, and resets for another PLAYER", () => {
+  const pool = poolOf([simple("a"), simple("b"), simple("c")]);
+  const pending = draw.synchronizeWarmUp(draw.createWarmUpState(), "p", pool, [], () => 0.5);
+  assert.equal(pending.history.length, 0);
+  const shown = draw.recordWarmUpDisplay(pending);
+  assert.equal(draw.recordWarmUpDisplay(shown), shown);
+  assert.equal(shown.history.flat().join(), "a");
+  const edited = poolOf([simple("a", "LIGHT", { bpRate: 0.01 }), simple("b")]);
+  const updated = draw.synchronizeWarmUp(shown, "p", edited, [], () => 0.5);
+  assert.deepEqual(ids(updated.items), ["b"]);
+  assert.equal(updated.history.flat().join(), "a");
+  const removed = draw.synchronizeWarmUp(shown, "p", poolOf([simple("b")]), [], () => 0.5);
+  assert.equal(removed.history.flat().length, 0);
+  assert.equal(draw.synchronizeWarmUp(shown, "other", pool, [], () => 0.5).history.length, 0);
+});
